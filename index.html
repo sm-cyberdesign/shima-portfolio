@@ -1384,6 +1384,68 @@
 
     @media (max-width: 600px) {
 
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .container,
+      .nav-inner {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .hero-photo-wrap {
+        order: 0;
+        grid-column: 2;
+        grid-row: 1;
+        min-height: 0;
+        padding-top: 1rem;
+      }
+
+      .hero-grid>div:first-child {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .mascot-svg-wrap {
+        width: 105px;
+        height: 105px;
+      }
+
+      .hero-tag,
+      .hero-p,
+      .hero-btns,
+      .hero-stats {
+        grid-column: 1 / -1;
+      }
+
+      .hero-photo-ring,
+      .hero-badge {
+        display: none;
+      }
+
+      .cert-strip {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .cert-track {
+        animation: none;
+        transform: none;
+        overflow-x: hidden;
+      }
+
       /* ── HERO ── */
       .hero {
         padding: 1.5rem 0 2rem;
