@@ -1502,6 +1502,36 @@
     .cert-strip:focus-within .cert-track {
       animation-play-state: paused;
     }
+
+    /* Mobile stability fixes */
+    @media (max-width: 600px) {
+      .hero-photo-wrap {
+        order: 0;
+        min-height: 220px;
+      }
+
+      .mascot-svg-wrap {
+        width: 220px;
+        height: 220px;
+      }
+
+      .cert-track {
+        animation: none;
+        overflow-x: auto;
+      }
+
+      .project-card:hover,
+      .insight-card:hover,
+      .mascot-svg-wrap:hover {
+        transform: none;
+      }
+    }
+
+    /* Pause marquee on hover/focus for WCAG 2.1 AA motion compliance */
+    .cert-strip:hover .cert-track,
+    .cert-strip:focus-within .cert-track {
+      animation-play-state: paused;
+    }
   </style>
 </head>
 
