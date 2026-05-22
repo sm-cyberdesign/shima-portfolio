@@ -7,7 +7,7 @@
   <title>Shima Mudakha | Cybersecurity Analyst &amp; UX Designer — Tampa, FL</title>
   <meta name="description"
     content="Shima Mudakha is a cybersecurity analyst and UX designer bridging human-centered design with security-first systems. Google-certified, ISC2 CC, based in Tampa FL.">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@400;500;600&display=swap"
     rel="stylesheet">
@@ -54,7 +54,7 @@
       font-family: 'Fira Code', monospace;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
@@ -62,7 +62,6 @@
       background: rgba(232, 230, 230, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      /* Safari support */
       border-bottom: 1px solid var(--border);
       transition: background-color 0.3s, border-color 0.3s;
     }
@@ -93,14 +92,29 @@
       font-weight: 800;
     }
 
+    .nav-logo-divider {
+      width: 1px;
+      height: 1rem;
+      background: #ccc;
+      margin: 0 4px;
+    }
+
     .nav-logo-sub {
-      font-size: 12px;
+      font-size: 8px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 800;
-      line-height: 1;
+      line-height: 1.4;
       display: flex;
       flex-direction: column;
+    }
+
+    .nav-logo-sub .design-label {
+      color: var(--deep);
+    }
+
+    .nav-logo-sub .cyber-label {
+      color: var(--muted);
     }
 
     .nav-links {
@@ -184,7 +198,7 @@
       border-radius: 2px;
     }
 
-    /* MOBILE MENU */
+    /* ── MOBILE MENU ── */
     .mobile-menu {
       display: none;
       position: fixed;
@@ -224,7 +238,7 @@
       color: var(--text);
     }
 
-    /* LAYOUT CONTAINER */
+    /* ── LAYOUT ── */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -235,7 +249,25 @@
       padding: 5rem 0;
     }
 
-    /* HERO */
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--vivid);
+      margin-bottom: .6rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    /* ── HERO ── */
     .hero {
       padding: 4.5rem 0 5.5rem;
     }
@@ -277,11 +309,11 @@
 
       0%,
       100% {
-        opacity: 1;
+        opacity: 1
       }
 
       50% {
-        opacity: .35;
+        opacity: .35
       }
     }
 
@@ -390,7 +422,7 @@
       letter-spacing: .05em;
     }
 
-    /* CERT STRIP */
+    /* ── CERT STRIP ── */
     .cert-strip {
       background: var(--dark);
       padding: 1.1rem 0;
@@ -406,11 +438,11 @@
 
     @keyframes scroll {
       0% {
-        transform: translateX(0);
+        transform: translateX(0)
       }
 
       100% {
-        transform: translateX(-50%);
+        transform: translateX(-50%)
       }
     }
 
@@ -431,7 +463,7 @@
       flex-shrink: 0;
     }
 
-    /* ABOUT */
+    /* ── ABOUT ── */
     .about {
       background: var(--white);
     }
@@ -519,7 +551,7 @@
       margin-bottom: 2px;
     }
 
-    /* PORTFOLIO */
+    /* ── PORTFOLIO ── */
     .portfolio-header {
       display: flex;
       justify-content: space-between;
@@ -535,7 +567,6 @@
       border: 1px solid var(--border);
       border-radius: 100px;
       padding: 4px;
-      transition: background-color 0.3s, border-color 0.3s;
     }
 
     .lane-btn {
@@ -556,7 +587,412 @@
       color: #fff;
     }
 
-    /* MODAL SYSTEM (Viewport Centered and Body Freezing Fixed) */
+    /* ── PROJECTS GRID ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .projects-grid.hidden {
+      display: none;
+    }
+
+    /* UX lane uses same grid */
+    #lane-ux {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    #lane-ux.hidden {
+      display: none;
+    }
+
+    #lane-cyber {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    #lane-cyber.hidden {
+      display: none;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(146, 0, 107, .13);
+    }
+
+    .project-card-img-wrap {
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .project-card-img-wrap svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .project-card-placeholder {
+      background: var(--dark);
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .project-card-body {
+      padding: 1.25rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: .6rem;
+    }
+
+    .project-cat {
+      font-size: .62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--vivid);
+      background: rgba(219, 0, 161, .08);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    .project-type {
+      font-size: .62rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    .project-card-body h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+      line-height: 1.35;
+    }
+
+    .project-card-body p {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .project-card-btn {
+      display: inline-block;
+      padding: .4rem 1rem;
+      background: var(--deep);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .2s;
+    }
+
+    .project-card-btn:hover {
+      background: var(--vivid);
+    }
+
+    /* ── INSIGHTS ── */
+    .insights {
+      background: var(--white);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .insight-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.75rem;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(146, 0, 107, .1);
+    }
+
+    .insight-tag {
+      display: inline-block;
+      font-size: .62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--vivid);
+      background: rgba(219, 0, 161, .08);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: .85rem;
+    }
+
+    .insight-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .6rem;
+      line-height: 1.4;
+    }
+
+    .insight-card p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1.1rem;
+    }
+
+    .insight-link {
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--deep);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      padding: 0;
+      transition: color .2s;
+    }
+
+    .insight-link:hover {
+      color: var(--vivid);
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info p:not(.section-label) {
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      padding: .85rem 1rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color .2s, box-shadow .2s;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .contact-link:hover {
+      border-color: var(--vivid);
+      box-shadow: 0 4px 16px rgba(219, 0, 161, .1);
+    }
+
+    .contact-link-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(146, 0, 107, .08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .4rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: .65rem .9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: .88rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color .2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--vivid);
+    }
+
+    .form-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: .75rem;
+      background: var(--vivid);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .2s;
+    }
+
+    .form-submit:hover {
+      background: var(--deep);
+    }
+
+    .form-success {
+      display: none;
+      margin-top: .85rem;
+      padding: .75rem 1rem;
+      background: rgba(16, 185, 129, .1);
+      border: 1px solid rgba(16, 185, 129, .3);
+      border-radius: 10px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #065f46;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, .7);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: .75rem;
+    }
+
+    .footer-brand span {
+      color: var(--vivid);
+    }
+
+    .footer-tagline {
+      font-size: .8rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .footer-col h5 {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--lime);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .footer-links a,
+    .footer-links button {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .55);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+      transition: color .2s;
+      padding: 0;
+    }
+
+    .footer-links a:hover,
+    .footer-links button:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .35);
+    }
+
+    /* ── MODAL ── */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -662,7 +1098,7 @@
       flex-shrink: 0;
     }
 
-    /* DYNAMIC CASE DECORATORS */
+    /* Modal inner styles */
     .modal-body h4 {
       font-size: .72rem;
       font-weight: 700;
@@ -701,7 +1137,6 @@
       border-radius: 14px;
       padding: 1.1rem 1.25rem;
       margin-bottom: .85rem;
-      transition: background-color 0.3s;
     }
 
     .persona-name {
@@ -775,13 +1210,25 @@
       color: var(--lime);
     }
 
-    /* TERMINAL INTERACTIVE THEME STYLINGS */
+    /* modal inner grid helpers */
+    .m-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: .75rem 0;
+    }
+
+    .m-space {
+      margin-top: 1.5rem;
+    }
+
+    /* ── SECURE TERMINAL MODE ── */
     .secure-terminal-mode {
-      --bg: #120c14 !important;
-      --white: #1a121d !important;
-      --text: #cbd5e1 !important;
-      --muted: #94a3b8 !important;
-      --border: rgba(214, 251, 81, 0.25) !important;
+      --bg: #120c14;
+      --white: #1a121d;
+      --text: #cbd5e1;
+      --muted: #94a3b8;
+      --border: rgba(214, 251, 81, 0.25);
     }
 
     .secure-terminal-mode nav {
@@ -818,50 +1265,57 @@
       border-color: #D6fb51 !important;
     }
 
+    .secure-terminal-mode .about {
+      background: #1a121d !important;
+    }
+
     .secure-terminal-mode .about-photo {
       background: linear-gradient(135deg, #09050a 0%, #120c14 100%) !important;
-      border: 1px solid var(--border) !important;
     }
 
     .secure-terminal-mode .lane-toggle {
       background: #1a121d !important;
     }
 
-    .secure-terminal-mode .swapper-container {
-      background-color: #1a121d !important;
-      border: 1px solid rgba(214, 251, 81, 0.3) !important;
+    .secure-terminal-mode .project-card {
+      background: #1a121d !important;
+      border-color: rgba(214, 251, 81, 0.2) !important;
     }
 
-    .secure-terminal-mode .active-lane-btn {
-      background-color: #db00a1 !important;
-      color: #D6fb51 !important;
+    .secure-terminal-mode .project-card-body h3 {
+      color: #fff !important;
     }
 
-    .secure-terminal-mode .inactive-lane-btn {
-      background-color: transparent !important;
+    .secure-terminal-mode .skill-tag {
+      background: #1a121d !important;
+    }
+
+    .secure-terminal-mode .insights {
+      background: #1a121d !important;
+    }
+
+    .secure-terminal-mode .insight-card {
+      background: #120c14 !important;
+    }
+
+    .secure-terminal-mode .contact-link {
+      background: #1a121d !important;
+    }
+
+    .secure-terminal-mode .contact-form {
+      background: #1a121d !important;
+    }
+
+    .secure-terminal-mode .form-group input,
+    .secure-terminal-mode .form-group textarea {
+      background: #120c14 !important;
       color: #cbd5e1 !important;
+      border-color: rgba(214, 251, 81, 0.2) !important;
     }
 
-    .secure-terminal-mode .inactive-lane-btn:hover {
-      background-color: rgba(255, 255, 255, 0.05) !important;
-      color: #ffffff !important;
-    }
-
-    .secure-terminal-mode .bg-slate-100 {
-      background-color: rgba(255, 255, 255, 0.08) !important;
-      color: #D6fb51 !important;
-      border: 1px solid rgba(214, 251, 81, 0.2) !important;
-    }
-
-    /* Modal Dark overrides */
     .secure-terminal-mode .modal-box {
       background: #120c14 !important;
       border: 1.5px solid #D6fb51 !important;
-      color: #cbd5e1 !important;
-    }
-
-    .secure-terminal-mode .modal-head {
-      border-bottom: 1px solid rgba(214, 251, 81, 0.2) !important;
     }
 
     .secure-terminal-mode .modal-body {
@@ -880,673 +1334,45 @@
       color: #D6fb51 !important;
     }
 
-    .secure-terminal-mode .ux-persona-card {
-      background: rgba(255, 255, 255, 0.04) !important;
-      border-color: rgba(214, 251, 81, 0.15) !important;
-    }
-
     .secure-terminal-mode .modal-foot {
       background: #1a121d !important;
       border-color: rgba(214, 251, 81, 0.2) !important;
     }
 
-    .secure-terminal-mode .bg-rose-50 {
-      background-color: rgba(244, 63, 94, 0.15) !important;
-      border: 1px solid rgba(244, 63, 94, 0.4) !important;
-    }
-
-    .secure-terminal-mode .text-rose-800 {
-      color: #fecdd3 !important;
-    }
-
-    .secure-terminal-mode .bg-rose-50 p,
-    .secure-terminal-mode .bg-rose-50 span {
-      color: #ffe4e6 !important;
-    }
-
-    .secure-terminal-mode .bg-emerald-50 {
-      background-color: rgba(16, 185, 129, 0.15) !important;
-      border: 1px solid rgba(16, 185, 129, 0.4) !important;
-    }
-
-    .secure-terminal-mode .text-emerald-800 {
-      color: #a7f3d0 !important;
-    }
-
-    .secure-terminal-mode .bg-emerald-50 p,
-    .secure-terminal-mode .bg-emerald-50 span {
-      color: #ecfdf5 !important;
-    }
-
-    .secure-terminal-mode .bg-brandBg\/30,
-    .secure-terminal-mode .bg-brandBg\/40 {
-      background-color: rgba(26, 18, 29, 0.8) !important;
-      border-color: rgba(214, 251, 81, 0.2) !important;
-    }
-
-    /* ===== PORTFOLIO FIXES: WIX/NO-TAILWIND + MOBILE/SAFARI SAFE ===== */
-    html,
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    img,
-    svg,
-    video {
-      max-width: 100%;
-      height: auto;
-    }
-
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-      line-height: 1.12;
-      color: var(--text);
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      line-height: 1.25;
-      color: var(--text);
-    }
-
-    .section-label {
-      font-size: .72rem;
-      font-weight: 800;
-      color: var(--vivid);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: .65rem;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .grid {
-      display: grid;
-    }
-
-    .grid-cols-1 {
-      grid-template-columns: 1fr;
-    }
-
-    .grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .gap-4 {
-      gap: 1rem;
-    }
-
-    .gap-6 {
-      gap: 1.5rem;
-    }
-
-    .w-full {
-      width: 100%;
-    }
-
-    .h-auto {
-      height: auto;
-    }
-
-    .h-4 {
-      height: 1rem;
-    }
-
-    .mx-2 {
-      margin-left: .5rem;
-      margin-right: .5rem;
-    }
-
-    .my-3 {
-      margin-top: .75rem;
-      margin-bottom: .75rem;
-    }
-
-    .p-2 {
-      padding: .5rem;
-    }
-
-    .p-4 {
-      padding: 1rem;
-    }
-
-    .pt-4 {
-      padding-top: 1rem;
-    }
-
-    .block {
-      display: block;
-    }
-
-    .rounded {
-      border-radius: .25rem;
-    }
-
-    .rounded-r-xl {
-      border-top-right-radius: .75rem;
-      border-bottom-right-radius: .75rem;
-    }
-
-    .border {
-      border: 1px solid var(--border);
-    }
-
-    .border-l-4 {
-      border-left-width: 4px;
-    }
-
-    .border-rose-500 {
-      border-color: #f43f5e;
-    }
-
-    .bg-slate-50 {
-      background: #f8fafc;
-    }
-
-    .bg-slate-100 {
-      background: #f1f5f9;
-    }
-
-    .bg-slate-300 {
-      background: #cbd5e1;
-    }
-
-    .bg-rose-50 {
-      background: #fff1f2;
-    }
-
-    .bg-emerald-50 {
-      background: #ecfdf5;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .text-xs {
-      font-size: .75rem;
-    }
-
-    .text-sm {
-      font-size: .875rem;
-    }
-
-    .text-lg {
-      font-size: 1.125rem;
-    }
-
-    .text-slate-400 {
-      color: #94a3b8;
-    }
-
-    .text-slate-500 {
-      color: #64748b;
-    }
-
-    .text-slate-700 {
-      color: #334155;
-    }
-
-    .text-slate-800 {
-      color: #1e293b;
-    }
-
-    .text-slate-900 {
-      color: #0f172a;
-    }
-
-    .text-rose-800 {
-      color: #9f1239;
-    }
-
-    .text-emerald-800 {
-      color: #065f46;
-    }
-
-    .text-brandDeep {
-      color: var(--deep);
-    }
-
-    .text-brandVibrant {
-      color: var(--vivid);
-    }
-
-    .font-mono {
-      font-family: 'Fira Code', monospace;
-    }
-
-    .font-sans {
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .font-bold {
-      font-weight: 700;
-    }
-
-    .font-semibold {
-      font-weight: 600;
-    }
-
-    .font-extrabold {
-      font-weight: 800;
-    }
-
-    .italic {
-      font-style: italic;
-    }
-
-    .uppercase {
-      text-transform: uppercase;
-    }
-
-    .tracking-wider {
-      letter-spacing: .05em;
-    }
-
-    .leading-relaxed {
-      line-height: 1.625;
-    }
-
-    .space-y-1>*+* {
-      margin-top: .25rem;
-    }
-
-    .space-y-2>*+* {
-      margin-top: .5rem;
-    }
-
-    .space-y-3>*+* {
-      margin-top: .75rem;
-    }
-
-    .space-y-4>*+* {
-      margin-top: 1rem;
-    }
-
-    .space-y-6>*+* {
-      margin-top: 1.5rem;
-    }
-
-    .space-y-8>*+* {
-      margin-top: 2rem;
-    }
-
-    .terminal-logo-divider {
-      width: 1px;
-      height: 16px;
-      background: #cbd5e1;
-      margin: 0 .5rem;
-      opacity: .85;
-      flex: 0 0 auto;
-    }
-
-    .terminal-logo-design {
-      color: var(--deep);
-    }
-
-    .terminal-logo-highlight {
-      color: var(--muted);
-    }
-
-    .projects-grid,
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    #lane-ux {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .project-card,
-    .insight-card,
-    .contact-form {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 14px 40px rgba(18, 12, 20, .06);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-
-    .project-card:hover,
-    .insight-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 55px rgba(146, 0, 107, .14);
-      border-color: rgba(219, 0, 161, .22);
-    }
-
-    .project-card-img-wrap {
-      background: var(--dark);
-      padding: .75rem;
-    }
-
-    .project-card-placeholder {
-      min-height: 165px;
-      background: linear-gradient(135deg, #120c14, #2a1430);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-    }
-
-    .project-card-body {
-      padding: 1.15rem;
-    }
-
-    .project-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: .75rem;
-      align-items: center;
-      margin-bottom: .65rem;
-    }
-
-    .project-cat,
-    .project-type,
-    .insight-tag {
-      font-size: .66rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      font-weight: 800;
-    }
-
-    .project-cat {
-      color: var(--vivid);
-    }
-
-    .project-type {
-      color: var(--muted);
-    }
-
-    .project-card p,
-    .insight-card p {
-      color: var(--muted);
-      font-size: .85rem;
-      line-height: 1.65;
-      margin: .7rem 0 1rem;
-    }
-
-    .project-card-btn,
-    .insight-link {
-      border: 0;
-      background: transparent;
-      color: var(--deep);
-      font-weight: 800;
-      cursor: pointer;
-      font-family: inherit;
-      padding: 0;
-    }
-
-    .project-card-btn:hover,
-    .insight-link:hover {
-      color: var(--vivid);
-    }
-
-    .insights {
-      background: #f7f5f5;
-    }
-
-    .insight-card {
-      padding: 1.3rem;
-    }
-
-    .insight-tag {
-      color: var(--vivid);
-      margin-bottom: .75rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .contact-info p {
-      color: var(--muted);
-      max-width: 460px;
-      line-height: 1.8;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: .75rem;
-      margin-top: 1.5rem;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      color: var(--text);
-      text-decoration: none;
-      padding: .75rem;
-      border-radius: 12px;
-      background: #fff;
-      border: 1px solid var(--border);
-      font-family: inherit;
-      font-size: .9rem;
-    }
-
-    .contact-link-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--deep);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-form {
-      padding: 1.5rem;
-    }
-
-    .form-group {
-      display: grid;
-      gap: .35rem;
-      margin-bottom: .9rem;
-    }
-
-    .form-group label {
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: .8rem .9rem;
-      font: inherit;
-      background: #fff;
-      color: var(--text);
-    }
-
-    .form-group textarea {
-      min-height: 135px;
-      resize: vertical;
-    }
-
-    .form-submit {
-      width: 100%;
-      border: 0;
-      border-radius: 999px;
-      background: var(--vivid);
-      color: #fff;
-      padding: .85rem 1rem;
-      font-weight: 800;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    .form-submit:hover {
-      background: var(--deep);
-    }
-
-    .form-submit:disabled {
-      opacity: .65;
-      cursor: wait;
-    }
-
-    .form-success {
-      display: none;
-      margin-top: .8rem;
-      padding: .75rem;
-      border-radius: 12px;
-      background: #ecfdf5;
-      color: #065f46;
-      font-size: .85rem;
-      font-weight: 700;
-    }
-
-    .form-success.show {
-      display: block;
-    }
-
-    footer {
-      background: var(--dark);
-      color: #fff;
-      padding: 3rem 0 1.5rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .footer-brand {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.45rem;
-    }
-
-    .footer-brand span {
-      color: var(--vivid);
-    }
-
-    .footer-tagline {
-      color: rgba(255, 255, 255, .62);
-      font-size: .85rem;
-      max-width: 330px;
-      margin-top: .75rem;
-    }
-
-    .footer-col h5 {
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--lime);
-      margin-bottom: .8rem;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: .45rem;
-    }
-
-    .footer-links a,
-    .footer-links button {
-      color: rgba(255, 255, 255, .68);
-      background: none;
-      border: 0;
-      text-align: left;
-      padding: 0;
-      font: inherit;
-      font-size: .83rem;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .footer-links a:hover,
-    .footer-links button:hover {
-      color: #fff;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, .1);
-      margin-top: 2rem;
-      padding-top: 1rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      color: rgba(255, 255, 255, .5);
-      font-size: .75rem;
-    }
-
-    .mascot-float {
-      animation: mascotFloat 4.5s ease-in-out infinite;
-    }
-
-    @keyframes mascotFloat {
-
-      0%,
-      100% {
-        transform: translateY(0);
+    .secure-terminal-mode .persona-card {
+      background: rgba(255, 255, 255, 0.04) !important;
+      border-color: rgba(214, 251, 81, 0.15) !important;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
-      50% {
-        transform: translateY(-8px);
+      /* FIX: mascot goes on top, centered */
+      .hero-photo-wrap {
+        order: -1;
+        justify-content: center;
+        width: 100%;
       }
-    }
 
-    @media (min-width: 640px) {
-      .sm\:grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .lg\:grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 1280px) {
-      .xl\:grid-cols-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 980px) {
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
+      .about-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
 
-      #lane-ux,
-      .projects-grid,
-      .insights-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
       .footer-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
       }
 
-      .about-card {
-        right: .75rem;
-      }
-    }
-
-    @media (max-width: 820px) {
       .nav-links {
         display: none;
       }
@@ -1554,184 +1380,131 @@
       .hamburger {
         display: flex;
       }
+    }
 
-      .nav-inner {
-        padding: .8rem 1rem;
+    @media (max-width: 600px) {
+      /* ── HERO MOBILE FIXES ── */
+
+      /* FIX 1: mascot SVG — explicit size so it never collapses to 0 */
+      .mascot-svg-wrap {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
       }
 
-      .nav-actions .btn-outline {
+      /* FIX 2: ring decoration causes phantom blank space — hide it */
+      .hero-photo-ring {
         display: none;
       }
 
-      #secToggleBtn {
-        font-size: 0;
-        width: 42px;
-        height: 34px;
-        padding: 0;
-        min-width: 42px;
-      }
-
-      #secToggleBtn::before {
-        content: "🔒";
-        font-size: 1rem;
-      }
-
-      section {
-        padding: 3.5rem 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        padding: 0 1rem;
-      }
-
-      .hero {
-        padding-top: 3rem;
-      }
-
-      .hero-grid {
-        gap: 2rem;
-      }
-
-      .hero-stats {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .mascot-svg-wrap {
-        width: min(240px, 78vw);
-        height: min(240px, 78vw);
-      }
-
-      .hero-photo-ring {
-        width: min(270px, 86vw);
-        height: min(270px, 86vw);
-      }
-
+      /* FIX 3: badge used calc() that went negative on narrow screens */
       .hero-badge {
-        right: 1rem;
-        bottom: -1rem;
+        position: static;
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        margin-top: .85rem;
       }
 
-      #lane-ux,
-      .projects-grid,
-      .insights-grid,
-      .footer-grid,
-      .skill-grid,
-      .two-col,
-      .grid-cols-2 {
+      /* Keep photo wrap from adding extra height after ring is gone */
+      .hero-photo-wrap {
+        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      /* ── ABOUT MOBILE FIXES ── */
+
+      /* FIX 4: absolute card bleeds into text column below — make it static */
+      .about-card {
+        position: static;
+        margin-top: 1rem;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 14px;
+      }
+
+      /* Keep about photo wrap clean with no overflow */
+      .about-photo-wrap {
+        overflow: visible;
+      }
+
+      /* ── PROJECT CARDS ── */
+
+      /* FIX 5: SVG thumbnails too tall — cap them */
+      .project-card-img-wrap {
+        max-height: 140px;
+        overflow: hidden;
+      }
+
+      .project-card-img-wrap svg {
+        max-height: 140px;
+      }
+
+      .project-card-placeholder {
+        height: 100px;
+        font-size: 2rem;
+      }
+
+      /* ── CERT STRIP ── */
+
+      /* FIX 6: ensure marquee items never wrap on any browser */
+      .cert-item {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* ── GENERAL ── */
+      .footer-grid {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-header {
-        align-items: flex-start;
+      .two-col {
+        grid-template-columns: 1fr;
       }
 
-      .lane-toggle {
-        width: 100%;
+      .m-grid-2 {
+        grid-template-columns: 1fr;
       }
 
-      .lane-btn {
-        flex: 1;
+      .skill-grid {
+        grid-template-columns: 1fr;
       }
 
-      .modal-overlay {
-        padding: .7rem;
-        align-items: flex-start;
-        padding-top: 1rem;
-      }
-
-      .modal-box {
-        max-height: calc(100vh - 2rem);
-        border-radius: 18px;
-      }
-
-      .modal-head,
-      .modal-foot {
-        padding: 1rem;
+      .hero-stats {
+        gap: 1.25rem;
+        flex-wrap: wrap;
       }
 
       .modal-body {
         padding: 1.25rem;
       }
 
-      .footer-bottom {
-        flex-direction: column;
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .hero {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      /* ── NAV on very small screens ── */
+      .btn-primary {
+        font-size: .72rem;
+        padding: .4rem .75rem;
+      }
+
+      .btn-outline {
+        font-size: .72rem;
+        padding: .4rem .75rem;
       }
     }
 
-    .stat {
-      min-width: 0;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-      }
-    }
-
-
-    /* Final contrast fix for Insights + Contact */
-    #insights {
-      background: #120c14 !important;
-    }
-
-    #insights h2,
-    #insights .section-label {
-      color: #ffffff !important;
-    }
-
-    #insights .insight-card {
-      background: #1a121d !important;
-      border: 1px solid rgba(214, 251, 81, 0.28) !important;
-    }
-
-    #insights .insight-card h3,
-    #insights .insight-card p {
-      color: #e5e7eb !important;
-    }
-
-    #contact {
-      background: #120c14 !important;
-    }
-
-    #contact h2,
-    #contact .section-label {
-      color: #ffffff !important;
-    }
-
-    #contact .contact-info p,
-    #contact .contact-link {
-      color: #e5e7eb !important;
-    }
-
-    #contact .contact-link,
-    #contact .contact-form {
-      background: #1a121d !important;
-      border: 1px solid rgba(214, 251, 81, 0.28) !important;
-    }
-
-    #contact .form-group label {
-      color: #e5e7eb !important;
-    }
-
-    #contact input,
-    #contact textarea {
-      background: #120c14 !important;
-      color: #ffffff !important;
-      border: 1px solid rgba(214, 251, 81, 0.3) !important;
-    }
-
-    #contact input::placeholder,
-    #contact textarea::placeholder {
-      color: #9ca3af !important;
+    /* Pause marquee on hover/focus for WCAG 2.1 AA motion compliance */
+    .cert-strip:hover .cert-track,
+    .cert-strip:focus-within .cert-track {
+      animation-play-state: paused;
     }
   </style>
 </head>
@@ -1753,10 +1526,10 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <div>Shima<span>.Mudakha</span></div>
-        <div class="h-4 w-[1px] bg-slate-300 mx-2 terminal-logo-divider"></div>
+        <div class="nav-logo-divider" aria-hidden="true"></div>
         <div class="nav-logo-sub">
-          <span class="text-brandDeep terminal-logo-design">Design</span>
-          <span class="text-slate-500 terminal-logo-highlight">Cybersecurity</span>
+          <span class="design-label">Design</span>
+          <span class="cyber-label">Cybersecurity</span>
         </div>
       </a>
       <ul class="nav-links">
@@ -1767,7 +1540,8 @@
       </ul>
       <div class="nav-actions">
         <button onclick="openModal('resume')" class="btn-outline">Resume</button>
-        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn">🔒 Secure Terminal Mode</button>
+        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn"
+          title="Switch to dark hacker theme">🔒 Secure Terminal Mode</button>
         <button class="hamburger" onclick="openMob()" aria-label="Open menu" aria-expanded="false" id="hambBtn">
           <span></span><span></span><span></span>
         </button>
@@ -1805,8 +1579,8 @@
         </div>
         <div class="hero-photo-wrap">
           <div class="hero-photo-ring" aria-hidden="true"></div>
-          <div class="mascot-svg-wrap mascot-float" onclick="triggerMascotWink()">
-            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <div class="mascot-svg-wrap" onclick="triggerMascotWink()">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
               <rect x="100" y="80" width="200" height="180" rx="90" fill="#92006B" stroke="#db00a1" stroke-width="6" />
               <rect x="120" y="110" width="160" height="100" rx="50" fill="#120c14" stroke="#db00a1" stroke-width="4" />
               <ellipse id="heroEyeL" cx="165" cy="155" rx="16" ry="20" fill="#D6fb51" />
@@ -1833,13 +1607,13 @@
         <div class="cert-item"><span class="cert-dot"></span>Google Cybersecurity Certificate</div>
         <div class="cert-item"><span class="cert-dot"></span>ISC2 Certified in Cybersecurity (CC) 2024</div>
         <div class="cert-item"><span class="cert-dot"></span>Google AI Certificate</div>
-        <div class="cert-item"><span class="cert-dot"></span>CompTIA Security+ &#8212; In Progress</div>
+        <div class="cert-item"><span class="cert-dot"></span>CompTIA Security+ &mdash; Expected Q4 2026</div>
         <div class="cert-item"><span class="cert-dot"></span>SOC Operations &amp; Incident Response</div>
         <div class="cert-item"><span class="cert-dot"></span>Google UX Design Certificate</div>
         <div class="cert-item"><span class="cert-dot"></span>Google Cybersecurity Certificate</div>
         <div class="cert-item"><span class="cert-dot"></span>ISC2 Certified in Cybersecurity (CC) 2024</div>
         <div class="cert-item"><span class="cert-dot"></span>Google AI Certificate</div>
-        <div class="cert-item"><span class="cert-dot"></span>CompTIA Security+ &#8212; In Progress</div>
+        <div class="cert-item"><span class="cert-dot"></span>CompTIA Security+ &mdash; Expected Q4 2026</div>
         <div class="cert-item"><span class="cert-dot"></span>SOC Operations &amp; Incident Response</div>
       </div>
     </div>
@@ -1852,7 +1626,7 @@
         <div class="about-photo-wrap">
           <div class="about-photo">
             <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="w-full h-auto max-w-[220px]">
+              style="width:100%;height:auto;max-width:220px">
               <rect x="30" y="30" width="240" height="340" rx="120" fill="none" stroke="#db00a1" stroke-width="4"
                 stroke-dasharray="10 10" />
               <circle cx="150" cy="160" r="60" fill="#92006B" />
@@ -1881,9 +1655,9 @@
             Pi-hole DNS filtering, designed Google-certified UX projects, and deployed cloud infrastructure with
             security guardrails baked in from day one.</p>
           <p>I hold an MBA in Marketing from JNTU Hyderabad and a BA in Carpet Design from the University of Sistan and
-            Baluchestan. I&#8217;m completing my CompTIA Security+ certification at Syracuse University. I believe
-            &#34;human error&#34; is a design failure &#8212; and I fix it at the source.</p>
-          <div class="skill-grid" role="list" aria-label="Technical skills">
+            Baluchestan. I&#8217;m completing my CompTIA Security+ certification at Syracuse University (expected Q4
+            2026). I believe &#34;human error&#34; is a design failure &mdash; and I fix it at the source.</p>
+          <div class="skill-grid" role="list">
             <div class="skill-tag" role="listitem"><strong>Security &amp; Networking</strong>VMware, OPNsense,
               Wireshark, Pi-hole, IDS/IPS</div>
             <div class="skill-tag" role="listitem"><strong>Scripting</strong>Python, PowerShell, Bash</div>
@@ -1899,7 +1673,9 @@
           <div style="margin-top:1.75rem;display:flex;gap:.75rem;flex-wrap:wrap">
             <button onclick="openModal('resume')" class="btn-primary">View Resume</button>
             <a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer"
-              class="btn-outline">LinkedIn Profile</a>
+              class="btn-outline">LinkedIn</a>
+            <a href="https://github.com/shimamudakha" target="_blank" rel="noopener noreferrer"
+              class="btn-outline">GitHub</a>
           </div>
         </div>
       </div>
@@ -1914,22 +1690,21 @@
           <p class="section-label">Case Studies &amp; Labs</p>
           <h2 id="portfolio-h2">Selected Work</h2>
         </div>
-        <div class="lane-toggle swapper-container" role="group" aria-label="Filter work">
-          <button class="lane-btn active active-lane-btn" id="laneBtn-ux" onclick="setLane('ux',this)"
-            aria-pressed="true">UX Design</button>
-          <button class="lane-btn inactive-lane-btn" id="laneBtn-cyber" onclick="setLane('cyber',this)"
-            aria-pressed="false">Cyber Labs</button>
+        <div class="lane-toggle" role="group" aria-label="Filter work">
+          <button class="lane-btn active" id="laneBtn-ux" onclick="setLane('ux',this)" aria-pressed="true">UX
+            Design</button>
+          <button class="lane-btn" id="laneBtn-cyber" onclick="setLane('cyber',this)" aria-pressed="false">Cyber
+            Labs</button>
         </div>
       </div>
 
       <!-- UX Lane -->
-      <div id="lane-ux" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
-        <!-- FoodWill -->
+      <div id="lane-ux">
         <article class="project-card" aria-labelledby="proj-fw">
           <div class="project-card-img-wrap">
-            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
               <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
-              <path d="M30 40 H290 M30 160 H290" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
               <circle cx="160" cy="100" r="30" fill="none" stroke="#D6fb51" stroke-dasharray="4 4" stroke-width="2" />
               <circle cx="160" cy="100" r="8" fill="#db00a1" />
               <text x="160" y="150" fill="#D6fb51" font-size="10" text-anchor="middle" font-family="monospace">FOODWILL:
@@ -1947,10 +1722,10 @@
           </div>
         </article>
 
-        <!-- Coffee House -->
         <article class="project-card" aria-labelledby="proj-cof">
           <div class="project-card-img-wrap">
-            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
               <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
               <rect x="40" y="40" width="240" height="35" rx="8" fill="#1e111c" stroke="#92006B" stroke-width="1.5" />
               <rect x="40" y="90" width="240" height="35" rx="8" fill="#1e111c" stroke="#92006B" stroke-width="1.5" />
@@ -1958,7 +1733,6 @@
                 X294L</text>
               <text x="60" y="112" fill="#D6fb51" font-size="11" font-family="sans-serif">● Secured with Behavioral
                 Telemetry</text>
-              <circle cx="250" cy="107" r="8" fill="#D6fb51" />
             </svg>
           </div>
           <div class="project-card-body">
@@ -1972,19 +1746,18 @@
           </div>
         </article>
 
-        <!-- Artish -->
         <article class="project-card" aria-labelledby="proj-art">
           <div class="project-card-img-wrap">
-            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
               <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
               <rect x="30" y="40" width="120" height="120" rx="12" fill="none" stroke="#92006B" stroke-width="2" />
               <line x1="30" y1="40" x2="150" y2="160" stroke="#db00a1" stroke-width="2" />
               <line x1="150" y1="40" x2="30" y2="160" stroke="#db00a1" stroke-width="2" />
-              <text x="170" y="80" fill="#ffffff" font-size="13" font-weight="bold" font-family="sans-serif">ARTISH
-                PLATFORM</text>
-              <text x="170" y="110" fill="#cbd5e1" font-size="11" font-family="sans-serif">Ocular strain toggle</text>
-              <text x="170" y="130" fill="#D6fb51" font-size="10" font-family="monospace">&gt; dark_mode_active:
-                true</text>
+              <text x="170" y="80" fill="#ffffff" font-size="13" font-weight="bold"
+                font-family="sans-serif">ARTISH</text>
+              <text x="170" y="100" fill="#cbd5e1" font-size="10" font-family="sans-serif">Ocular strain toggle</text>
+              <text x="170" y="120" fill="#D6fb51" font-size="10" font-family="monospace">dark_mode: active</text>
             </svg>
           </div>
           <div class="project-card-body">
@@ -1998,21 +1771,20 @@
           </div>
         </article>
 
-        <!-- Paws & Protect (4th Case Study Card Added!) -->
         <article class="project-card" aria-labelledby="proj-paws">
           <div class="project-card-img-wrap">
-            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
               <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
               <rect x="30" y="30" width="120" height="140" rx="8" fill="#1e111c" stroke="#D6fb51" stroke-width="1.5" />
-              <!-- Visual Wireframe Placeholder Symbol -->
-              <line x1="30" y1="30" x2="150" y2="170" stroke="rgba(214, 251, 81, 0.25)" stroke-width="1.5" />
-              <line x1="150" y1="30" x2="30" y2="170" stroke="rgba(214, 251, 81, 0.25)" stroke-width="1.5" />
+              <line x1="30" y1="30" x2="150" y2="170" stroke="rgba(214,251,81,0.25)" stroke-width="1.5" />
+              <line x1="150" y1="30" x2="30" y2="170" stroke="rgba(214,251,81,0.25)" stroke-width="1.5" />
               <rect x="40" y="50" width="100" height="20" rx="4" fill="#120c14" stroke="#92006B" stroke-width="1" />
               <text x="50" y="63" fill="#D6fb51" font-size="8" font-family="monospace">Resilience: 94%</text>
               <text x="165" y="80" fill="#ffffff" font-size="12" font-weight="bold" font-family="sans-serif">PAWS &amp;
                 PROTECT</text>
-              <text x="165" y="110" fill="#cbd5e1" font-size="10" font-family="sans-serif">E-Commerce Flow</text>
-              <text x="165" y="130" fill="#D6fb51" font-size="10" font-family="monospace">&gt; secure_by_default</text>
+              <text x="165" y="105" fill="#cbd5e1" font-size="10" font-family="sans-serif">E-Commerce Flow</text>
+              <text x="165" y="125" fill="#D6fb51" font-size="10" font-family="monospace">secure_by_default</text>
             </svg>
           </div>
           <div class="project-card-body">
@@ -2030,7 +1802,7 @@
       <!-- Cyber Lane -->
       <div id="lane-cyber" class="projects-grid hidden">
         <article class="project-card" aria-labelledby="proj-siem">
-          <div class="project-card-placeholder" aria-hidden="true">&#129504;</div>
+          <div class="project-card-placeholder" aria-hidden="true">🧠</div>
           <div class="project-card-body">
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR4810</span><span
                 class="project-type">SOC Operations</span></div>
@@ -2042,7 +1814,7 @@
           </div>
         </article>
         <article class="project-card" aria-labelledby="proj-vuln">
-          <div class="project-card-placeholder" aria-hidden="true">&#128269;</div>
+          <div class="project-card-placeholder" aria-hidden="true">🔍</div>
           <div class="project-card-body">
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR4220</span><span
                 class="project-type">Vulnerability Management</span></div>
@@ -2054,7 +1826,7 @@
           </div>
         </article>
         <article class="project-card" aria-labelledby="proj-cloud">
-          <div class="project-card-placeholder" aria-hidden="true">&#9729;&#65039;</div>
+          <div class="project-card-placeholder" aria-hidden="true">☁️</div>
           <div class="project-card-body">
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR3210</span><span
                 class="project-type">Cloud &amp; IaC</span></div>
@@ -2066,7 +1838,7 @@
           </div>
         </article>
         <article class="project-card" aria-labelledby="proj-crypto">
-          <div class="project-card-placeholder" aria-hidden="true">&#128273;</div>
+          <div class="project-card-placeholder" aria-hidden="true">🔑</div>
           <div class="project-card-body">
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR7400</span><span
                 class="project-type">Applied Cryptography</span></div>
@@ -2078,7 +1850,7 @@
           </div>
         </article>
         <article class="project-card" aria-labelledby="proj-fw2">
-          <div class="project-card-placeholder" aria-hidden="true">&#129521;</div>
+          <div class="project-card-placeholder" aria-hidden="true">🛡️</div>
           <div class="project-card-body">
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR4200</span><span
                 class="project-type">Network Defense</span></div>
@@ -2100,20 +1872,20 @@
       <h2 id="insights-h2" style="margin-bottom:2.5rem">Ideas Worth Sharing</h2>
       <div class="insights-grid">
         <div class="insight-card">
-          <div class="insight-tag">AI &#183; Cyber &#183; UX</div>
+          <div class="insight-tag">AI &middot; Cyber &middot; UX</div>
           <h3>Bridging the Trust Gap in AI Security Dashboards</h3>
-          <p>How visual transparency prevents security analysts from bypassing automated alert models &#8212; and why
+          <p>How visual transparency prevents security analysts from bypassing automated alert models &mdash; and why
             Explainable AI is a UX mandate, not just an engineering goal.</p>
           <button class="insight-link" onclick="openModal('blog_ai')" aria-haspopup="dialog">Read Article
-            &#8594;</button>
+            &rarr;</button>
         </div>
         <div class="insight-card">
           <div class="insight-tag">Career Journey</div>
           <h3>From Design to Defense</h3>
-          <p>Why my UX background is my primary engine for building structural digital resilience &#8212; and how I came
+          <p>Why my UX background is my primary engine for building structural digital resilience &mdash; and how I came
             to understand that &#8220;human error&#8221; is always a design failure.</p>
           <button class="insight-link" onclick="openModal('blog_journey')" aria-haspopup="dialog">Read Article
-            &#8594;</button>
+            &rarr;</button>
         </div>
         <div class="insight-card">
           <div class="insight-tag">Data Visualization</div>
@@ -2121,7 +1893,7 @@
           <p>Why data displays are the first line of defense against advanced persistent threats, and how designing for
             high-stress comprehension directly reduces threat dwell time.</p>
           <button class="insight-link" onclick="openModal('blog_viz')" aria-haspopup="dialog">Read Article
-            &#8594;</button>
+            &rarr;</button>
         </div>
       </div>
     </div>
@@ -2135,18 +1907,17 @@
           <p class="section-label">Get in Touch</p>
           <h2 id="contact-h2">Let&#8217;s work<br>together.</h2>
           <p>Open to full-time cybersecurity analyst roles, UX/security hybrid positions, and contract engagements.
-            Based in Tampa, FL &#8212; available remotely nationwide.</p>
+            Based in Tampa, FL &mdash; available remotely nationwide.</p>
           <div class="contact-links">
             <a href="mailto:shmtlb@gmail.com" class="contact-link">
-              <div class="contact-link-icon">&#9993;</div>shmtlb@gmail.com
+              <div class="contact-link-icon">✉</div>shmtlb@gmail.com
             </a>
             <a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer"
               class="contact-link">
-              <div class="contact-link-icon">&#128188;</div>linkedin.com/in/shimamudakha
+              <div class="contact-link-icon">💼</div>linkedin.com/in/shimamudakha
             </a>
-            <button onclick="openModal('resume')" class="contact-link"
-              style="width:100%; text-align:left; border:1px solid var(--border); background:#fff; cursor:pointer;">
-              <div class="contact-link-icon">&#128196;</div>View Resume (Interactive)
+            <button onclick="openModal('resume')" class="contact-link">
+              <div class="contact-link-icon">📄</div>View Resume (Interactive)
             </button>
           </div>
         </div>
@@ -2218,13 +1989,13 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&#169; 2026 Shima Mudakha &#8212; SM Cyber Design LLC &#183; Tampa, Florida</span>
+        <span>&copy; 2026 Shima Mudakha &mdash; SM Cyber Design LLC &middot; Tampa, Florida</span>
         <span>Handcrafted with a security-first mindset.</span>
       </div>
     </div>
   </footer>
 
-  <!-- SYSTEM MODAL VIEWPORT CENTER COMPATIBLE -->
+  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="mTitle">
     <div class="modal-box" id="modalBox">
       <div class="modal-head">
@@ -2235,7 +2006,6 @@
         <button class="modal-close-btn" onclick="closeModal()" aria-label="Close">&times;</button>
       </div>
       <div class="modal-progress" id="mProgress"></div>
-      <!-- Modal Content (Independent Scroll Column) -->
       <div class="modal-body" id="mBody" tabindex="0"></div>
       <div class="modal-foot">
         <button class="btn-primary" onclick="closeModal()">Close</button>
@@ -2244,133 +2014,92 @@
   </div>
 
   <script>
-    // Mobile menu
+    // ── Mobile menu ──────────────────────────────────────────────────────────────
     function openMob() { document.getElementById('mobileMenu').classList.add('open'); document.getElementById('hambBtn').setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
     function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); document.getElementById('hambBtn').setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
 
-    // Lane toggle
+    // ── Lane toggle ──────────────────────────────────────────────────────────────
     function setLane(l, btn) {
-      document.getElementById('lane-ux').classList.toggle('hidden', l !== 'ux');
-      document.getElementById('lane-cyber').classList.toggle('hidden', l !== 'cyber');
-
-      const container = document.querySelector('.lane-toggle');
+      const ux = document.getElementById('lane-ux');
+      const cy = document.getElementById('lane-cyber');
       const uxBtn = document.getElementById('laneBtn-ux');
-      const cyberBtn = document.getElementById('laneBtn-cyber');
-
+      const cyBtn = document.getElementById('laneBtn-cyber');
       if (l === 'cyber') {
-        cyberBtn.className = "lane-btn active active-lane-btn";
-        uxBtn.className = "lane-btn inactive-lane-btn";
-        cyberBtn.setAttribute('aria-pressed', 'true');
-        uxBtn.setAttribute('aria-pressed', 'false');
+        ux.classList.add('hidden'); cy.classList.remove('hidden');
+        cyBtn.classList.add('active'); uxBtn.classList.remove('active');
+        cyBtn.setAttribute('aria-pressed', 'true'); uxBtn.setAttribute('aria-pressed', 'false');
       } else {
-        uxBtn.className = "lane-btn active active-lane-btn";
-        cyberBtn.className = "lane-btn inactive-lane-btn";
-        uxBtn.setAttribute('aria-pressed', 'true');
-        cyberBtn.setAttribute('aria-pressed', 'false');
+        cy.classList.add('hidden'); ux.classList.remove('hidden');
+        uxBtn.classList.add('active'); cyBtn.classList.remove('active');
+        uxBtn.setAttribute('aria-pressed', 'true'); cyBtn.setAttribute('aria-pressed', 'false');
       }
     }
 
-    // Complete Modals Content Engine reflecting actual project documents
+    // ── Modal data ───────────────────────────────────────────────────────────────
     const MD = {
-      // FoodWill Case Study (Reflecting Case Study FOODWILL.pdf)
       foodwill: {
         title: 'FoodWill Donation Service',
         sub: 'UX Case Study &mdash; Mobile App Design (Google Certificate)',
         body: `
-      <div class="space-y-6">
-        <section>
-          <h4>Project Overview</h4>
-          <p>FOODWILL is a Google Certificate project designed to connect surplus meal givers directly with local rescue charities and community pickup lockers. By integrating security-conscious geodata masking and intuitive user interfaces, FoodWill helps reduce household food waste and feed hungry individuals in local neighborhoods.</p>
-          <div class="grid grid-cols-2 gap-4 my-3">
-            <div class="skill-tag"><strong>My Role</strong>Lead UX/UI Designer &amp; Researcher</div>
-            <div class="skill-tag"><strong>Duration</strong>3 Weeks (May &ndash; June 2022)</div>
-          </div>
-        </section>
+      <h4>Project Overview</h4>
+      <p>FoodWill connects surplus meal givers directly with local rescue charities and community pickup lockers. By integrating security-conscious geodata masking and intuitive user interfaces, FoodWill helps reduce household food waste and feed hungry individuals in local neighborhoods.</p>
+      <div class="m-grid-2">
+        <div class="skill-tag"><strong>My Role</strong>Lead UX/UI Designer &amp; Researcher</div>
+        <div class="skill-tag"><strong>Duration</strong>3 Weeks (May &ndash; June 2022)</div>
+      </div>
 
-        <section>
-          <h4>01. Empathize: Giver &amp; Recipient Personas</h4>
-          <p>Primary user research on 5 unmoderated remote participants established key user tendencies and needs. Two major profiles were mapped out:</p>
-          <div class="persona-card">
-            <div class="persona-name">Mari, 41 &mdash; Suburban Mother (Tampa)</div>
-            <div class="persona-quote">&ldquo;I hate wasting high-quality surplus meals before my family leaves for trips.&rdquo;</div>
-            <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Pain Point:</strong> Mari has no easy way to find secure, nearby community donation centers without revealing her exact home address on open map platforms.</p>
-          </div>
-          <div class="persona-card">
-            <div class="persona-name">Phil, 41 &mdash; Corporate Canteen Manager (Tampa)</div>
-            <div class="persona-quote">&ldquo;Our cafeteria dumps fresh bulk food daily while people suffer from hunger nearby.&rdquo;</div>
-            <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Pain Point:</strong> Phil needs a quick, friction-free way to schedule anonymous pickups without complex legal or administrative registration forms.</p>
-          </div>
-        </section>
+      <h4>01. Empathize: Giver &amp; Recipient Personas</h4>
+      <p>Primary user research on 5 unmoderated remote participants established key user tendencies. Two major profiles were mapped:</p>
+      <div class="persona-card">
+        <div class="persona-name">Mari, 41 &mdash; Suburban Mother (Tampa)</div>
+        <div class="persona-quote">&ldquo;I hate wasting high-quality surplus meals before my family leaves for trips.&rdquo;</div>
+        <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Pain Point:</strong> No easy way to find secure, nearby donation centers without revealing her exact home address on open map platforms.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-name">Phil, 41 &mdash; Corporate Canteen Manager (Tampa)</div>
+        <div class="persona-quote">&ldquo;Our cafeteria dumps fresh bulk food daily while people suffer from hunger nearby.&rdquo;</div>
+        <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Pain Point:</strong> Needs a quick, friction-free way to schedule anonymous pickups without complex registration forms.</p>
+      </div>
 
-        <section>
-          <h4>02. Define: Information Architecture &amp; Sitemaps</h4>
-          <p>To reduce user anxiety, the sitemap was structured into clear, short pipelines: Home, Donation Form, Driver Portal, and Profile.</p>
-          <!-- Vector-rendered Sitemap Graph -->
-          <div style="background:#f9f7f9;border:1px solid #ece3ec;padding:1.25rem;border-radius:14px;font-family:monospace;font-size:.75rem;" class="space-y-1">
-            <div class="text-center font-bold text-slate-800">[ Sitemap Diagram: Navigation Loops ]</div>
-            <div style="display:flex;justify-content:center;margin:10px 0;">
-              <span style="background:var(--deep);color:#fff;padding:4px 8px;border-radius:4px;">Home Landing [Map View]</span>
-            </div>
-            <div style="display:flex;justify-content:space-around;gap:5px;">
-              <span style="background:#fff;border:1px solid var(--deep);padding:4px;border-radius:4px;width:30%;text-align:center;">Giver: Add Photo</span>
-              <span style="background:#fff;border:1px solid var(--deep);padding:4px;border-radius:4px;width:30%;text-align:center;">Volunteer: Dispatch</span>
-              <span style="background:#fff;border:1px solid var(--deep);padding:4px;border-radius:4px;width:30%;text-align:center;">Recipient: Locker Map</span>
-            </div>
-          </div>
-        </section>
+      <h4>02. Define: Information Architecture</h4>
+      <p>The sitemap was structured into clear, short pipelines: Home, Donation Form, Driver Portal, and Profile — reducing user anxiety at every step.</p>
+      <div style="background:#f9f7f9;border:1px solid #ece3ec;padding:1.25rem;border-radius:14px;font-family:monospace;font-size:.75rem;text-align:center;">
+        <span style="background:var(--deep);color:#fff;padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:8px;">Home Landing [Map View]</span><br>
+        <div style="display:flex;justify-content:space-around;gap:5px;margin-top:8px;">
+          <span style="background:#fff;border:1px solid var(--deep);padding:4px 8px;border-radius:4px;">Giver: Add Photo</span>
+          <span style="background:#fff;border:1px solid var(--deep);padding:4px 8px;border-radius:4px;">Volunteer: Dispatch</span>
+          <span style="background:#fff;border:1px solid var(--deep);padding:4px 8px;border-radius:4px;">Recipient: Locker Map</span>
+        </div>
+      </div>
 
-        <section>
-          <h4>03. Ideation: Low-Fidelity Skeletons</h4>
-          <p>Early layout sketches focused on establishing clear call-to-action buttons right on the home screen to fast-track meal donations:</p>
-          <div class="grid grid-cols-2 gap-4 font-mono text-[10px] text-slate-500">
-            <div style="border:2px dashed #ccc;padding:1rem;border-radius:10px;" class="space-y-2 bg-slate-50">
-              <p class="font-bold text-center text-slate-700">[ Lo-Fi Screen 1: Home Map ]</p>
-              <div style="height:50px;background:#fff;border:1px solid #ddd;border-radius:4px;display:flex;align-items:center;justify-content:center;">[ Map Frame Area ]</div>
-              <div style="height:20px;background:#ddd;border-radius:4px;"></div>
-            </div>
-            <div style="border:2px dashed #ccc;padding:1rem;border-radius:10px;" class="space-y-2 bg-slate-50">
-              <p class="font-bold text-center text-slate-700">[ Lo-Fi Screen 2: Add Donation ]</p>
-              <div style="height:40px;background:#fff;border:1px solid #ddd;border-radius:4px;display:flex;align-items:center;justify-content:center;">[ Upload Image Wireframe ]</div>
-              <div style="height:30px;background:#ddd;border-radius:4px;"></div>
+      <h4>03. Prototype: Secure Dispatch Simulator</h4>
+      <p>The final interactive model protects donor safety by tokenizing exact residential coordinates, revealing them only to dispatch couriers. Click below to simulate:</p>
+      <div style="max-width:300px;margin:1.5rem auto;background:#120c14;border-radius:28px;padding:12px;box-shadow:0 15px 35px rgba(0,0,0,0.4);border:2px solid var(--vivid);">
+        <div style="background:#fff;border-radius:20px;padding:1rem;font-size:.7rem;">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:5px;margin-bottom:8px;">
+            <span style="font-weight:bold;color:var(--deep);">🐾 FOODWILL</span>
+            <span style="color:#aaa;">Tampa, FL</span>
+          </div>
+          <div style="background:var(--deep);color:#fff;padding:8px;border-radius:8px;text-align:center;">
+            <span style="font-size:.55rem;color:var(--lime);text-transform:uppercase;font-weight:bold;display:block;">Active Donation</span>
+            <p style="font-weight:bold;font-size:.7rem;margin:2px 0;">Fish and rice with broccoli</p>
+            <div style="display:flex;justify-content:space-between;font-size:.55rem;color:#eee;margin-top:4px;">
+              <span>Date: 06/07/2022</span>
+              <span style="background:#D6fb51;color:#120c14;padding:1px 4px;border-radius:3px;font-weight:bold;" id="foodwillStatus">Standard Listing</span>
             </div>
           </div>
-        </section>
-
-        <section>
-          <h4>04. Prototype: Interactive High-Fidelity Simulator</h4>
-          <p>Our final interactive model protects donor safety by tokenizing exact residential coordinates, revealing them only to dispatch couriers.</p>
-          
-          <!-- Live Interactive Mockup Frame -->
-          <div style="max-width:320px;margin:1.5rem auto;background:#120c14;border-radius:32px;padding:12px;box-shadow:0 15px 35px rgba(0,0,0,0.4);border:2px solid var(--vivid);">
-            <div style="background:#fff;border-radius:24px;padding:1rem;color:#1a1118;font-size:.7rem;" class="space-y-3 font-sans">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:5px;">
-                <span style="font-weight:bold;color:var(--deep);">🐾 FOODWILL</span>
-                <span style="color:#aaa;">Tampa, FL</span>
-              </div>
-              <div style="background:var(--deep);color:#fff;padding:8px;border-radius:8px;" class="space-y-1 text-center">
-                <span style="font-size:.55rem;color:var(--lime);text-transform:uppercase;font-weight:bold;">Active Donation</span>
-                <p style="font-weight:bold;font-size:.7rem;margin:2px 0;">Fish and rice with broccoli</p>
-                <div style="display:flex;justify-content:space-between;font-size:.55rem;color:#eee;">
-                  <span>Date: 06/07/2022</span>
-                  <span style="background:#D6fb51;color:#120c14;padding:1px 4px;border-radius:3px;font-weight:bold;" id="foodwillStatus">Standard Listing</span>
-                </div>
-              </div>
-              <div style="background:#f5f3f0;border:1px solid rgba(146,0,107,0.1);padding:6px;border-radius:6px;font-size:.6rem;">
-                <p style="font-weight:bold;color:var(--text);">Address Privacy Shield</p>
-                <p style="color:#666;">Location details are dynamically tokenized to prevent public web scraping.</p>
-              </div>
-              <button onclick="toggleFoodwillState()" style="width:100%;padding:8px;background:var(--vivid);color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;" id="foodwillSimBtn">Simulate Secure Dispatch</button>
-            </div>
+          <div style="background:#f5f3f0;border:1px solid rgba(146,0,107,0.1);padding:6px;border-radius:6px;font-size:.6rem;margin-top:8px;">
+            <p style="font-weight:bold;">Address Privacy Shield</p>
+            <p style="color:#666;">Location details are dynamically tokenized to prevent public web scraping.</p>
           </div>
-        </section>
+          <button onclick="toggleFoodwillState()" style="width:100%;padding:8px;background:var(--vivid);color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:8px;" id="foodwillSimBtn">Simulate Secure Dispatch</button>
+        </div>
+      </div>
 
-        <section>
-          <h4>05. Usability Findings &amp; Outcomes</h4>
-          <div class="two-col text-xs">
-            <div class="find-card bad"><strong>Before: Static recipes panel</strong>Initial wireframes featured a recipe bank on the navigation bar, which users ignored and found distracting from the donation flow.</div>
-            <div class="find-card good"><strong>After: Post-donation actions</strong>Replaced recipes with an immediate "Share Donation to Encourage Others" CTA, driving a 40% repeat contribution increase.</div>
-          </div>
-        </section>
+      <h4>04. Usability Findings</h4>
+      <div class="two-col">
+        <div class="find-card bad"><strong>Before: Static recipes panel</strong>Initial wireframes featured a recipe bank that users ignored and found distracting from the donation flow.</div>
+        <div class="find-card good"><strong>After: Post-donation CTA</strong>Replaced with an immediate "Share Donation to Encourage Others" action, driving a 40% repeat contribution increase.</div>
       </div>
     `
       },
@@ -2378,60 +2107,45 @@
         title: 'Coffee House App',
         sub: 'UX Case Study &mdash; Mobile App Design (Google Certificate)',
         body: `
-      <div class="space-y-6">
-        <section>
-          <h4>Project Overview</h4>
-          <p>Coffee House is an ultra-fast pre-ordering and group ordering mobile application focused on employees and students. By combining sitemaps, customized checkout options, and a passive behavioral anti-fraud protocol, Coffee House secures loyalty points from credential stuffing while speeding up checkouts.</p>
-        </section>
+      <h4>Project Overview</h4>
+      <p>Coffee House is an ultra-fast pre-ordering and group ordering mobile application focused on employees and students. Combining streamlined checkout flows with a passive behavioral anti-fraud protocol, it secures loyalty points from credential stuffing while speeding up checkouts.</p>
 
-        <section>
-          <h4>01. Empathize: Pre-Order Friction (6 moderated participants)</h4>
-          <p>Usability audits with target users revealed major ordering pain points:</p>
-          <div class="persona-card">
-            <div class="persona-name">Rich Ard, 40 &mdash; Software Engineer (Tampa)</div>
-            <p style="font-size:.82rem;margin-top:.4rem;color:#555">"My breaks are only 10 minutes long. If an app forces me to create an account or reset my password, I skip it entirely."</p>
+      <h4>01. Empathize: Pre-Order Friction</h4>
+      <p>Usability audits with 6 moderated participants revealed major pain points:</p>
+      <div class="persona-card">
+        <div class="persona-name">Rich Ard, 40 &mdash; Software Engineer (Tampa)</div>
+        <p style="font-size:.82rem;margin-top:.4rem;color:#555">"My breaks are only 10 minutes long. If an app forces me to create an account or reset my password, I skip it entirely."</p>
+      </div>
+      <ul>
+        <li><strong>Forced Onboarding:</strong> Account gates before checkout drive immediate cart drops.</li>
+        <li><strong>Group Coordination Limits:</strong> No clear way to share checkout codes or separate billing.</li>
+        <li><strong>Customization barriers:</strong> Inability to add or remove specific ingredients.</li>
+      </ul>
+
+      <h4>02. Sitemap &amp; User Journey</h4>
+      <div style="background:#f9f7f9;border:1px solid #ece3ec;padding:1rem;border-radius:14px;font-family:monospace;font-size:.72rem;text-align:center;">
+        [ Guest Access ] &rarr; [ Menu Discovery ] &rarr; [ Ingredient Panel ] &rarr; [ Joint Checkout / Token Login ]
+      </div>
+
+      <h4>03. Prototype: Group Pre-Order Simulator</h4>
+      <p>Click below to simulate inviting Anna Anderson to the dynamic group pre-order session:</p>
+      <div style="max-width:300px;margin:1.5rem auto;background:#120c14;border-radius:28px;padding:12px;box-shadow:0 15px 35px rgba(0,0,0,0.4);border:2px solid var(--vivid);">
+        <div style="background:#fff;border-radius:20px;padding:1rem;font-size:.7rem;">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:5px;margin-bottom:8px;">
+            <span style="font-weight:bold;color:var(--deep);">☕ Coffee House</span>
+            <span style="color:#aaa;font-size:.6rem;">Group: X294L</span>
           </div>
-          <ul class="text-xs space-y-1">
-            <li><strong>Forced Onboarding:</strong> Account gates before checkout drive immediate cart drops.</li>
-            <li><strong>Group Coordination Limits:</strong> No clear way to share checkout codes or separate billing.</li>
-            <li><strong>Customization barriers:</strong> Inability to add/remove specific ingredients.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h4>02. Sitemaps &amp; User Journeys</h4>
-          <p>We designed the sitemap to support guest browse states and separate group invite code terminals:</p>
-          <div style="background:#f9f7f9;border:1px solid #ece3ec;padding:1rem;border-radius:14px;font-family:monospace;font-size:.72rem;">
-            [ Guest Access Pathway ] &rarr; [ Menu Discovery ] &rarr; [ Ingredient custom panel ] &rarr; [ Joint checkout / Token login ]
-          </div>
-        </section>
-
-        <section>
-          <h4>03. Prototype: Group pre-order simulator</h4>
-          <p>Click below to simulate adding a contact (Anna Anderson) to our dynamic group pre-order list:</p>
-          
-          <!-- Interactive Phone Mockup for Coffee House -->
-          <div style="max-width:320px;margin:1.5rem auto;background:#120c14;border-radius:32px;padding:12px;box-shadow:0 15px 35px rgba(0,0,0,0.4);border:2px solid var(--vivid);">
-            <div style="background:#fff;border-radius:24px;padding:1rem;color:#1a1118;font-size:.7rem;" class="space-y-3 font-sans">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:5px;">
-                <span style="font-weight:bold;color:var(--deep);">☕ Coffee House</span>
-                <span style="color:#aaa;">Group pre-order: X294L</span>
-              </div>
-              <div style="background:var(--deep);color:#fff;padding:8px;border-radius:8px;text-align:center;">
-                <span style="font-size:.55rem;color:var(--lime);font-weight:bold;">Active Session Members</span>
-              </div>
-              <div class="space-y-1.5" id="simCoffeeGroupList" style="font-size:.65rem;">
-                <div style="display:flex;justify-content:space-between;padding:4px;background:#f5f3f0;border-radius:4px;">
-                  <span>Alicia Davis</span> <span>1x Iced Mocha [Oatmilk]</span>
-                </div>
-                <div style="display:flex;justify-content:space-between;padding:4px;background:#f5f3f0;border-radius:4px;">
-                  <span>Alexander Lewis</span> <span>1x Americano [Double Shot]</span>
-                </div>
-              </div>
-              <button onclick="addCoffeeMember()" style="width:100%;padding:8px;background:var(--vivid);color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;" id="coffeeSimBtn">➕ Invite Anna Anderson</button>
+          <div style="background:var(--deep);color:#fff;padding:6px;border-radius:6px;text-align:center;font-size:.55rem;font-weight:bold;color:var(--lime);text-transform:uppercase;margin-bottom:8px;">Active Session Members</div>
+          <div id="simCoffeeGroupList" style="font-size:.65rem;">
+            <div style="display:flex;justify-content:space-between;padding:4px;background:#f5f3f0;border-radius:4px;margin-bottom:3px;">
+              <span>Alicia Davis</span><span>1x Iced Mocha [Oatmilk]</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:4px;background:#f5f3f0;border-radius:4px;">
+              <span>Alexander Lewis</span><span>1x Americano [Double Shot]</span>
             </div>
           </div>
-        </section>
+          <button onclick="addCoffeeMember()" style="width:100%;padding:8px;background:var(--vivid);color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:8px;" id="coffeeSimBtn">➕ Invite Anna Anderson</button>
+        </div>
       </div>
     `
       },
@@ -2439,173 +2153,130 @@
         title: 'Artish Discovery Hub',
         sub: 'UX Case Study &mdash; Website &amp; Mobile App (Google Certificate)',
         body: `
-      <div class="space-y-8">
-        <section>
-          <h4>Project Overview</h4>
-          <p>Artish is a global art discovery search engine covering virtual and physical art galleries. Key targeted institutions include the Miami Design District, ICA Miami, P&eacute;rez Art Museum, and the Rubell Museum. Designed as part of the Google UX Design Certificate, Artish features dark theme layouts, zipcode search indexes, and copyright defenses.</p>
-        </section>
+      <h4>Project Overview</h4>
+      <p>Artish is a global art discovery search engine covering virtual and physical galleries — Miami Design District, ICA Miami, Pérez Art Museum, and Rubell Museum. Features dark theme layouts, zipcode search indexes, and copyright scraper defenses.</p>
 
-        <section>
-          <h4>01. Empathize &mdash; Persona Study</h4>
-          <div class="persona-card">
-            <div class="persona-name">Liza, 27 &mdash; Single Mother</div>
-            <p style="font-size:.82rem;margin-top:.4rem;color:#555">"I want to explore cultural events with my son but traveling with a child on a tight budget is incredibly difficult. Virtual gallery tools are my only option."</p>
-          </div>
-        </section>
-
-        <section>
-          <h4>02. Low-Fidelity Skeletons</h4>
-          <p>Skeletal layouts focus on dark-grid search terminals, giving priority to visual art assets:</p>
-          <div style="border:2px dashed #ccc;padding:1rem;border-radius:10px;background:#000;" class="font-mono text-[10px] text-slate-500 space-y-2">
-            <p class="text-center font-bold text-slate-400">[ Lo-Fi Web Frame: Artish Grid ]</p>
-            <div style="display:flex;gap:10px;">
-              <div style="width:50%;height:60px;background:#1a1118;border:1px solid #444;display:flex;align-items:center;justify-content:center;">[ Art Image Box ]</div>
-              <div style="width:50%;height:60px;background:#1a1118;border:1px solid #444;display:flex;align-items:center;justify-content:center;">[ Art Image Box ]</div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h4>03. Prototype: Interactive Website Search &amp; Strain Toggle</h4>
-          <p>Explore nearby exhibitions by typing Zipcode <strong class="text-brandVibrant">33137</strong> (Miami Design District) and use our **Strain Toggle** to change interface themes:</p>
-          
-          <!-- Interactive Web Portal Prototype Simulator -->
-          <div style="background:#fff;border-radius:16px;padding:1rem;border:1px solid var(--border);" class="space-y-4" id="artishPortalFrame">
-            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:5px;" id="artishPortalHeader">
-              <span style="font-weight:bold;color:var(--text);font-size:.7rem;">🎨 Artish Directory</span>
-              <div style="display:flex;align-items:center;gap:4px;">
-                <input type="text" id="artishZipInput" placeholder="Zipcode (33137)" style="padding:4px;border-radius:4px;border:1px solid #ccc;font-size:.6rem;width:90px;color:#1a1118;">
-                <button onclick="runArtishSim()" style="padding:4px 8px;background:var(--deep);color:#fff;border:none;border-radius:4px;font-size:.6rem;cursor:pointer;">Search</button>
-                <button onclick="toggleArtishTheme()" style="padding:4px 6px;background:#eee;border:none;border-radius:4px;font-size:.55rem;cursor:pointer;color:#000;">🌓 Toggle</button>
-              </div>
-            </div>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;" id="artishGalleryDisplay">
-              <div style="padding:8px;background:#f5f3f0;border-radius:8px;font-size:.6rem;">
-                <p style="font-weight:bold;color:var(--text);">Wynwood Walls Museum</p>
-                <p style="color:#666;">Miami, FL · Contemporary Art</p>
-                <span style="color:var(--vivid);font-weight:bold;">● Secure Canvas Shield Active</span>
-              </div>
-              <div style="padding:8px;background:#f5f3f0;border-radius:8px;font-size:.6rem;">
-                <p style="font-weight:bold;color:var(--text);">P&eacute;rez Art Museum Miami</p>
-                <p style="color:#666;">Miami, FL · Modern Art Exhibit</p>
-                <span style="color:var(--vivid);font-weight:bold;">● Secure Canvas Shield Active</span>
-              </div>
-            </div>
-          </div>
-        </section>
+      <h4>01. Persona Study</h4>
+      <div class="persona-card">
+        <div class="persona-name">Liza, 27 &mdash; Single Mother</div>
+        <p style="font-size:.82rem;margin-top:.4rem;color:#555">"I want to explore cultural events with my son but traveling on a tight budget is incredibly difficult. Virtual gallery tools are my only option."</p>
       </div>
+
+      <h4>02. Prototype: Gallery Search &amp; Strain Toggle</h4>
+      <p>Enter zipcode <strong>33137</strong> (Miami Design District) or any other zip to explore. Toggle the theme to simulate the Ocular Strain accessibility mode:</p>
+      <div style="background:#fff;border-radius:16px;padding:1rem;border:1px solid var(--border);" id="artishPortalFrame">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:8px;margin-bottom:10px;" id="artishPortalHeader">
+          <span style="font-weight:bold;color:var(--text);font-size:.7rem;" id="artishLogoLabel">🎨 Artish Directory</span>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <input type="text" id="artishZipInput" placeholder="Zipcode (33137)" style="padding:4px;border-radius:4px;border:1px solid #ccc;font-size:.6rem;width:90px;color:#1a1118;">
+            <button onclick="runArtishSim()" style="padding:4px 8px;background:var(--deep);color:#fff;border:none;border-radius:4px;font-size:.6rem;cursor:pointer;">Search</button>
+            <button onclick="toggleArtishTheme()" style="padding:4px 6px;background:#eee;border:none;border-radius:4px;font-size:.55rem;cursor:pointer;color:#000;">🌓 Toggle</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;" id="artishGalleryDisplay">
+          <div style="padding:8px;background:#f5f3f0;border-radius:8px;font-size:.6rem;">
+            <p style="font-weight:bold;color:var(--text);">Wynwood Walls Museum</p>
+            <p style="color:#666;">Miami, FL · Contemporary Art</p>
+            <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
+          </div>
+          <div style="padding:8px;background:#f5f3f0;border-radius:8px;font-size:.6rem;">
+            <p style="font-weight:bold;color:var(--text);">Pérez Art Museum Miami</p>
+            <p style="color:#666;">Miami, FL · Modern Art</p>
+            <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
+          </div>
+        </div>
+      </div>
+
+      <h4>03. IP Protection Layer</h4>
+      <p>Canvas scraper defenses protect artist intellectual property by dynamically watermarking rendered image assets and rate-limiting automated crawl sessions.</p>
     `
       },
-
-      // Added Paws & Protect Case Study (Reflecting paws_and_protect_case_study.md)
       paws_protect: {
         title: 'Paws & Protect E-Commerce Flow',
         sub: 'UX Case Study &mdash; Secure Mobile E-Commerce Trust Framework',
-        icon: '🐾',
         body: `
-      <div class="space-y-6 text-slate-700">
-        <section>
-          <h4>Project Overview</h4>
-          <p>Paws &amp; Protect is a secure mobile e-commerce platform dedicated to pet owners. The primary UX challenge: designing a robust checkout journey that mitigates account takeovers (ATO) and credential stuffing, without degrading checkout completion speeds.</p>
-          <div class="grid grid-cols-2 gap-4 my-3">
-            <div class="skill-tag"><strong>My Role</strong>Lead Secure UX Designer</div>
-            <div class="skill-tag"><strong>Focus</strong>Threat Modeling &amp; Conversion</div>
-          </div>
-        </section>
-
-        <section>
-          <h4>01. The Conflict: Friction vs. Business Conversion</h4>
-          <p>Traditional anti-fraud defense blocks brute-force bots but introduces heavy analytical friction: confusing CAPTCHAs and repetitive text verification loops. When security feels uncoordinated, user checkouts plunge by up to <strong>22%</strong>.</p>
-          <div class="p-4 bg-rose-50 border-l-4 border-rose-500 text-rose-800 rounded-r-xl text-xs">
-            <strong>The Secure UX Goal:</strong> To steer users into making highly resilient, password-secure choices naturally by using secure-by-default visual architecture.
-          </div>
-        </section>
-
-        <section>
-          <h4>02. Human Behavior &amp; Password Fatigue</h4>
-          <ul>
-            <li><strong>Path of Least Resistance:</strong> Users copy-paste recycled passwords across multiple endpoints due to memory overload.</li>
-            <li><strong>Privacy Fatigue:</strong> 97% of users bypass dense privacy legalese, destroying active consensus.</li>
-            <li><strong>Friction Sensitivity:</strong> Sudden MFA prompts during purchase finalization trigger checkout abandonment.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h4>03. Interactive Password Resilience Simulator</h4>
-          <p>Test our custom visual feedback loop below. Note how the system nudges users toward resilience without displaying frustrating technical error messages:</p>
-          
-          <!-- Interactive Password Simulator Inside Modal -->
-          <div style="max-width:320px;margin:1.5rem auto;background:#120c14;border-radius:24px;padding:16px;box-shadow:0 10px 25px rgba(0,0,0,0.3); border:1px solid #D6fb51;">
-            <div style="background:#fff;border-radius:18px;padding:1rem;color:#1a1118;font-size:.7rem;" class="space-y-3 font-sans">
-              <label class="block text-xs font-bold text-slate-700">Choose a Password:</label>
-              <input type="password" id="passSim" oninput="testResilience()" placeholder="Enter password..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;font-size:.75rem;">
-              
-              <div style="width:100%;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;">
-                <div id="strengthIndicator" style="height:100%;width:0%;transition:width 0.3s;background:#ef4444;"></div>
-              </div>
-              
-              <div id="simFeedback" style="font-size:.65rem;color:#64748b;" class="p-2 bg-slate-50 border rounded">
-                Start typing to test the Paws &amp; Protect responsive strength indicator.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h4>04. Security-by-Default Outcomes</h4>
-          <ul>
-            <li><strong>94%</strong> of test users created highly resilient, attack-immune keys on their first login attempt.</li>
-            <li><strong>0%</strong> drop-off or task abandonment during password configuration stages.</li>
-            <li><strong>15% increase</strong> in overall brand trust scores as evaluated by unmoderated participant interviews.</li>
-          </ul>
-        </section>
+      <h4>Project Overview</h4>
+      <p>Paws &amp; Protect is a secure mobile e-commerce platform for pet owners. The primary UX challenge: designing a robust checkout journey that mitigates account takeovers (ATO) and credential stuffing without degrading checkout completion rates.</p>
+      <div class="m-grid-2">
+        <div class="skill-tag"><strong>My Role</strong>Lead Secure UX Designer</div>
+        <div class="skill-tag"><strong>Focus</strong>Threat Modeling &amp; Conversion</div>
       </div>
+
+      <h4>01. The Conflict: Friction vs. Conversion</h4>
+      <p>Traditional anti-fraud defense blocks bots but introduces heavy friction: confusing CAPTCHAs and repetitive verification loops. When security feels uncoordinated, checkout rates drop by up to <strong>22%</strong>.</p>
+      <div style="padding:.85rem 1rem;background:#fff0f0;border-left:4px solid #e11d48;border-radius:0 10px 10px 0;font-size:.82rem;color:#7f1d1d;margin:1rem 0;">
+        <strong>The Secure UX Goal:</strong> Steer users toward highly resilient password choices naturally, using secure-by-default visual architecture — not frustrating error messages.
+      </div>
+
+      <h4>02. Human Behavior &amp; Password Fatigue</h4>
+      <ul>
+        <li><strong>Path of Least Resistance:</strong> Users copy-paste recycled passwords due to memory overload.</li>
+        <li><strong>Privacy Fatigue:</strong> 97% of users bypass dense privacy legalese, destroying active consent.</li>
+        <li><strong>Friction Sensitivity:</strong> Sudden MFA prompts during purchase finalization trigger abandonment.</li>
+      </ul>
+
+      <h4>03. Interactive Password Resilience Simulator</h4>
+      <p>Test the visual feedback loop. Note how the system nudges users toward resilience without technical error messages:</p>
+      <div style="max-width:300px;margin:1.5rem auto;background:#120c14;border-radius:24px;padding:16px;box-shadow:0 10px 25px rgba(0,0,0,0.3);border:1px solid #D6fb51;">
+        <div style="background:#fff;border-radius:18px;padding:1rem;font-size:.7rem;">
+          <label style="display:block;font-size:.75rem;font-weight:bold;color:#1a1118;margin-bottom:6px;">Choose a Password:</label>
+          <input type="password" id="passSim" oninput="testResilience()" placeholder="Enter password..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;font-size:.75rem;color:#1a1118;">
+          <div style="width:100%;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;margin:8px 0;">
+            <div id="strengthIndicator" style="height:100%;width:0%;transition:width 0.3s;background:#ef4444;"></div>
+          </div>
+          <div id="simFeedback" style="font-size:.65rem;color:#64748b;padding:8px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;">
+            Start typing to test the responsive strength indicator.
+          </div>
+        </div>
+      </div>
+
+      <h4>04. Security-by-Default Outcomes</h4>
+      <ul>
+        <li><strong>94%</strong> of test users created highly resilient keys on their first login attempt.</li>
+        <li><strong>0%</strong> task abandonment during password configuration stages.</li>
+        <li><strong>15% increase</strong> in overall brand trust scores from unmoderated participant interviews.</li>
+      </ul>
     `
       },
-
       siem: {
         title: 'SOC Telemetry SIEM Triage',
         sub: 'Cyber Defense Lab &mdash; CYBR4810',
         body: `
-      <div class="space-y-4">
-        <h4>The Challenge: Alert Fatigue</h4>
-        <p>Security analysts face thousands of independent telemetry alerts per shift. This constant noise causes cognitive fatigue and desensitization &mdash; increasing the risk of missing genuine intrusion attempts.</p>
-        <div class="two-col">
-          <div class="find-card bad"><strong>Traditional SOC Failure</strong>Individual alerts for every event flood analysts with noise, leading to missed indicators and dangerously delayed response times.</div>
-          <div class="find-card good"><strong>Human-Centered Solution</strong>Clustering related events (shared source IP, target, timestamp) into incident models reduces analyst cognitive load by up to 95%.</div>
-        </div>
-        <h4>Lab Execution &mdash; WitFoo SIEM</h4>
-        <p>Deployed the WitFoo SIEM platform to capture and evaluate syslog structures. Configured automated de-duplication and state-based event clustering to aggregate atomic telemetry into high-severity incident models.</p>
-        <div class="code-block">
-<span class="cm">// Simulated aggregator output after clustering</span>
-<span class="hi">CLUSTERED [84 attempts] &rarr; INCIDENT ID: INC-29402</span>
-Classification: Brute-Force SSH Intrusion Attempt
-Target host: WS19_12
-Source IP:   192.168.1.144
-Protocol:    TCP/Port 22
-Confidence:  HIGH &mdash; Recommend immediate isolation
-        </div>
+      <h4>The Challenge: Alert Fatigue</h4>
+      <p>Security analysts face thousands of independent telemetry alerts per shift. Constant noise causes cognitive fatigue and desensitization — increasing the risk of missing genuine intrusion attempts.</p>
+      <div class="two-col">
+        <div class="find-card bad"><strong>Traditional SOC Failure</strong>Individual alerts for every event flood analysts with noise, leading to missed indicators and dangerously delayed response times.</div>
+        <div class="find-card good"><strong>Human-Centered Solution</strong>Clustering related events into incident models reduces analyst cognitive load by up to 95%.</div>
       </div>
+      <h4>Lab Execution &mdash; WitFoo SIEM</h4>
+      <p>Deployed WitFoo SIEM to capture and evaluate syslog structures. Configured automated de-duplication and state-based event clustering to aggregate atomic telemetry into high-severity incident models.</p>
+      <div class="code-block">
+<span class="cm">// Simulated aggregator output after clustering</span>
+<span class="hi">CLUSTERED [84 attempts] → INCIDENT ID: INC-29402</span>
+Classification: Brute-Force SSH Intrusion Attempt
+Target host:   WS19_12
+Source IP:     192.168.1.144
+Protocol:      TCP/Port 22
+Confidence:    HIGH — Recommend immediate isolation
+      </div>
+      <p>By grouping 84 raw SSH authentication failures into a single prioritized incident card, the design directly demonstrates how interface architecture reduces mean time to detect (MTTD).</p>
     `
       },
       vuln: {
         title: 'Vulnerability Triage &amp; Remediation',
         sub: 'Cyber Defense Lab &mdash; CYBR4220',
         body: `
-      <div class="space-y-4">
-        <h4>The Problem: The Siloed Report</h4>
-        <p>Security scanners generate dense PDF reports with hundreds of CVEs ranked by CVSS score. These are often forwarded directly to engineers without context, causing friction and delays. The core human problem: developers do not speak &ldquo;CVE.&rdquo;</p>
-        <h4>Lab Execution &mdash; Greenbone (OpenVAS)</h4>
-        <p>Deployed Greenbone OpenVAS to run credentialed compliance scans across mixed server environments (Debian and Windows Server nodes). Applied CVSS v3 weighting to extract and prioritize high-severity findings automatically.</p>
-        <h4>Developer-First Remediation Cards</h4>
-        <p>Instead of forwarding raw XML scanner output, I created structured remediation cards grouping vulnerabilities by their specific update dependency &mdash; making the secure path also the easiest path.</p>
-        <div style="background:#f9f7f9;border:1px solid #ece3ec;border-radius:14px;padding:1.25rem;margin:1rem 0">
-          <span style="background:#ffd5d5;color:#a32d2d;font-size:.67rem;font-weight:700;padding:2px 9px;border-radius:100px;text-transform:uppercase">CRITICAL &mdash; CVE-2023-38408</span>
-          <p style="font-weight:700;margin:.6rem 0 .25rem;font-size:.9rem">OpenSSH Remote Code Execution (RCE)</p>
-          <p style="font-size:.82rem;color:#555;margin-bottom:.75rem">Unauthenticated remote code execution on vulnerable OpenSSH agent versions.</p>
-          <div class="code-block" style="margin:0">sudo apt-get update &amp;&amp; sudo apt-get install --only-upgrade openssh-server</div>
-        </div>
+      <h4>The Problem: The Siloed Report</h4>
+      <p>Security scanners generate dense reports with hundreds of CVEs ranked by CVSS score. These are often forwarded directly to engineers without context. The core human problem: developers do not speak "CVE."</p>
+      <h4>Lab Execution &mdash; Greenbone (OpenVAS)</h4>
+      <p>Deployed Greenbone OpenVAS to run credentialed compliance scans across mixed server environments (Debian and Windows Server nodes). Applied CVSS v3 weighting to extract and prioritize high-severity findings automatically.</p>
+      <h4>Developer-First Remediation Cards</h4>
+      <p>Instead of forwarding raw XML scanner output, structured remediation cards were created — grouping vulnerabilities by their update dependency, making the secure path the easiest path.</p>
+      <div style="background:#f9f7f9;border:1px solid #ece3ec;border-radius:14px;padding:1.25rem;margin:1rem 0">
+        <span style="background:#ffd5d5;color:#a32d2d;font-size:.67rem;font-weight:700;padding:2px 9px;border-radius:100px;text-transform:uppercase">CRITICAL &mdash; CVE-2023-38408</span>
+        <p style="font-weight:700;margin:.6rem 0 .25rem;font-size:.9rem">OpenSSH Remote Code Execution (RCE)</p>
+        <p style="font-size:.82rem;color:#555;margin-bottom:.75rem">Unauthenticated remote code execution on vulnerable OpenSSH agent versions.</p>
+        <div class="code-block" style="margin:0">sudo apt-get update && sudo apt-get install --only-upgrade openssh-server</div>
       </div>
     `
       },
@@ -2613,12 +2284,11 @@ Confidence:  HIGH &mdash; Recommend immediate isolation
         title: 'Zero-Trust Cloud IaC Provisioning',
         sub: 'Cyber Defense Lab &mdash; CYBR3210',
         body: `
-      <div class="space-y-4">
-        <h4>The Engineering Dilemma: Configuration Drift</h4>
-        <p>Manual cloud configuration is error-prone. Common failures: administrative ports (22, 3389) left open to the public internet, or overly broad IAM roles assigned during testing that never get restricted before production.</p>
-        <h4>The Terraform Solution</h4>
-        <p>Codifying security guardrails directly inside deployment configurations means developers build compliant infrastructure by default. Deployed hardened Ubuntu EC2 instances on AWS using Terraform, automating strict security group and key-pair management.</p>
-        <div class="code-block">
+      <h4>The Engineering Dilemma: Configuration Drift</h4>
+      <p>Manual cloud configuration is error-prone. Common failures: administrative ports (22, 3389) left open to the public internet, or overly broad IAM roles assigned during testing that never get restricted before production.</p>
+      <h4>The Terraform Solution</h4>
+      <p>Codifying security guardrails directly inside deployment configurations means developers build compliant infrastructure by default. Deployed hardened Ubuntu EC2 instances on AWS using Terraform, automating strict security group and key-pair management.</p>
+      <div class="code-block">
 <span class="cm"># Enforce restricted administrative access</span>
 resource "aws_security_group" "internal_mgmt" {
   ingress {
@@ -2629,200 +2299,180 @@ resource "aws_security_group" "internal_mgmt" {
     <span class="cm"># Blocks 0.0.0.0/0 (public internet)</span>
   }
 }
-        </div>
       </div>
+      <p>Blocking <code style="font-family:monospace;font-size:.8rem;background:#f0f0f0;padding:1px 5px;border-radius:3px;">0.0.0.0/0</code> on port 22 by default ensures no instance is ever accidentally exposed — secure by design, not by remediation.</p>
     `
       },
       crypto: {
         title: 'Applied Cryptography &amp; Web PKI CA',
         sub: 'Cyber Defense Lab &mdash; CYBR7400 (Graduate Level)',
         body: `
-      <div class="space-y-4">
-        <h4>Lab Objective</h4>
-        <p>Build a complete Public Key Infrastructure (PKI) ecosystem from scratch on SEED-Ubuntu VMs to master certificate trust chains, cryptographic key management, and SSL/TLS validation &mdash; the infrastructure underlying every HTTPS connection.</p>
-        <h4>Implementation Steps</h4>
-        <ul>
-          <li><strong>Become a Certificate Authority:</strong> Generated a self-signed root CA certificate using OpenSSL, establishing the trusted root directory.</li>
-          <li><strong>Web Server Certification:</strong> Generated a CSR for SEEDPKILab2020.com and signed it with the local root CA private key.</li>
-          <li><strong>Apache Deployment:</strong> Configured virtual host SSL directives mapping incoming HTTPS requests onto the encrypted certificate pipeline.</li>
-          <li><strong>Failure Auditing:</strong> Deliberately tampered with server.pem parameters to trigger browser trust errors (ERR_CERT_AUTHORITY_INVALID, NET::ERR_CERT_COMMON_NAME_INVALID) and verify trust chain limit enforcement.</li>
-        </ul>
-      </div>
+      <h4>Lab Objective</h4>
+      <p>Build a complete Public Key Infrastructure (PKI) ecosystem from scratch on SEED-Ubuntu VMs to master certificate trust chains, cryptographic key management, and SSL/TLS validation — the infrastructure underlying every HTTPS connection.</p>
+      <h4>Implementation Steps</h4>
+      <ul>
+        <li><strong>Become a Certificate Authority:</strong> Generated a self-signed root CA certificate using OpenSSL, establishing the trusted root directory.</li>
+        <li><strong>Web Server Certification:</strong> Generated a CSR for SEEDPKILab2020.com and signed it with the local root CA private key.</li>
+        <li><strong>Apache Deployment:</strong> Configured virtual host SSL directives mapping incoming HTTPS requests onto the encrypted certificate pipeline.</li>
+        <li><strong>Failure Auditing:</strong> Deliberately tampered with server.pem parameters to trigger browser trust errors (ERR_CERT_AUTHORITY_INVALID, NET::ERR_CERT_COMMON_NAME_INVALID) and verify trust chain limit enforcement.</li>
+      </ul>
     `
       },
       firewall: {
         title: 'Perimeter Firewall Access Controls',
         sub: 'Cyber Defense Lab &mdash; CYBR4200 / CYBR3200',
         body: `
-      <div class="space-y-4">
-        <h4>Strategy: Defense at the Boundary</h4>
-        <p>Effective perimeter defense limits what attackers can see and reach before they ever touch an internal system. This lab focused on iptables ACLs, NAT port redirection, Docker network isolation, and adversarial validation.</p>
-        <h4>Technical Implementation</h4>
-        <ul>
-          <li><strong>iptables Firewall Setup:</strong> Configured Linux firewall rules to DROP unnecessary inbound connection attempts, sanitize network streams, and log blocked traffic for analysis.</li>
-          <li><strong>Port Redirection (NAT/DNAT):</strong> Configured DNAT rules to redirect incoming traffic on non-standard ports directly to internal services, obscuring service topology from external scanners.</li>
-          <li><strong>Docker Container Isolation:</strong> Applied network namespace controls to containerized services, enforcing the principle of least privilege for cross-container communication.</li>
-          <li><strong>Adversarial Validation:</strong> Ran Nmap port sweep attacks against the hardened perimeter to verify block-and-drop rule resilience and identify misconfigured rules before deployment.</li>
-        </ul>
-      </div>
+      <h4>Strategy: Defense at the Boundary</h4>
+      <p>Effective perimeter defense limits what attackers can see and reach before they ever touch an internal system. This lab focused on iptables ACLs, NAT port redirection, Docker network isolation, and adversarial validation.</p>
+      <h4>Technical Implementation</h4>
+      <ul>
+        <li><strong>iptables Firewall Setup:</strong> Configured Linux firewall rules to DROP unnecessary inbound connection attempts, sanitize network streams, and log blocked traffic for analysis.</li>
+        <li><strong>Port Redirection (NAT/DNAT):</strong> Configured DNAT rules to redirect incoming traffic on non-standard ports directly to internal services, obscuring service topology from external scanners.</li>
+        <li><strong>Docker Container Isolation:</strong> Applied network namespace controls to containerized services, enforcing the principle of least privilege for cross-container communication.</li>
+        <li><strong>Adversarial Validation:</strong> Ran Nmap port sweep attacks against the hardened perimeter to verify block-and-drop rule resilience and identify misconfigured rules before deployment.</li>
+      </ul>
     `
       },
       blog_ai: {
         title: 'Bridging the Trust Gap in AI Security Dashboards',
-        sub: 'Thought Leadership',
+        sub: 'Thought Leadership &mdash; AI &middot; Cyber &middot; UX',
         body: `
-      <div class="space-y-4 text-slate-700 text-xs md:text-sm leading-relaxed">
-        <h4 class="font-extrabold text-brandDeep text-lg uppercase tracking-wider">The Trust Paradox</h4>
-        <p class="italic font-semibold text-slate-900">"We are building threat intelligence platforms of unprecedented scale, yet frontline security operations remain throttled by human decision trust."</p>
-        <p>When organizations deploy automated AI security models, they expect an immediate drop in Mean Time to Detect. In practice, these systems often hit a wall of operator skepticism. If an AI algorithm blocks an executive&rsquo;s terminal or triggers a critical incident with a convoluted black-box explanation, analysts will eventually bypass the tool entirely. Alert fatigue becomes tool fatigue &mdash; and the organization is less secure than before deployment.</p>
-        <h4 class="font-extrabold text-brandDeep text-sm uppercase tracking-wider pt-4">Explainable AI (XAI) as a UX Mandate</h4>
-        <p>To bridge this trust gap, UX principles must be applied directly to model telemetry. Moving beyond binary labels (MALICIOUS / CLEAN) toward Explainable Intelligence interfaces &mdash; visualizing feature weights, displaying standard baseline correlation context, and providing &ldquo;Inspect Model&rdquo; pathways &mdash; gives analysts the context they need to act with confidence on AI assessments.</p>
-      </div>
+      <h4>The Trust Paradox</h4>
+      <p><em>"We are building threat intelligence platforms of unprecedented scale, yet frontline security operations remain throttled by human decision trust."</em></p>
+      <p>When organizations deploy automated AI security models, they expect an immediate drop in Mean Time to Detect. In practice, these systems often hit a wall of operator skepticism. If an AI algorithm blocks an executive's terminal or triggers a critical incident with a convoluted black-box explanation, analysts will eventually bypass the tool entirely. Alert fatigue becomes tool fatigue — and the organization is less secure than before deployment.</p>
+      <h4>Explainable AI (XAI) as a UX Mandate</h4>
+      <p>To bridge this trust gap, UX principles must be applied directly to model telemetry. Moving beyond binary labels (MALICIOUS / CLEAN) toward Explainable Intelligence interfaces — visualizing feature weights, displaying standard baseline correlation context, and providing "Inspect Model" pathways — gives analysts the context they need to act with confidence on AI assessments.</p>
+      <h4>Key Design Principles</h4>
+      <ul>
+        <li>Surface the reasoning behind AI decisions, not just the verdict</li>
+        <li>Use progressive disclosure to avoid overwhelming analysts</li>
+        <li>Design override flows that log human-AI disagreements for model improvement</li>
+        <li>Treat analyst skepticism as a signal, not a failure</li>
+      </ul>
     `
       },
       blog_journey: {
         title: 'From Design to Defense',
         sub: 'Career Journey',
         body: `
-      <div class="space-y-4 text-slate-700 text-xs md:text-sm leading-relaxed">
-        <h4 class="font-extrabold text-brandDeep text-lg uppercase tracking-wider">The Core Realization</h4>
-        <p class="italic font-semibold text-slate-900">"We spend millions hardening firewalls, only to deploy systems that invite users to fail."</p>
-        <p>When I started in UX/UI design, I focused on creating smooth user flows for consumer applications. But the deeper I looked, the more I noticed standard interfaces setting users up to fail &mdash; especially around security.</p>
-        <p>We tell users to create complex, unmemorable passwords, then blame them when they reuse credentials. We flood security analysts with unprioritized logs, then blame them when an intrusion slips through. I realized that &ldquo;human error&rdquo; is actually a design flaw. If a user consistently fails at the same point in a flow, the interface is the vulnerability &mdash; not the user.</p>
-        <h4 class="font-extrabold text-brandDeep text-sm uppercase tracking-wider pt-4">Building the Technical Foundation</h4>
-        <p>To address this effectively, I knew I needed to master technical defensive mechanics &mdash; not just communicate about them. That meant building network labs with Raspberry Pi infrastructure, deploying SIEMs, writing Terraform IaC scripts, and understanding vulnerability management at a practitioner level.</p>
-      </div>
+      <h4>The Core Realization</h4>
+      <p><em>"We spend millions hardening firewalls, only to deploy systems that invite users to fail."</em></p>
+      <p>When I started in UX/UI design, I focused on creating smooth user flows for consumer applications. But the deeper I looked, the more I noticed standard interfaces setting users up to fail — especially around security.</p>
+      <p>We tell users to create complex, unmemorable passwords, then blame them when they reuse credentials. We flood security analysts with unprioritized logs, then blame them when an intrusion slips through. I realized that "human error" is actually a design flaw. If a user consistently fails at the same point in a flow, the interface is the vulnerability — not the user.</p>
+      <h4>Building the Technical Foundation</h4>
+      <p>To address this effectively, I knew I needed to master technical defensive mechanics — not just communicate about them. That meant building network labs with Raspberry Pi infrastructure, deploying SIEMs, writing Terraform IaC scripts, and understanding vulnerability management at a practitioner level.</p>
+      <p>The result is a rare dual perspective: I understand how attackers think, and I understand how users behave. This combination allows me to build systems that are secure by design, not just secure by policy.</p>
     `
       },
       blog_viz: {
         title: 'Cognitive Load in Cyber Operations',
         sub: 'Data Visualization in Security',
         body: `
-      <div class="space-y-4 text-slate-700 text-xs md:text-sm leading-relaxed">
-        <h4 class="font-extrabold text-brandDeep text-lg uppercase tracking-wider">The Visual Dimension of Defense</h4>
-        <p class="italic font-semibold text-slate-900">"In high-threat environments, clear data visualization is a critical security control."</p>
-        <p>Modern SOCs rely on massive streams of log data. Analysts sift through events looking for indicators of compromise, but when data displays are poorly structured, response times slow dramatically. The average threat dwell time across the industry remains over 100 days &mdash; not because analysts lack skill, but because interfaces fail them.</p>
-        <h4 class="font-extrabold text-brandDeep text-sm uppercase tracking-wider pt-4">Designing for High-Stress Comprehension</h4>
-        <p>The same visual design principles that guide consumer UX are critical for threat detection. Organizing telemetry data, grouping related alerts, and applying clear visual hierarchy helps analysts spot anomalies immediately. progressive disclosure, visual grouping, and high-contrast alert states directly reduce threat dwell time.</p>
-      </div>
+      <h4>The Visual Dimension of Defense</h4>
+      <p><em>"In high-threat environments, clear data visualization is a critical security control."</em></p>
+      <p>Modern SOCs rely on massive streams of log data. Analysts sift through events looking for indicators of compromise, but when data displays are poorly structured, response times slow dramatically. The average threat dwell time across the industry remains over 100 days — not because analysts lack skill, but because interfaces fail them.</p>
+      <h4>Designing for High-Stress Comprehension</h4>
+      <p>The same visual design principles that guide consumer UX are critical for threat detection. Organizing telemetry data, grouping related alerts, and applying clear visual hierarchy helps analysts spot anomalies immediately. Progressive disclosure, visual grouping, and high-contrast alert states directly reduce threat dwell time.</p>
+      <h4>Practical Applications</h4>
+      <ul>
+        <li>Use spatial proximity to group correlated events</li>
+        <li>Apply pre-attentive attributes (color, size, shape) to signal severity</li>
+        <li>Design for worst-case cognitive load — 3am, high alert volume, time pressure</li>
+        <li>Test dashboards with real analysts under simulated incident conditions</li>
+      </ul>
     `
       },
       resume: {
         title: 'Shima Mudakha &mdash; Professional Resume',
         sub: 'Cybersecurity Analyst &amp; Human-Centered Security Specialist',
         body: `
-      <div class="space-y-6 text-slate-700 font-sans">
-        <div style="border-bottom: 2px solid var(--border); padding-bottom: 1.5rem; text-align: center;">
-          <h3 style="font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--text);">Shima Mudakha</h3>
-          <p style="font-size: .85rem; color: var(--muted); margin-top: .4rem;">Tampa, FL &bull; shmtlb@gmail.com &bull; linkedin.com/in/shimamudakha</p>
-          <div style="display:flex; justify-content:center; gap:8px; margin-top:10px; flex-wrap:wrap;">
-            <span style="background:var(--bg); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; font-size: .7rem; font-weight: bold; color: var(--text);">ISC2 CC Certified</span>
-            <span style="background:var(--bg); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; font-size: .7rem; font-weight: bold; color: var(--text);">Google UX Certified</span>
-            <span style="background:var(--bg); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; font-size: .7rem; font-weight: bold; color: var(--text);">Google Cyber Certified</span>
-            <span style="background:var(--bg); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; font-size: .7rem; font-weight: bold; color: var(--text);">Google AI Certified</span>
-          </div>
+      <div style="border-bottom:2px solid var(--border);padding-bottom:1.5rem;text-align:center;margin-bottom:1.5rem;">
+        <h3 style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--text);">Shima Mudakha</h3>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:.4rem;">Tampa, FL &bull; shmtlb@gmail.com &bull; linkedin.com/in/shimamudakha</p>
+        <div style="display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap;">
+          <span style="background:var(--bg);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:.7rem;font-weight:bold;">ISC2 CC Certified</span>
+          <span style="background:var(--bg);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:.7rem;font-weight:bold;">Google UX Certified</span>
+          <span style="background:var(--bg);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:.7rem;font-weight:bold;">Google Cyber Certified</span>
+          <span style="background:var(--bg);border:1px solid var(--border);padding:4px 10px;border-radius:100px;font-size:.7rem;font-weight:bold;">Google AI Certified</span>
         </div>
+      </div>
 
+      <h4>Professional Profile</h4>
+      <p>A unique double-perspective professional bridging the gap between rigorous technical cybersecurity (SIEM analysis, vulnerability assessment, cloud configurations) and user-centric product experiences. Committed to optimizing operational security controls by treating human error as a structural interface design challenge.</p>
+
+      <h4>Education &amp; Credentials</h4>
+      <ul>
+        <li><strong>CompTIA Security+</strong> &mdash; Syracuse University (Expected Q4 2026)</li>
+        <li><strong>MBA in Marketing</strong> &mdash; JNTU Hyderabad</li>
+        <li><strong>BA in Carpet Design</strong> &mdash; University of Sistan and Baluchestan</li>
+        <li><strong>ISC2 Certified in Cybersecurity (CC)</strong> &mdash; 2024</li>
+        <li><strong>Google Cybersecurity Professional Certificate</strong> &mdash; 2023</li>
+        <li><strong>Google UX Design Professional Certificate</strong> &mdash; 2022</li>
+        <li><strong>Google AI Professional Certificate</strong> &mdash; 2024</li>
+      </ul>
+
+      <h4>Technical Skill Domains</h4>
+      <div class="m-grid-2">
         <div>
-          <h4 style="font-family:'DM Serif Display', serif; font-size:1.1rem; color:var(--deep); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:8px;">Professional Profile</h4>
-          <p style="font-size:.88rem; line-height:1.75; color:var(--text);">
-            A unique double-perspective professional bridging the gap between rigorous technical cybersecurity (SIEM analysis, vulnerability assessment, cloud configurations) and user-centric product experiences. Committed to optimizing operational security controls by treating human error as a structural interface design challenge.
-          </p>
+          <p style="font-weight:bold;color:var(--text);margin-bottom:4px;font-size:.85rem;">Security &amp; Networking</p>
+          <p style="color:var(--muted);line-height:1.6;font-size:.82rem;">VMware, OPNsense, Wireshark, Pi-hole DNS, WitFoo SIEM, Greenbone OpenVAS, IDS/IPS, Python, Bash, PowerShell, secure IAM models.</p>
         </div>
-
         <div>
-          <h4 style="font-family:'DM Serif Display', serif; font-size:1.1rem; color:var(--deep); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:8px;">Education &amp; Credentials</h4>
-          <ul style="list-style-type:disc; padding-left:1.25rem; font-size:.85rem; space-y:2px;" class="space-y-1">
-            <li><strong>CompTIA Security+</strong> &mdash; Syracuse University (In Progress)</li>
-            <li><strong>MBA in Marketing</strong> &mdash; JNTU Hyderabad</li>
-            <li><strong>BA in Carpet Design</strong> &mdash; University of Sistan and Baluchestan</li>
-            <li><strong>ISC2 Certified in Cybersecurity (CC)</strong> &mdash; Certified 2024</li>
-            <li><strong>Google Cybersecurity Professional Certificate</strong> &mdash; Certified 2023</li>
-            <li><strong>Google UX Design Professional Certificate</strong> &mdash; Certified 2022</li>
-            <li><strong>Google AI Professional Certificate</strong> &mdash; Certified 2024</li>
-          </ul>
+          <p style="font-weight:bold;color:var(--text);margin-bottom:4px;font-size:.85rem;">Secure Product Design</p>
+          <p style="color:var(--muted);line-height:1.6;font-size:.82rem;">Figma vector modeling, low/high-fidelity interactive prototyping, WCAG AA accessibility, cognitive wireframes, sitemaps, usability telemetry.</p>
         </div>
+      </div>
 
-        <div>
-          <h4 style="font-family:'DM Serif Display', serif; font-size:1.1rem; color:var(--deep); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:8px;">Technical Skill Domains</h4>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; font-size:.85rem;">
-            <div>
-              <p style="font-weight:bold; color:var(--text); margin-bottom:4px;">Security &amp; Networking</p>
-              <p style="color:var(--muted); line-height:1.6;">VMware, OPNsense, Wireshark, Pi-hole DNS, WitFoo SIEM, Greenbone OpenVAS, IDS/IPS, Linux terminal scripting (Python, Bash, PowerShell), secure IAM models.</p>
-            </div>
-            <div>
-              <p style="font-weight:bold; color:var(--text); margin-bottom:4px;">Secure Product Design</p>
-              <p style="color:var(--muted); line-height:1.6;">Figma vector modeling, low/high-fidelity interactive prototyping, WCAG AA accessibility frameworks, cognitive wireframes, sitemaps, usability telemetry.</p>
-            </div>
-          </div>
-        </div>
+      <h4>Hands-On Engineering Experience</h4>
+      <div style="margin-bottom:1rem;">
+        <p style="font-weight:bold;color:var(--text);font-size:.85rem;">Defensive Operations &amp; SIEM Clustering (KSU CYBR4810)</p>
+        <p style="color:var(--muted);line-height:1.65;font-size:.82rem;">Deployed WitFoo SIEM to aggregate syslog metrics, mapping 84 independent SSH authentication alerts into a single actionable incident to directly mitigate SOC fatigue.</p>
+      </div>
+      <div>
+        <p style="font-weight:bold;color:var(--text);font-size:.85rem;">Vulnerability Management &amp; Patch Playbooks (KSU CYBR4220)</p>
+        <p style="color:var(--muted);line-height:1.65;font-size:.82rem;">Conducted credentialed scans using Greenbone (OpenVAS). Developed developer-first remediation cards translating CVSS risks into one-line patching commands.</p>
+      </div>
 
-        <div>
-          <h4 style="font-family:'DM Serif Display', serif; font-size:1.1rem; color:var(--deep); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:8px;">Hands-On Engineering Experience</h4>
-          <div style="font-size:.85rem;" class="space-y-3">
-            <div>
-              <p style="font-weight:bold; color:var(--text);">Defensive Operations &amp; SIEM Clustering (KSU Cyber Lab CYBR4810)</p>
-              <p style="color:var(--muted); line-height:1.65;">Deployed WitFoo SIEM platform to aggregate syslog metrics, mapping 84 independent raw SSH authentication alerts into a single actionable incident template to directly mitigate security operations center (SOC) fatigue.</p>
-            </div>
-            <div>
-              <p style="font-weight:bold; color:var(--text);">Vulnerability Management &amp; Patch playbooks (KSU Cyber Lab CYBR4220)</p>
-              <p style="color:var(--muted); line-height:1.65;">Conducted credentialed scans across mixed system environments using Greenbone (OpenVAS). Developed developer-first remediation cards, translating CVSS risks into one-line patching commands.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align:center; padding-top:1.5rem;">
-          <button onclick="window.print()" class="btn-primary" style="padding:.6rem 1.5rem; font-size:.8rem;">🖨️ Print / Save Resume PDF</button>
-        </div>
+      <div style="text-align:center;padding-top:1.5rem;">
+        <button onclick="window.print()" class="btn-primary" style="padding:.6rem 1.5rem;font-size:.8rem;">🖨️ Print / Save Resume PDF</button>
       </div>
     `
       }
     };
 
+    // ── Modal engine ─────────────────────────────────────────────────────────────
     function openModal(id) {
-      const d = MD[id]; if (!d) return;
+      const d = MD[id];
+      if (!d) return;
       document.getElementById('mTitle').textContent = d.title;
       document.getElementById('mSub').innerHTML = d.sub;
       const body = document.getElementById('mBody');
       body.innerHTML = d.body;
-
-      // Freeze background scrolling on body element
-      document.body.classList.add('overflow-hidden');
-
-      // Reset scroll progress vector to absolute top on open
       body.scrollTop = 0;
       document.getElementById('mProgress').style.width = '0%';
-
+      document.body.classList.add('overflow-hidden');
       const ov = document.getElementById('modalOverlay');
       ov.classList.add('open');
       setTimeout(() => ov.querySelector('.modal-close-btn').focus(), 50);
     }
 
     function closeModal() {
-      // Unfreeze background scrolling
       document.body.classList.remove('overflow-hidden');
       document.getElementById('modalOverlay').classList.remove('open');
     }
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeMob(); } });
-    const modalOverlayEl = document.getElementById('modalOverlay');
-    if (modalOverlayEl) {
-      modalOverlayEl.addEventListener('click', function (e) { if (e.target === this) closeModal(); });
-    }
-    const modalBodyEl = document.getElementById('mBody');
-    if (modalBodyEl) {
-      modalBodyEl.addEventListener('scroll', function () {
-        const denom = this.scrollHeight - this.clientHeight;
-        const pct = denom > 0 ? (this.scrollTop / denom) * 100 : 0;
-        const progressEl = document.getElementById('mProgress');
-        if (progressEl) progressEl.style.width = Math.round(pct) + '%';
-      });
-    }
+    document.getElementById('modalOverlay').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+    document.getElementById('mBody').addEventListener('scroll', function () {
+      const pct = this.scrollTop / (this.scrollHeight - this.clientHeight) * 100;
+      document.getElementById('mProgress').style.width = Math.round(pct) + '%';
+    });
 
-    // Interactive Simulator State toggles for Giver FoodWill app
+    // ── FoodWill simulator ────────────────────────────────────────────────────────
     function toggleFoodwillState() {
       const status = document.getElementById('foodwillStatus');
       const btn = document.getElementById('foodwillSimBtn');
+      if (!status || !btn) return;
       if (status.innerText === 'Standard Listing') {
         status.innerText = 'Tokenized Routing';
         status.style.backgroundColor = '#92006B';
@@ -2836,16 +2486,18 @@ resource "aws_security_group" "internal_mgmt" {
       }
     }
 
-    // Interactive Pre-Ordering simulator toggles for Coffee House app
+    // ── Coffee House simulator ────────────────────────────────────────────────────
+    // FIX: was referencing wrong id ('groupOrderContainer'). Now correctly targets 'simCoffeeGroupList'
     function addCoffeeMember() {
       const container = document.getElementById('simCoffeeGroupList');
       const btn = document.getElementById('coffeeSimBtn');
+      if (!container || !btn) return;
       if (btn.innerText.includes('Invite')) {
-        container.innerHTML += `
-      <div id="simulatedAnnaNode" style="display:flex;justify-content:space-between;padding:4px;background:rgba(146,0,107,0.1);border:1px solid rgba(146,0,107,0.2);border-radius:4px;color:var(--deep);font-weight:bold;animation:pulse 1s infinite;">
-        <span>Anna Anderson</span> <span>1x Vegan Brownie</span>
-      </div>
-    `;
+        const node = document.createElement('div');
+        node.id = 'simulatedAnnaNode';
+        node.style.cssText = 'display:flex;justify-content:space-between;padding:4px;background:rgba(146,0,107,0.1);border:1px solid rgba(146,0,107,0.2);border-radius:4px;color:var(--deep);font-weight:bold;margin-top:3px;';
+        node.innerHTML = '<span>Anna Anderson</span><span>1x Vegan Brownie</span>';
+        container.appendChild(node);
         btn.innerText = '❌ Remove Anna Anderson';
         btn.style.backgroundColor = '#e11d48';
       } else {
@@ -2856,131 +2508,120 @@ resource "aws_security_group" "internal_mgmt" {
       }
     }
 
-    // Interactive Password Strength Indicator inside Paws & Protect case study modal
+    // ── Password strength simulator ───────────────────────────────────────────────
     function testResilience() {
-      const pass = document.getElementById('passSim').value;
+      const pass = document.getElementById('passSim');
       const bar = document.getElementById('strengthIndicator');
       const feedback = document.getElementById('simFeedback');
+      if (!pass || !bar || !feedback) return;
 
       let score = 0;
-      if (pass.length > 8) score += 25;
-      if (/[A-Z]/.test(pass)) score += 25;
-      if (/[0-9]/.test(pass)) score += 25;
-      if (/[^A-Za-z0-9]/.test(pass)) score += 25;
+      if (pass.value.length > 8) score += 25;
+      if (/[A-Z]/.test(pass.value)) score += 25;
+      if (/[0-9]/.test(pass.value)) score += 25;
+      if (/[^A-Za-z0-9]/.test(pass.value)) score += 25;
 
       bar.style.width = score + '%';
 
       if (score === 0) {
         bar.style.backgroundColor = '#ef4444';
-        feedback.innerText = "Start typing to test the Paws & Protect responsive strength indicator.";
-        feedback.style.color = "#64748b";
+        feedback.innerText = 'Start typing to test the responsive strength indicator.';
+        feedback.style.color = '#64748b';
       } else if (score < 50) {
-        bar.style.backgroundColor = '#ef4444'; // Red
-        feedback.innerHTML = "🚨 <strong>Weak:</strong> Extremely susceptible to brute-forcing. Reusing this credential compromises account integrity.";
-        feedback.style.color = "#ef4444";
+        bar.style.backgroundColor = '#ef4444';
+        feedback.innerHTML = '🚨 <strong>Weak:</strong> Extremely susceptible to brute-forcing. Reusing this credential compromises account integrity.';
+        feedback.style.color = '#ef4444';
       } else if (score < 100) {
-        bar.style.backgroundColor = '#f59e0b'; // Amber
-        feedback.innerHTML = "⚠️ <strong>Medium:</strong> Better, but password-manager generated keys are highly recommended.";
-        feedback.style.color = "#f59e0b";
+        bar.style.backgroundColor = '#f59e0b';
+        feedback.innerHTML = '⚠️ <strong>Medium:</strong> Better, but password-manager generated keys are highly recommended.';
+        feedback.style.color = '#f59e0b';
       } else {
-        bar.style.backgroundColor = '#10b981'; // Green
-        feedback.innerHTML = "🛡️ <strong>Resilient:</strong> Secure-by-default parameters satisfied. High-trust checkout enabled.";
-        feedback.style.color = "#10b981";
+        bar.style.backgroundColor = '#10b981';
+        feedback.innerHTML = '🛡️ <strong>Resilient:</strong> Secure-by-default parameters satisfied. High-trust checkout enabled.';
+        feedback.style.color = '#10b981';
       }
     }
 
-    // Interactive Directory search engine query triggers for Artish website
+    // ── Artish simulator ─────────────────────────────────────────────────────────
     function runArtishSim() {
-      const zip = document.getElementById('artishZipInput').value.trim();
+      const zipEl = document.getElementById('artishZipInput');
       const display = document.getElementById('artishGalleryDisplay');
-      const isDark = document.getElementById('artishPortalFrame').style.backgroundColor === 'rgb(18, 12, 20)';
-
-      const textClass = isDark ? 'color:#fff;' : 'color:#1a1118;';
-      const cardBgClass = isDark ? 'background:#1a121d;border:1px solid #444;' : 'background:#f5f3f0;border:1px solid rgba(146,0,107,0.1);';
+      if (!zipEl || !display) return;
+      const zip = zipEl.value.trim();
+      const isDark = document.getElementById('artishPortalFrame').dataset.dark === '1';
+      const cardBg = isDark ? 'background:#1a121d;border:1px solid #444;' : 'background:#f5f3f0;';
+      const textColor = isDark ? 'color:#fff;' : 'color:var(--text);';
 
       if (zip === '33137') {
         display.innerHTML = `
-      <div style="padding:8px;${cardBgClass}border-radius:8px;font-size:.6rem;animation:pulse 1s infinite;">
-        <p style="font-weight:bold;${textClass}">Miami Design District</p>
-        <p style="color:#666;font-size:.55rem">Miami, FL · Outdoor Art Installations</p>
-        <span style="color:var(--vivid);font-weight:bold;">● Active Exhibition: Flora Walk</span>
+      <div style="padding:8px;${cardBg}border-radius:8px;font-size:.6rem;">
+        <p style="font-weight:bold;${textColor}">Miami Design District</p>
+        <p style="color:#888;">Miami, FL · Outdoor Installations</p>
+        <span style="color:var(--vivid);font-weight:bold;">● Active: Flora Walk</span>
       </div>
-      <div style="padding:8px;${cardBgClass}border-radius:8px;font-size:.6rem;">
-        <p style="font-weight:bold;${textClass}">Institute of Contemporary Art (ICA)</p>
-        <p style="color:#666;font-size:.55rem">Miami, FL · Contemporary Art Works</p>
-        <span style="color:var(--vivid);font-weight:bold;">● Secure Canvas Shield Active</span>
-      </div>
-    `;
+      <div style="padding:8px;${cardBg}border-radius:8px;font-size:.6rem;">
+        <p style="font-weight:bold;${textColor}">ICA Miami</p>
+        <p style="color:#888;">Miami, FL · Contemporary Works</p>
+        <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
+      </div>`;
       } else {
         display.innerHTML = `
-      <div style="padding:8px;${cardBgClass}border-radius:8px;font-size:.6rem;">
-        <p style="font-weight:bold;${textClass}">P&eacute;rez Art Museum Miami</p>
-        <p style="color:#666;font-size:.55rem">Miami, FL · Modern Art Exhibit</p>
-        <span style="color:var(--vivid);font-weight:bold;">● Secure Canvas Shield Active</span>
+      <div style="padding:8px;${cardBg}border-radius:8px;font-size:.6rem;">
+        <p style="font-weight:bold;${textColor}">Pérez Art Museum Miami</p>
+        <p style="color:#888;">Miami, FL · Modern Art</p>
+        <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
       </div>
-      <div style="padding:8px;${cardBgClass}border-radius:8px;font-size:.6rem;">
-        <p style="font-weight:bold;${textClass}">Rubell Museum</p>
-        <p style="color:#666;font-size:.55rem">Miami, FL · Private Contemporary Collection</p>
-        <span style="color:var(--vivid);font-weight:bold;">● Secure Canvas Shield Active</span>
-      </div>
-    `;
+      <div style="padding:8px;${cardBg}border-radius:8px;font-size:.6rem;">
+        <p style="font-weight:bold;${textColor}">Rubell Museum</p>
+        <p style="color:#888;">Miami, FL · Private Collection</p>
+        <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
+      </div>`;
       }
     }
 
-    // Interactive theme toggle inside Artish modal simulator
     function toggleArtishTheme() {
       const frame = document.getElementById('artishPortalFrame');
-      const header = document.getElementById('artishPortalHeader');
+      const logoLabel = document.getElementById('artishLogoLabel');
       const input = document.getElementById('artishZipInput');
-
-      if (frame.style.backgroundColor === 'rgb(18, 12, 20)') {
-        frame.style.backgroundColor = '#fff';
+      if (!frame) return;
+      const isDark = frame.dataset.dark === '1';
+      if (isDark) {
+        frame.dataset.dark = '0';
+        frame.style.background = '#fff';
         frame.style.borderColor = 'var(--border)';
-        header.firstElementChild.style.color = 'var(--text)';
-        input.style.backgroundColor = '#f5f3f0';
-        input.style.color = '#1a1118';
+        if (logoLabel) logoLabel.style.color = 'var(--text)';
+        if (input) { input.style.background = '#fff'; input.style.color = '#1a1118'; }
       } else {
-        frame.style.backgroundColor = '#120c14';
+        frame.dataset.dark = '1';
+        frame.style.background = '#120c14';
         frame.style.borderColor = '#db00a1';
-        header.firstElementChild.style.color = '#fff';
-        input.style.backgroundColor = '#1a121d';
-        input.style.color = '#fff';
+        if (logoLabel) logoLabel.style.color = '#fff';
+        if (input) { input.style.background = '#1a121d'; input.style.color = '#fff'; }
       }
       runArtishSim();
     }
 
-    // Wink animation for global robot mascot companion
+    // ── Mascot wink ───────────────────────────────────────────────────────────────
+    // FIX: removed call to undefined triggerTip()
     function triggerMascotWink() {
       const leftEye = document.getElementById('heroEyeL');
+      if (!leftEye) return;
       leftEye.setAttribute('ry', '3');
       setTimeout(() => leftEye.setAttribute('ry', '20'), 150);
-      if (typeof triggerTip === 'function') triggerTip();
     }
 
-    // Global Terminal Mode switch function
+    // ── Secure Terminal Mode ──────────────────────────────────────────────────────
     function toggleSecureMode() {
-      const body = document.body;
-      const isTerminal = body.classList.toggle('secure-terminal-mode');
-
-      // Change nav button text dynamically
-      const toggleBtn = document.getElementById('secToggleBtn');
-      toggleBtn.innerText = isTerminal ? "💡 Standard UX Mode" : "🔒 Secure Terminal Mode";
-
-      // Animate mascot eyes in response
+      const isTerminal = document.body.classList.toggle('secure-terminal-mode');
+      document.getElementById('secToggleBtn').innerText = isTerminal ? '💡 Standard UX Mode' : '🔒 Secure Terminal Mode';
       const eyeL = document.getElementById('heroEyeL');
       const eyeR = document.getElementById('heroEyeR');
-      if (isTerminal) {
-        eyeL.setAttribute('fill', '#db00a1');
-        eyeR.setAttribute('fill', '#db00a1');
-      } else {
-        eyeL.setAttribute('fill', '#D6fb51');
-        eyeR.setAttribute('fill', '#D6fb51');
-      }
+      if (eyeL) eyeL.setAttribute('fill', isTerminal ? '#db00a1' : '#D6fb51');
+      if (eyeR) eyeR.setAttribute('fill', isTerminal ? '#db00a1' : '#D6fb51');
     }
 
-    // Contact form integration
-    const contactFormEl = document.getElementById('contactForm');
-    if (contactFormEl) contactFormEl.addEventListener('submit', async function (e) {
+    // ── Contact form ──────────────────────────────────────────────────────────────
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const btn = this.querySelector('.form-submit');
       btn.textContent = 'Sending...'; btn.disabled = true;
@@ -2999,13 +2640,12 @@ resource "aws_security_group" "internal_mgmt" {
           document.getElementById('formSuccess').classList.add('show');
           this.reset();
         } else {
-          alert("Oops! There was a problem submitting your form");
+          alert('Oops! There was a problem submitting your form.');
         }
       } catch (err) {
-        alert("Connection error occurred. Please try again.");
+        alert('Connection error. Please try again.');
       }
-      btn.textContent = 'Send Message';
-      btn.disabled = false;
+      btn.textContent = 'Send Message'; btn.disabled = false;
     });
   </script>
 </body>
