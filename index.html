@@ -1660,47 +1660,67 @@
       }
     }
 
-    /* Desktop hero alignment fix */
-    @media (min-width: 901px) {
-      .hero-grid {
-        grid-template-columns: 1fr 0.9fr;
-        gap: 2.5rem;
-        align-items: center;
-      }
+    
+/* FINAL desktop hero layout fix */
+@media (min-width: 901px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 420px) !important;
+    gap: 3rem !important;
+    align-items: center !important;
+  }
 
-      .hero-photo-wrap {
-        justify-content: center;
-        max-width: 430px;
-        margin-left: auto;
-        margin-right: auto;
-      }
+  .hero-photo-wrap {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    overflow: visible !important;
+  }
 
-      .hero-photo-ring {
-        width: 280px;
-        height: 280px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+  .hero-photo-ring {
+    position: absolute !important;
+    width: 300px !important;
+    height: 300px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 0 !important;
+  }
 
-      .mascot-svg-wrap {
-        width: 230px;
-        height: 230px;
-      }
+  .mascot-svg-wrap {
+    width: 240px !important;
+    height: 240px !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
 
-      .hero-resume-btn,
-      .hero-photo-wrap .btn-outline {
-        position: absolute;
-        right: 18px;
-        top: 45%;
-        transform: translateY(-50%);
-      }
+  .hero-photo-wrap .btn-outline,
+  .hero-resume-btn {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin-top: 1.1rem !important;
+    z-index: 3 !important;
+  }
 
-      .hero-badge {
-        right: 18px;
-        bottom: 38px;
-      }
-    }
-  </style>
+  .hero-badge {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-top: 0.9rem !important;
+    z-index: 3 !important;
+  }
+}
+
+</style>
 </head>
 
 <body>
