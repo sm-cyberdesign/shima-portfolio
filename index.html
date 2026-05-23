@@ -2342,8 +2342,9 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn"
-          title="Switch to dark hacker theme">🔒 Secure Terminal Mode</button>
+        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn" title="Switch to dark hacker theme">
+          🔒 <span class="secure-full-text">Secure Terminal Mode</span><span class="secure-short-text">Secure</span>
+        </button>
         <button class="hamburger" onclick="openMob()" aria-label="Open menu" aria-expanded="false" id="hambBtn">
           <span></span><span></span><span></span>
         </button>
@@ -2442,38 +2443,41 @@
             </svg>
           </div>
           <div class="about-card">
-            <strong>Based in</strong>Tampa, Florida, USA
+            <strong>Focus</strong>Human-centered cybersecurity
             <strong
-              style="display:block;color:var(--lime);font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;margin-top:.6rem;margin-bottom:.2rem">Available
-              for</strong>
-            Full-time &amp; contract roles
+              style="display:block;color:var(--lime);font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;margin-top:.6rem;margin-bottom:.2rem">Building
+              toward</strong>
+            AI-powered digital safety tools
           </div>
         </div>
         <div class="about-content">
           <p class="section-label">About Me</p>
-          <h2 id="about-h2">Where design<br>meets defense.</h2>
-          <p>I&#8217;m a cybersecurity analyst and UX/UI designer with a rare dual perspective: I understand how
-            attackers think, and I understand how users behave. This combination lets me build systems that are not just
-            secure by policy, but secure by design.</p>
-          <p>My background spans SOC operations, network defense, and incident investigation alongside years of user
-            research, wireframing, and product design. I&#8217;ve built a Raspberry Pi network security lab using
-            Pi-hole DNS filtering, designed Google-certified UX projects, and deployed cloud infrastructure with
-            security guardrails baked in from day one.</p>
-          <p>I hold an MBA in Marketing from JNTU Hyderabad and a BA in Carpet Design from the University of Sistan and
-            Baluchestan. I&#8217;m completing my CompTIA Security+ certification at Syracuse University (expected Q4
-            2026). I believe &#34;human error&#34; is a design failure &mdash; and I fix it at the source.</p>
+          <h2 id="about-h2">Cybersecurity through<br>a human lens.</h2>
+          <p>I see cybersecurity and UX design as two sides of the same problem: both are about understanding human
+            behavior, reducing confusion, and helping people make safer decisions under pressure.</p>
+          <p>Security often fails when tools are too complicated, warnings are unclear, or users feel forced to work
+            around the system. My focus is on designing security experiences that make the safe choice feel natural,
+            simple, and trustworthy.</p>
+          <p>I approach cybersecurity through a human-centered lens: how people click, respond, ignore alerts, reuse
+            passwords, trust interfaces, and make decisions when they are busy, stressed, or unsure. This perspective
+            helps me think beyond technical controls and focus on how security actually works in real life.</p>
+          <p>I also use AI as a practical leverage tool for cybersecurity learning, research, documentation, content
+            design, and workflow acceleration. I work with structured prompting, canvas-style workflows, AI-assisted
+            analysis, and modern tools to turn complex security ideas into clearer, more usable experiences.</p>
           <div class="skill-grid" role="list">
-            <div class="skill-tag" role="listitem"><strong>Security &amp; Networking</strong>VMware, OPNsense,
-              Wireshark, Pi-hole, IDS/IPS</div>
-            <div class="skill-tag" role="listitem"><strong>Scripting</strong>Python, PowerShell, Bash</div>
-            <div class="skill-tag" role="listitem"><strong>UX Design</strong>User Research, Wireframes, Prototyping,
-              Figma</div>
-            <div class="skill-tag" role="listitem"><strong>Security Domains</strong>SOC Operations, Incident Response,
-              GRC (NIST, RMF)</div>
-            <div class="skill-tag" role="listitem"><strong>Operating Systems</strong>Linux (Ubuntu, Debian), macOS,
-              Windows</div>
-            <div class="skill-tag" role="listitem"><strong>Cloud &amp; IaC</strong>AWS, Terraform, Secure Infrastructure
-              Design</div>
+            <div class="skill-tag" role="listitem"><strong>Human-Centered Security</strong>Designing security around
+              real user behavior, trust, clarity, and decision-making.</div>
+            <div class="skill-tag" role="listitem"><strong>Cybersecurity Analysis</strong>Log review, threat thinking,
+              SOC workflows, incident investigation, and defensive security labs.</div>
+            <div class="skill-tag" role="listitem"><strong>Secure UX Thinking</strong>Reducing friction, preventing
+              unsafe workarounds, and making the secure path easier to follow.</div>
+            <div class="skill-tag" role="listitem"><strong>AI-Enhanced Workflow</strong>Using AI tools, structured
+              prompting, canvas workflows, and automation to speed up research, documentation, and security
+              communication.</div>
+            <div class="skill-tag" role="listitem"><strong>Security Communication</strong>Translating technical risk
+              into clear language for users, teams, clients, and non-technical audiences.</div>
+            <div class="skill-tag" role="listitem"><strong>Product Mindset</strong>Connecting cybersecurity, usability,
+              business trust, and scalable digital safety solutions.</div>
           </div>
           <div style="margin-top:1.75rem;display:flex;gap:.75rem;flex-wrap:wrap">
             <button onclick="openModal('resume')" class="btn-primary">View Resume</button>
@@ -3542,7 +3546,9 @@
     // ── Secure Terminal Mode ──────────────────────────────────────────────────────
     function toggleSecureMode() {
       const isTerminal = document.body.classList.toggle('secure-terminal-mode');
-      document.getElementById('secToggleBtn').innerText = isTerminal ? '💡 Standard UX Mode' : '🔒 Secure Terminal Mode';
+      document.getElementById('secToggleBtn').innerHTML = isTerminal
+        ? '💡 <span class="secure-full-text">Standard UX Mode</span><span class="secure-short-text">UX Mode</span>'
+        : '🔒 <span class="secure-full-text">Secure Terminal Mode</span><span class="secure-short-text">Secure</span>';
       const eyeL = document.getElementById('heroEyeL');
       const eyeR = document.getElementById('heroEyeR');
       if (eyeL) eyeL.setAttribute('fill', isTerminal ? '#db00a1' : '#D6fb51');
@@ -3593,7 +3599,6 @@
     });
 
   </script>
-
   <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
     ↑
   </button>
