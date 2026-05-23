@@ -1799,6 +1799,36 @@
       z-index: 3 !important;
     }
     }
+
+    /* Desktop-only mascot ring center fix */
+    @media (min-width: 901px) {
+      .hero-photo-wrap {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .hero-photo-ring {
+        position: absolute !important;
+        width: 270px !important;
+        height: 270px !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 0 !important;
+        opacity: 0.07 !important;
+      }
+
+      .mascot-svg-wrap {
+        width: 240px !important;
+        height: 240px !important;
+        position: relative !important;
+        z-index: 2 !important;
+        margin: 0 auto !important;
+      }
+    }
   </style>
 </head>
 
