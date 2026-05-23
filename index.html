@@ -1659,6 +1659,47 @@
         justify-items: center;
       }
     }
+
+    /* Desktop hero alignment fix */
+    @media (min-width: 901px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.9fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero-photo-wrap {
+        justify-content: center;
+        max-width: 430px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-photo-ring {
+        width: 280px;
+        height: 280px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .mascot-svg-wrap {
+        width: 230px;
+        height: 230px;
+      }
+
+      .hero-resume-btn,
+      .hero-photo-wrap .btn-outline {
+        position: absolute;
+        right: 18px;
+        top: 45%;
+        transform: translateY(-50%);
+      }
+
+      .hero-badge {
+        right: 18px;
+        bottom: 38px;
+      }
+    }
   </style>
 </head>
 
