@@ -3042,34 +3042,34 @@ resource "aws_security_group" "internal_mgmt" {
       }
       btn.textContent = 'Send Message'; btn.disabled = false;
     });
-
-}
-  </script>
-
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-    ↑
-  </button>
-
-  <script>
+  
     // Back to top button
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', function () {
-      if (!backToTopBtn) return;
-      if (window.scrollY > 500) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
-    });
-
-    function scrollToTop() {
+    window.scrollToTop = function () {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-    }
-  </script>
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (!backToTopBtn) return;
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 500) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+    });
+
+</script>
+
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+  ↑
+</button>
+
 </body>
 
 </html>
