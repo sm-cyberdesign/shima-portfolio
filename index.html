@@ -100,7 +100,7 @@
     }
 
     .nav-logo-sub {
-      font-size: 8px;
+      font-size: 12px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 800;
@@ -2300,35 +2300,34 @@
         gap: .3rem;
       }
     }
-  
-/* Mobile: shorten secure terminal button */
-.secure-short-text {
-  display: none !important;
-}
 
-.secure-full-text {
-  display: inline !important;
-}
+    /* Mobile: shorten secure terminal button */
+    .secure-short-text {
+      display: none !important;
+    }
 
-@media (max-width: 600px) {
-  #secToggleBtn {
-    max-width: none !important;
-    width: auto !important;
-    padding: 0.42rem 0.68rem !important;
-    font-size: 0.72rem !important;
-    white-space: nowrap !important;
-  }
+    .secure-full-text {
+      display: inline !important;
+    }
 
-  #secToggleBtn .secure-full-text {
-    display: none !important;
-  }
+    @media (max-width: 600px) {
+      #secToggleBtn {
+        max-width: none !important;
+        width: auto !important;
+        padding: 0.42rem 0.68rem !important;
+        font-size: 0.72rem !important;
+        white-space: nowrap !important;
+      }
 
-  #secToggleBtn .secure-short-text {
-    display: inline !important;
-  }
-}
+      #secToggleBtn .secure-full-text {
+        display: none !important;
+      }
 
-</style>
+      #secToggleBtn .secure-short-text {
+        display: inline !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -2370,8 +2369,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn"
-          title="Switch to dark hacker theme">
+        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn" title="Switch to dark hacker theme">
           🔒 <span class="secure-full-text">Secure Terminal Mode</span><span class="secure-short-text">Secure</span>
         </button>
         <button class="hamburger" onclick="openMob()" aria-label="Open menu" aria-expanded="false" id="hambBtn">
@@ -2899,7 +2897,7 @@
       </div>
     </div>
   </div>
-);
+  );
   }
   <script>
     // ── Mobile menu ──────────────────────────────────────────────────────────────
@@ -3614,32 +3612,32 @@
 
   </script>
 
-<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-  ↑
-</button>
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+    ↑
+  </button>
 
-<script>
-  // Back to top button
-  window.scrollToTop = function () {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  <script>
+    // Back to top button
+    window.scrollToTop = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (!backToTopBtn) return;
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 500) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
     });
-  };
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const backToTopBtn = document.getElementById('backToTop');
-    if (!backToTopBtn) return;
-
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 500) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
-    });
-  });
-</script>
+  </script>
 
 </body>
 
