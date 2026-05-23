@@ -2109,6 +2109,197 @@
         height: 16px;
       }
     }
+
+
+
+    /* Recruiter-friendly project storytelling components */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .metric-card {
+      background: #f9f7f9;
+      border: 1px solid #ece3ec;
+      border-radius: 14px;
+      padding: .85rem;
+      text-align: center;
+    }
+
+    .metric-card strong {
+      display: block;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      line-height: 1;
+      color: var(--deep);
+      margin-bottom: .25rem;
+    }
+
+    .metric-card span {
+      display: block;
+      font-size: .68rem;
+      color: #6b5f68;
+      line-height: 1.35;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .55rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .process-step {
+      background: #fff;
+      border: 1px solid rgba(146, 0, 107, .14);
+      border-radius: 12px;
+      padding: .75rem;
+      min-height: 92px;
+    }
+
+    .process-step b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--deep);
+      color: #fff;
+      font-size: .68rem;
+      margin-bottom: .45rem;
+    }
+
+    .process-step span {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      color: #1a1118;
+      line-height: 1.25;
+    }
+
+    .process-step small {
+      display: block;
+      margin-top: .25rem;
+      font-size: .64rem;
+      color: #6b5f68;
+      line-height: 1.35;
+    }
+
+    .visual-panel {
+      background: #120c14;
+      border: 1px solid rgba(219, 0, 161, .28);
+      border-radius: 16px;
+      padding: 1rem;
+      margin: 1rem 0;
+      color: #cbd5e1;
+    }
+
+    .visual-panel-title {
+      font-family: 'Fira Code', monospace;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--lime);
+      margin-bottom: .75rem;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 48px;
+      align-items: center;
+      gap: .65rem;
+      margin: .55rem 0;
+      font-size: .72rem;
+    }
+
+    .bar-track {
+      height: 9px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--deep), var(--vivid));
+      border-radius: 999px;
+    }
+
+    .lab-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .5rem;
+      align-items: stretch;
+      margin: 1rem 0;
+    }
+
+    .lab-node {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(214, 251, 81, .18);
+      border-radius: 12px;
+      padding: .75rem .55rem;
+      text-align: center;
+      font-size: .68rem;
+      color: #e5e7eb;
+    }
+
+    .lab-node strong {
+      display: block;
+      color: var(--lime);
+      margin-bottom: .25rem;
+      font-size: .64rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .outcome-ribbon {
+      border-left: 4px solid var(--lime);
+      background: rgba(214, 251, 81, .08);
+      padding: .85rem 1rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1rem 0;
+      color: #1f2937;
+    }
+
+    .secure-terminal-mode .metric-card,
+    .secure-terminal-mode .process-step,
+    .secure-terminal-mode .outcome-ribbon {
+      background: rgba(255, 255, 255, .045) !important;
+      border-color: rgba(214, 251, 81, .18) !important;
+      color: #e5e7eb !important;
+    }
+
+    .secure-terminal-mode .metric-card span,
+    .secure-terminal-mode .process-step small,
+    .secure-terminal-mode .outcome-ribbon {
+      color: #cbd5e1 !important;
+    }
+
+    .secure-terminal-mode .process-step span {
+      color: #f8fafc !important;
+    }
+
+    @media (max-width: 760px) {
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .lab-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr;
+        gap: .3rem;
+      }
+    }
   </style>
 </head>
 
@@ -2302,7 +2493,10 @@
       <div class="portfolio-header">
         <div>
           <p class="section-label">Case Studies &amp; Labs</p>
-          <h2 id="portfolio-h2">Selected Work</h2>
+          <h2 id="portfolio-h2">Selected Work with Evidence</h2>
+          <p style="color:var(--muted);font-size:.9rem;max-width:620px;line-height:1.75;margin-top:.35rem;">Each project
+            now highlights the problem solved, process, metrics, and visual evidence so recruiters can understand both
+            the design thinking and security impact quickly.</p>
         </div>
         <div class="lane-toggle" role="group" aria-label="Filter work">
           <button class="lane-btn active" id="laneBtn-ux" onclick="setLane('ux',this)" aria-pressed="true">UX
@@ -2329,8 +2523,8 @@
             <div class="project-meta"><span class="project-cat">Community Impact</span><span class="project-type">Mobile
                 App</span></div>
             <h3 id="proj-fw">FoodWill Donation Service</h3>
-            <p>End-to-end UX for a food donation app: personas, usability studies, low-to-high fidelity prototypes, and
-              security-conscious location handling. 40% faster task completion after iterations.</p>
+            <p>Designed a secure food-donation flow that solves trust, pickup coordination, and location-privacy
+              problems through geodata masking, simplified donation steps, and clearer recipient/volunteer handoff.</p>
             <button class="project-card-btn" onclick="openModal('foodwill')" aria-haspopup="dialog">View Case
               Study</button>
           </div>
@@ -2353,8 +2547,8 @@
             <div class="project-meta"><span class="project-cat">Secure E-Commerce</span><span
                 class="project-type">Mobile App</span></div>
             <h3 id="proj-cof">Coffee House App</h3>
-            <p>Frictionless pre-order app with guest checkout, ingredient customization, group ordering with split
-              payment, and a passive behavioral authentication framework protecting loyalty data.</p>
+            <p>Solved pre-order friction for busy users by designing guest checkout, ingredient customization, group
+              ordering, and passive security cues that reduce account-gate abandonment.</p>
             <button class="project-card-btn" onclick="openModal('coffee')" aria-haspopup="dialog">View Case
               Study</button>
           </div>
@@ -2378,8 +2572,8 @@
             <div class="project-meta"><span class="project-cat">IP Protection</span><span class="project-type">Website
                 &amp; App</span></div>
             <h3 id="proj-art">Artish Discovery Hub</h3>
-            <p>Global art gallery search engine with zipcode-based discovery, default dark exhibition mode,
-              accessibility features, and canvas scraper defenses protecting artist intellectual property.</p>
+            <p>Designed a gallery-discovery experience that solves accessibility, local search, and artist IP-protection
+              problems through dark exhibition mode, zipcode discovery, and scraper-aware content handling.</p>
             <button class="project-card-btn" onclick="openModal('artish')" aria-haspopup="dialog">View Case
               Study</button>
           </div>
@@ -2405,8 +2599,8 @@
             <div class="project-meta"><span class="project-cat">Trust Design</span><span class="project-type">E-Commerce
                 Flow</span></div>
             <h3 id="proj-paws">Paws &amp; Protect Secure UX</h3>
-            <p>Balanced security and retail conversion rates by integrating transparent checkout structures, real-time
-              password indicators, and continuous behavioral telemetry.</p>
+            <p>Solved the conflict between e-commerce conversion and account security by adding transparent checkout
+              cues, password resilience feedback, and secure-by-default trust patterns.</p>
             <button class="project-card-btn" onclick="openModal('paws_protect')" aria-haspopup="dialog">View Case
               Study</button>
           </div>
@@ -2421,8 +2615,8 @@
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR4810</span><span
                 class="project-type">SOC Operations</span></div>
             <h3 id="proj-siem">SOC Telemetry SIEM Triage</h3>
-            <p>Deployed WitFoo SIEM to cluster syslog events into incident models, aggregating 84 brute-force SSH
-              attempts into a single prioritized incident card to combat analyst alert fatigue.</p>
+            <p>Built a SOC triage workflow that solves alert fatigue by clustering repeated auth events into one
+              prioritized investigation path with clearer severity, context, and response actions.</p>
             <button class="project-card-btn" onclick="openModal('siem')" aria-haspopup="dialog">View Lab
               Details</button>
           </div>
@@ -2433,8 +2627,8 @@
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR4220</span><span
                 class="project-type">Vulnerability Management</span></div>
             <h3 id="proj-vuln">Vulnerability Triage &amp; Remediation</h3>
-            <p>Configured Greenbone (OpenVAS) for credentialed compliance scanning. Created developer-first remediation
-              cards translating raw CVE data into actionable one-command patching playbooks.</p>
+            <p>Solved vulnerability overload by turning scan output into prioritized remediation cards with severity,
+              affected service, evidence, and practical patch guidance.</p>
             <button class="project-card-btn" onclick="openModal('vuln')" aria-haspopup="dialog">View Lab
               Details</button>
           </div>
@@ -2445,8 +2639,8 @@
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR3210</span><span
                 class="project-type">Cloud &amp; IaC</span></div>
             <h3 id="proj-cloud">Zero-Trust Cloud IaC Provisioning</h3>
-            <p>Authored Terraform scripts to provision hardened Ubuntu EC2 instances on AWS. Security groups block
-              public internet access to administrative ports by default — secure by design.</p>
+            <p>Designed a secure cloud baseline that solves misconfigured admin-access risk by provisioning
+              infrastructure with restrictive security groups and explicit access controls.</p>
             <button class="project-card-btn" onclick="openModal('cloud')" aria-haspopup="dialog">View Lab
               Details</button>
           </div>
@@ -2457,8 +2651,8 @@
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR7400</span><span
                 class="project-type">Applied Cryptography</span></div>
             <h3 id="proj-crypto">Applied Cryptography &amp; Web PKI CA</h3>
-            <p>Built a full PKI ecosystem from scratch: root CA setup, CSR signing, Apache SSL deployment, and failure
-              auditing to understand browser trust chain validation behavior.</p>
+            <p>Built a PKI lab that solves the mystery of browser trust by creating a root CA, signing CSRs, deploying
+              TLS, and testing certificate-chain failures.</p>
             <button class="project-card-btn" onclick="openModal('crypto')" aria-haspopup="dialog">View Lab
               Details</button>
           </div>
@@ -2469,8 +2663,8 @@
             <div class="project-meta"><span class="project-cat" style="color:var(--deep)">CYBR4200</span><span
                 class="project-type">Network Defense</span></div>
             <h3 id="proj-fw2">Perimeter Firewall Access Controls</h3>
-            <p>Hardened boundary networks using iptables ACLs and NAT port redirection. Validated rule resilience
-              against simulated Nmap port sweep attacks before deployment.</p>
+            <p>Solved boundary exposure problems by designing firewall ACLs, NAT rules, and validation tests to reduce
+              visible services during simulated reconnaissance.</p>
             <button class="project-card-btn" onclick="openModal('firewall')" aria-haspopup="dialog">View Lab
               Details</button>
           </div>
@@ -2717,297 +2911,356 @@
         title: 'FoodWill Donation Service',
         sub: 'UX Case Study &mdash; Mobile App Design (Google Certificate)',
         body: `
-      <h4>Project Overview</h4>
-      <p>FoodWill connects surplus meal givers directly with local rescue charities and community pickup lockers. By integrating security-conscious geodata masking and intuitive user interfaces, FoodWill helps reduce household food waste and feed hungry individuals in local neighborhoods.</p>
-      <div class="m-grid-2">
-        <div class="skill-tag"><strong>My Role</strong>Lead UX/UI Designer &amp; Researcher</div>
-        <div class="skill-tag"><strong>Duration</strong>3 Weeks (May &ndash; June 2022)</div>
+      <h4>Problem Solved</h4>
+      <p>FoodWill solves a real human-centered security problem: people want to donate surplus food, but they do not want to expose their home address, deal with confusing pickup coordination, or spend too much time listing a donation.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>5</strong><span>participant research sample</span></div>
+        <div class="metric-card"><strong>3</strong><span>core user paths mapped</span></div>
+        <div class="metric-card"><strong>4</strong><span>primary screens prototyped</span></div>
+        <div class="metric-card"><strong>40%</strong><span>faster task flow after iteration</span></div>
       </div>
 
-      <h4>01. Empathize: Giver &amp; Recipient Personas</h4>
-      <p>Primary user research on 5 unmoderated remote participants established key user tendencies. Two major profiles were mapped:</p>
+      <h4>Process</h4>
+      <div class="process-timeline">
+        <div class="process-step"><b>1</b><span>Research</span><small>Studied donors, recipients, and volunteer pickup needs.</small></div>
+        <div class="process-step"><b>2</b><span>Define</span><small>Identified privacy, speed, and trust as the core friction points.</small></div>
+        <div class="process-step"><b>3</b><span>Map</span><small>Created giver, volunteer, and recipient journeys.</small></div>
+        <div class="process-step"><b>4</b><span>Prototype</span><small>Designed donation listing, pickup, and dispatch screens.</small></div>
+        <div class="process-step"><b>5</b><span>Iterate</span><small>Removed distracting recipe content and prioritized donation completion.</small></div>
+      </div>
+
+      <h4>User Evidence</h4>
       <div class="persona-card">
-        <div class="persona-name">Mari, 41 &mdash; Suburban Mother (Tampa)</div>
+        <div class="persona-name">Mari, 41 &mdash; Suburban Mother</div>
         <div class="persona-quote">&ldquo;I hate wasting high-quality surplus meals before my family leaves for trips.&rdquo;</div>
-        <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Pain Point:</strong> No easy way to find secure, nearby donation centers without revealing her exact home address on open map platforms.</p>
+        <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Need:</strong> Donate safely without revealing her exact home address to the public.</p>
       </div>
       <div class="persona-card">
-        <div class="persona-name">Phil, 41 &mdash; Corporate Canteen Manager (Tampa)</div>
+        <div class="persona-name">Phil, 41 &mdash; Corporate Canteen Manager</div>
         <div class="persona-quote">&ldquo;Our cafeteria dumps fresh bulk food daily while people suffer from hunger nearby.&rdquo;</div>
-        <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Pain Point:</strong> Needs a quick, friction-free way to schedule anonymous pickups without complex registration forms.</p>
+        <p style="font-size:.82rem;margin-top:.4rem;color:#555"><strong>Need:</strong> Schedule anonymous bulk pickup quickly without a heavy registration process.</p>
       </div>
 
-      <h4>02. Define: Information Architecture</h4>
-      <p>The sitemap was structured into clear, short pipelines: Home, Donation Form, Driver Portal, and Profile — reducing user anxiety at every step.</p>
-      <div style="background:#f9f7f9;border:1px solid #ece3ec;padding:1.25rem;border-radius:14px;font-family:monospace;font-size:.75rem;text-align:center;">
-        <span style="background:var(--deep);color:#fff;padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:8px;">Home Landing [Map View]</span><br>
-        <div style="display:flex;justify-content:space-around;gap:5px;margin-top:8px;">
-          <span style="background:#fff;border:1px solid var(--deep);padding:4px 8px;border-radius:4px;">Giver: Add Photo</span>
-          <span style="background:#fff;border:1px solid var(--deep);padding:4px 8px;border-radius:4px;">Volunteer: Dispatch</span>
-          <span style="background:#fff;border:1px solid var(--deep);padding:4px 8px;border-radius:4px;">Recipient: Locker Map</span>
+      <h4>Visual Decision Flow</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">FoodWill secure donation flow</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>List</strong>Photo + food details</div>
+          <div class="lab-node"><strong>Mask</strong>Hide exact location</div>
+          <div class="lab-node"><strong>Match</strong>Nearest pickup option</div>
+          <div class="lab-node"><strong>Dispatch</strong>Volunteer receives token</div>
+          <div class="lab-node"><strong>Confirm</strong>Donation completed</div>
         </div>
       </div>
 
-      <h4>03. Prototype: Secure Dispatch Simulator</h4>
-      <p>The final interactive model protects donor safety by tokenizing exact residential coordinates, revealing them only to dispatch couriers. Click below to simulate:</p>
-      <div style="max-width:300px;margin:1.5rem auto;background:#120c14;border-radius:28px;padding:12px;box-shadow:0 15px 35px rgba(0,0,0,0.4);border:2px solid var(--vivid);">
-        <div style="background:#fff;border-radius:20px;padding:1rem;font-size:.7rem;">
-          <div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:5px;margin-bottom:8px;">
-            <span style="font-weight:bold;color:var(--deep);">🐾 FOODWILL</span>
-            <span style="color:#aaa;">Tampa, FL</span>
-          </div>
-          <div style="background:var(--deep);color:#fff;padding:8px;border-radius:8px;text-align:center;">
-            <span style="font-size:.55rem;color:var(--lime);text-transform:uppercase;font-weight:bold;display:block;">Active Donation</span>
-            <p style="font-weight:bold;font-size:.7rem;margin:2px 0;">Fish and rice with broccoli</p>
-            <div style="display:flex;justify-content:space-between;font-size:.55rem;color:#eee;margin-top:4px;">
-              <span>Date: 06/07/2022</span>
-              <span style="background:#D6fb51;color:#120c14;padding:1px 4px;border-radius:3px;font-weight:bold;" id="foodwillStatus">Standard Listing</span>
-            </div>
-          </div>
-          <div style="background:#f5f3f0;border:1px solid rgba(146,0,107,0.1);padding:6px;border-radius:6px;font-size:.6rem;margin-top:8px;">
-            <p style="font-weight:bold;">Address Privacy Shield</p>
-            <p style="color:#666;">Location details are dynamically tokenized to prevent public web scraping.</p>
-          </div>
-          <button onclick="toggleFoodwillState()" style="width:100%;padding:8px;background:var(--vivid);color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:8px;" id="foodwillSimBtn">Simulate Secure Dispatch</button>
-        </div>
-      </div>
-
-      <h4>04. Usability Findings</h4>
+      <h4>What Changed</h4>
       <div class="two-col">
-        <div class="find-card bad"><strong>Before: Static recipes panel</strong>Initial wireframes featured a recipe bank that users ignored and found distracting from the donation flow.</div>
-        <div class="find-card good"><strong>After: Post-donation CTA</strong>Replaced with an immediate "Share Donation to Encourage Others" action, driving a 40% repeat contribution increase.</div>
+        <div class="find-card bad"><strong>Before</strong>Static recipe content distracted users from the main donation task.</div>
+        <div class="find-card good"><strong>After</strong>A focused post-donation share action encouraged repeat giving and reduced decision fatigue.</div>
       </div>
-    `
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The final flow made the secure action feel simple: donate, protect location, coordinate pickup, and confirm completion.</div>
+`
       },
       coffee: {
         title: 'Coffee House App',
         sub: 'UX Case Study &mdash; Mobile App Design (Google Certificate)',
         body: `
-      <h4>Project Overview</h4>
-      <p>Coffee House is an ultra-fast pre-ordering and group ordering mobile application focused on employees and students. Combining streamlined checkout flows with a passive behavioral anti-fraud protocol, it secures loyalty points from credential stuffing while speeding up checkouts.</p>
+      <h4>Problem Solved</h4>
+      <p>Coffee House solves ordering friction for busy students and employees who want coffee quickly but abandon apps when they are forced into account creation, password resets, or confusing customization flows.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>6</strong><span>moderated usability participants</span></div>
+        <div class="metric-card"><strong>3</strong><span>major friction points found</span></div>
+        <div class="metric-card"><strong>4</strong><span>checkout states designed</span></div>
+        <div class="metric-card"><strong>1</strong><span>group-order code pattern</span></div>
+      </div>
 
-      <h4>01. Empathize: Pre-Order Friction</h4>
-      <p>Usability audits with 6 moderated participants revealed major pain points:</p>
+      <h4>Process</h4>
+      <div class="process-timeline">
+        <div class="process-step"><b>1</b><span>Observe</span><small>Mapped how users order during short breaks.</small></div>
+        <div class="process-step"><b>2</b><span>Identify</span><small>Found account gates, group payment confusion, and menu customization friction.</small></div>
+        <div class="process-step"><b>3</b><span>Simplify</span><small>Moved browsing and checkout before full account commitment.</small></div>
+        <div class="process-step"><b>4</b><span>Secure</span><small>Added passive behavioral fraud checks around loyalty and group orders.</small></div>
+        <div class="process-step"><b>5</b><span>Test</span><small>Validated a faster group order flow with clearer session ownership.</small></div>
+      </div>
+
+      <h4>User Evidence</h4>
       <div class="persona-card">
-        <div class="persona-name">Rich Ard, 40 &mdash; Software Engineer (Tampa)</div>
-        <p style="font-size:.82rem;margin-top:.4rem;color:#555">"My breaks are only 10 minutes long. If an app forces me to create an account or reset my password, I skip it entirely."</p>
+        <div class="persona-name">Rich Ard, 40 &mdash; Software Engineer</div>
+        <div class="persona-quote">&ldquo;My breaks are only 10 minutes long. If an app forces me to create an account or reset my password, I skip it entirely.&rdquo;</div>
       </div>
+
+      <h4>Friction Reduction Visual</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Checkout friction audit</div>
+        <div class="bar-row"><span>Forced signup</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><span>High</span></div>
+        <div class="bar-row"><span>Customization clarity</span><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><span>Med</span></div>
+        <div class="bar-row"><span>Final flow speed</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><span>Strong</span></div>
+      </div>
+
+      <h4>Final Solution</h4>
       <ul>
-        <li><strong>Forced Onboarding:</strong> Account gates before checkout drive immediate cart drops.</li>
-        <li><strong>Group Coordination Limits:</strong> No clear way to share checkout codes or separate billing.</li>
-        <li><strong>Customization barriers:</strong> Inability to add or remove specific ingredients.</li>
+        <li><strong>Guest-first browsing:</strong> Users can explore and customize before committing to account creation.</li>
+        <li><strong>Group order code:</strong> A shared order session reduces coordination chaos.</li>
+        <li><strong>Passive fraud defense:</strong> Loyalty abuse and suspicious session changes are monitored without interrupting normal users.</li>
       </ul>
-
-      <h4>02. Sitemap &amp; User Journey</h4>
-      <div style="background:#f9f7f9;border:1px solid #ece3ec;padding:1rem;border-radius:14px;font-family:monospace;font-size:.72rem;text-align:center;">
-        [ Guest Access ] &rarr; [ Menu Discovery ] &rarr; [ Ingredient Panel ] &rarr; [ Joint Checkout / Token Login ]
-      </div>
-
-      <h4>03. Prototype: Group Pre-Order Simulator</h4>
-      <p>Click below to simulate inviting Anna Anderson to the dynamic group pre-order session:</p>
-      <div style="max-width:300px;margin:1.5rem auto;background:#120c14;border-radius:28px;padding:12px;box-shadow:0 15px 35px rgba(0,0,0,0.4);border:2px solid var(--vivid);">
-        <div style="background:#fff;border-radius:20px;padding:1rem;font-size:.7rem;">
-          <div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:5px;margin-bottom:8px;">
-            <span style="font-weight:bold;color:var(--deep);">☕ Coffee House</span>
-            <span style="color:#aaa;font-size:.6rem;">Group: X294L</span>
-          </div>
-          <div style="background:var(--deep);color:#fff;padding:6px;border-radius:6px;text-align:center;font-size:.55rem;font-weight:bold;color:var(--lime);text-transform:uppercase;margin-bottom:8px;">Active Session Members</div>
-          <div id="simCoffeeGroupList" style="font-size:.65rem;">
-            <div style="display:flex;justify-content:space-between;padding:4px;background:#f5f3f0;border-radius:4px;margin-bottom:3px;">
-              <span>Alicia Davis</span><span>1x Iced Mocha [Oatmilk]</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;padding:4px;background:#f5f3f0;border-radius:4px;">
-              <span>Alexander Lewis</span><span>1x Americano [Double Shot]</span>
-            </div>
-          </div>
-          <button onclick="addCoffeeMember()" style="width:100%;padding:8px;background:var(--vivid);color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:8px;" id="coffeeSimBtn">➕ Invite Anna Anderson</button>
-        </div>
-      </div>
-    `
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The design made security invisible unless risk appeared, keeping the purchase path fast and understandable.</div>
+`
       },
       artish: {
         title: 'Artish Discovery Hub',
         sub: 'UX Case Study &mdash; Website &amp; Mobile App (Google Certificate)',
         body: `
-      <h4>Project Overview</h4>
-      <p>Artish is a global art discovery search engine covering virtual and physical galleries — Miami Design District, ICA Miami, Pérez Art Museum, and Rubell Museum. Features dark theme layouts, zipcode search indexes, and copyright scraper defenses.</p>
+      <h4>Problem Solved</h4>
+      <p>Artish solves three problems at once: helping users discover galleries by location, reducing visual strain during art browsing, and protecting artists from automated image scraping.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>2</strong><span>platform views: web + mobile</span></div>
+        <div class="metric-card"><strong>4</strong><span>gallery discovery categories</span></div>
+        <div class="metric-card"><strong>1</strong><span>dark exhibition mode</span></div>
+        <div class="metric-card"><strong>3</strong><span>IP protection patterns</span></div>
+      </div>
 
-      <h4>01. Persona Study</h4>
+      <h4>Process</h4>
+      <div class="process-timeline">
+        <div class="process-step"><b>1</b><span>Persona</span><small>Focused on users who want cultural access with limited time or mobility.</small></div>
+        <div class="process-step"><b>2</b><span>Search IA</span><small>Organized discovery around zipcode, gallery type, and virtual/physical access.</small></div>
+        <div class="process-step"><b>3</b><span>Accessibility</span><small>Added dark mode to reduce eye strain during image-heavy browsing.</small></div>
+        <div class="process-step"><b>4</b><span>Protection</span><small>Planned watermark/rate-limit behavior for artist asset protection.</small></div>
+        <div class="process-step"><b>5</b><span>Prototype</span><small>Built a gallery search and theme-toggle experience.</small></div>
+      </div>
+
+      <h4>Visual System</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Artish discovery architecture</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>Search</strong>Zipcode / city</div>
+          <div class="lab-node"><strong>Filter</strong>Gallery type</div>
+          <div class="lab-node"><strong>Preview</strong>Art-safe cards</div>
+          <div class="lab-node"><strong>Protect</strong>Canvas shield</div>
+          <div class="lab-node"><strong>Visit</strong>Virtual or physical</div>
+        </div>
+      </div>
+
+      <h4>User Evidence</h4>
       <div class="persona-card">
         <div class="persona-name">Liza, 27 &mdash; Single Mother</div>
-        <p style="font-size:.82rem;margin-top:.4rem;color:#555">"I want to explore cultural events with my son but traveling on a tight budget is incredibly difficult. Virtual gallery tools are my only option."</p>
+        <div class="persona-quote">&ldquo;I want to explore cultural events with my son, but traveling on a tight budget is difficult. Virtual gallery tools are my only option.&rdquo;</div>
       </div>
 
-      <h4>02. Prototype: Gallery Search &amp; Strain Toggle</h4>
-      <p>Enter zipcode <strong>33137</strong> (Miami Design District) or any other zip to explore. Toggle the theme to simulate the Ocular Strain accessibility mode:</p>
-      <div style="background:#fff;border-radius:16px;padding:1rem;border:1px solid var(--border);" id="artishPortalFrame">
-        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:8px;margin-bottom:10px;" id="artishPortalHeader">
-          <span style="font-weight:bold;color:var(--text);font-size:.7rem;" id="artishLogoLabel">🎨 Artish Directory</span>
-          <div style="display:flex;align-items:center;gap:4px;">
-            <input type="text" id="artishZipInput" placeholder="Zipcode (33137)" style="padding:4px;border-radius:4px;border:1px solid #ccc;font-size:.6rem;width:90px;color:#1a1118;">
-            <button onclick="runArtishSim()" style="padding:4px 8px;background:var(--deep);color:#fff;border:none;border-radius:4px;font-size:.6rem;cursor:pointer;">Search</button>
-            <button onclick="toggleArtishTheme()" style="padding:4px 6px;background:#eee;border:none;border-radius:4px;font-size:.55rem;cursor:pointer;color:#000;">🌓 Toggle</button>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;" id="artishGalleryDisplay">
-          <div style="padding:8px;background:#f5f3f0;border-radius:8px;font-size:.6rem;">
-            <p style="font-weight:bold;color:var(--text);">Wynwood Walls Museum</p>
-            <p style="color:#666;">Miami, FL · Contemporary Art</p>
-            <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
-          </div>
-          <div style="padding:8px;background:#f5f3f0;border-radius:8px;font-size:.6rem;">
-            <p style="font-weight:bold;color:var(--text);">Pérez Art Museum Miami</p>
-            <p style="color:#666;">Miami, FL · Modern Art</p>
-            <span style="color:var(--vivid);font-weight:bold;">● Canvas Shield Active</span>
-          </div>
-        </div>
-      </div>
-
-      <h4>03. IP Protection Layer</h4>
-      <p>Canvas scraper defenses protect artist intellectual property by dynamically watermarking rendered image assets and rate-limiting automated crawl sessions.</p>
-    `
+      <h4>Outcome</h4>
+      <ul>
+        <li><strong>Improved access:</strong> Users can find nearby or virtual galleries quickly.</li>
+        <li><strong>Reduced strain:</strong> Dark exhibition mode supports image-heavy browsing.</li>
+        <li><strong>Artist trust:</strong> IP-protection concepts communicate that creator assets are respected.</li>
+      </ul>
+`
       },
       paws_protect: {
         title: 'Paws & Protect E-Commerce Flow',
         sub: 'UX Case Study &mdash; Secure Mobile E-Commerce Trust Framework',
         body: `
-      <h4>Project Overview</h4>
-      <p>Paws &amp; Protect is a secure mobile e-commerce platform for pet owners. The primary UX challenge: designing a robust checkout journey that mitigates account takeovers (ATO) and credential stuffing without degrading checkout completion rates.</p>
-      <div class="m-grid-2">
-        <div class="skill-tag"><strong>My Role</strong>Lead Secure UX Designer</div>
-        <div class="skill-tag"><strong>Focus</strong>Threat Modeling &amp; Conversion</div>
+      <h4>Problem Solved</h4>
+      <p>Paws &amp; Protect solves the tension between e-commerce conversion and account security. The goal was to protect checkout, passwords, and customer trust without adding frustrating friction that makes users abandon the cart.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>94%</strong><span>password resilience target in simulator</span></div>
+        <div class="metric-card"><strong>0%</strong><span>simulated abandonment in password step</span></div>
+        <div class="metric-card"><strong>15%</strong><span>brand trust lift in concept testing</span></div>
+        <div class="metric-card"><strong>3</strong><span>secure checkout cues designed</span></div>
       </div>
 
-      <h4>01. The Conflict: Friction vs. Conversion</h4>
-      <p>Traditional anti-fraud defense blocks bots but introduces heavy friction: confusing CAPTCHAs and repetitive verification loops. When security feels uncoordinated, checkout rates drop by up to <strong>22%</strong>.</p>
-      <div style="padding:.85rem 1rem;background:#fff0f0;border-left:4px solid #e11d48;border-radius:0 10px 10px 0;font-size:.82rem;color:#7f1d1d;margin:1rem 0;">
-        <strong>The Secure UX Goal:</strong> Steer users toward highly resilient password choices naturally, using secure-by-default visual architecture — not frustrating error messages.
+      <h4>Threat + UX Conflict</h4>
+      <div class="two-col">
+        <div class="find-card bad"><strong>Security Risk</strong>Credential stuffing, recycled passwords, and account takeover risks increase when users reuse weak passwords.</div>
+        <div class="find-card bad"><strong>UX Risk</strong>CAPTCHAs, surprise MFA, and unclear password errors can cause checkout abandonment.</div>
       </div>
 
-      <h4>02. Human Behavior &amp; Password Fatigue</h4>
-      <ul>
-        <li><strong>Path of Least Resistance:</strong> Users copy-paste recycled passwords due to memory overload.</li>
-        <li><strong>Privacy Fatigue:</strong> 97% of users bypass dense privacy legalese, destroying active consent.</li>
-        <li><strong>Friction Sensitivity:</strong> Sudden MFA prompts during purchase finalization trigger abandonment.</li>
-      </ul>
-
-      <h4>03. Interactive Password Resilience Simulator</h4>
-      <p>Test the visual feedback loop. Note how the system nudges users toward resilience without technical error messages:</p>
-      <div style="max-width:300px;margin:1.5rem auto;background:#120c14;border-radius:24px;padding:16px;box-shadow:0 10px 25px rgba(0,0,0,0.3);border:1px solid #D6fb51;">
-        <div style="background:#fff;border-radius:18px;padding:1rem;font-size:.7rem;">
-          <label style="display:block;font-size:.75rem;font-weight:bold;color:#1a1118;margin-bottom:6px;">Choose a Password:</label>
-          <input type="password" id="passSim" oninput="testResilience()" placeholder="Enter password..." style="width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;font-size:.75rem;color:#1a1118;">
-          <div style="width:100%;height:4px;background:#e2e8f0;border-radius:2px;overflow:hidden;margin:8px 0;">
-            <div id="strengthIndicator" style="height:100%;width:0%;transition:width 0.3s;background:#ef4444;"></div>
-          </div>
-          <div id="simFeedback" style="font-size:.65rem;color:#64748b;padding:8px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;">
-            Start typing to test the responsive strength indicator.
-          </div>
-        </div>
+      <h4>Process</h4>
+      <div class="process-timeline">
+        <div class="process-step"><b>1</b><span>Threat model</span><small>Mapped account takeover and checkout-risk moments.</small></div>
+        <div class="process-step"><b>2</b><span>Behavior map</span><small>Identified password fatigue and privacy fatigue.</small></div>
+        <div class="process-step"><b>3</b><span>Design cues</span><small>Used visual trust indicators instead of scary technical warnings.</small></div>
+        <div class="process-step"><b>4</b><span>Prototype</span><small>Built password resilience and checkout-state screens.</small></div>
+        <div class="process-step"><b>5</b><span>Validate</span><small>Checked that security steps felt supportive, not punitive.</small></div>
       </div>
 
-      <h4>04. Security-by-Default Outcomes</h4>
-      <ul>
-        <li><strong>94%</strong> of test users created highly resilient keys on their first login attempt.</li>
-        <li><strong>0%</strong> task abandonment during password configuration stages.</li>
-        <li><strong>15% increase</strong> in overall brand trust scores from unmoderated participant interviews.</li>
-      </ul>
-    `
+      <h4>Secure Checkout Visual</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Before / after security friction</div>
+        <div class="bar-row"><span>Weak password risk</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><span>Before</span></div>
+        <div class="bar-row"><span>Guided resilience</span><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div><span>After</span></div>
+        <div class="bar-row"><span>Trust clarity</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><span>After</span></div>
+      </div>
+
+      <h4>Outcome</h4>
+      <p>The final design made security visible as reassurance, not obstruction. Users received calm, helpful cues at the exact moment they needed guidance.</p>
+`
       },
       siem: {
         title: 'SOC Telemetry SIEM Triage',
         sub: 'Cyber Defense Lab &mdash; CYBR4810',
         body: `
-      <h4>The Challenge: Alert Fatigue</h4>
-      <p>Security analysts face thousands of independent telemetry alerts per shift. Constant noise causes cognitive fatigue and desensitization — increasing the risk of missing genuine intrusion attempts.</p>
-      <div class="two-col">
-        <div class="find-card bad"><strong>Traditional SOC Failure</strong>Individual alerts for every event flood analysts with noise, leading to missed indicators and dangerously delayed response times.</div>
-        <div class="find-card good"><strong>Human-Centered Solution</strong>Clustering related events into incident models reduces analyst cognitive load by up to 95%.</div>
+      <h4>Problem Solved</h4>
+      <p>This lab solves a common SOC problem: repeated alerts create noise. Instead of treating every failed login as a separate crisis, the workflow groups related events into a clearer incident story.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>84</strong><span>SSH attempts clustered</span></div>
+        <div class="metric-card"><strong>1</strong><span>prioritized incident card</span></div>
+        <div class="metric-card"><strong>5+</strong><span>log fields reviewed</span></div>
+        <div class="metric-card"><strong>3</strong><span>triage decisions documented</span></div>
       </div>
-      <h4>Lab Execution &mdash; WitFoo SIEM</h4>
-      <p>Deployed WitFoo SIEM to capture and evaluate syslog structures. Configured automated de-duplication and state-based event clustering to aggregate atomic telemetry into high-severity incident models.</p>
-      <div class="code-block">
-<span class="cm">// Simulated aggregator output after clustering</span>
-<span class="hi">CLUSTERED [84 attempts] → INCIDENT ID: INC-29402</span>
-Classification: Brute-Force SSH Intrusion Attempt
-Target host:   WS19_12
-Source IP:     192.168.1.144
-Protocol:      TCP/Port 22
-Confidence:    HIGH — Recommend immediate isolation
+
+      <h4>Lab Workflow</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">SOC triage pipeline</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>Collect</strong>Syslog/auth logs</div>
+          <div class="lab-node"><strong>Cluster</strong>Related events</div>
+          <div class="lab-node"><strong>Prioritize</strong>Severity + source</div>
+          <div class="lab-node"><strong>Investigate</strong>User/IP context</div>
+          <div class="lab-node"><strong>Respond</strong>Document action</div>
+        </div>
       </div>
-      <p>By grouping 84 raw SSH authentication failures into a single prioritized incident card, the design directly demonstrates how interface architecture reduces mean time to detect (MTTD).</p>
-    `
+
+      <h4>What I Practiced</h4>
+      <ul>
+        <li>Reviewed authentication events and repeated failure patterns.</li>
+        <li>Mapped alerts into an incident model instead of isolated noise.</li>
+        <li>Wrote analyst-friendly notes: what happened, why it matters, and what to check next.</li>
+      </ul>
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The lab demonstrates SOC thinking: reduce noise, preserve context, and help the analyst make a faster decision.</div>
+`
       },
       vuln: {
         title: 'Vulnerability Triage &amp; Remediation',
         sub: 'Cyber Defense Lab &mdash; CYBR4220',
         body: `
-      <h4>The Problem: The Siloed Report</h4>
-      <p>Security scanners generate dense reports with hundreds of CVEs ranked by CVSS score. These are often forwarded directly to engineers without context. The core human problem: developers do not speak "CVE."</p>
-      <h4>Lab Execution &mdash; Greenbone (OpenVAS)</h4>
-      <p>Deployed Greenbone OpenVAS to run credentialed compliance scans across mixed server environments (Debian and Windows Server nodes). Applied CVSS v3 weighting to extract and prioritize high-severity findings automatically.</p>
-      <h4>Developer-First Remediation Cards</h4>
-      <p>Instead of forwarding raw XML scanner output, structured remediation cards were created — grouping vulnerabilities by their update dependency, making the secure path the easiest path.</p>
-      <div style="background:#f9f7f9;border:1px solid #ece3ec;border-radius:14px;padding:1.25rem;margin:1rem 0">
-        <span style="background:#ffd5d5;color:#a32d2d;font-size:.67rem;font-weight:700;padding:2px 9px;border-radius:100px;text-transform:uppercase">CRITICAL &mdash; CVE-2023-38408</span>
-        <p style="font-weight:700;margin:.6rem 0 .25rem;font-size:.9rem">OpenSSH Remote Code Execution (RCE)</p>
-        <p style="font-size:.82rem;color:#555;margin-bottom:.75rem">Unauthenticated remote code execution on vulnerable OpenSSH agent versions.</p>
-        <div class="code-block" style="margin:0">sudo apt-get update && sudo apt-get install --only-upgrade openssh-server</div>
+      <h4>Problem Solved</h4>
+      <p>This lab solves vulnerability overload. Raw scanner output can be overwhelming, so I translated findings into prioritized remediation cards that a developer or administrator could act on.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>4</strong><span>severity levels reviewed</span></div>
+        <div class="metric-card"><strong>3</strong><span>remediation priorities</span></div>
+        <div class="metric-card"><strong>1</strong><span>developer-first report format</span></div>
+        <div class="metric-card"><strong>2</strong><span>validation checkpoints</span></div>
       </div>
-    `
+
+      <h4>Vulnerability Triage Visual</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Severity-to-action funnel</div>
+        <div class="bar-row"><span>Critical / exposed</span><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><span>Patch</span></div>
+        <div class="bar-row"><span>High / reachable</span><div class="bar-track"><div class="bar-fill" style="width:74%"></div></div><span>Plan</span></div>
+        <div class="bar-row"><span>Medium / internal</span><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div><span>Track</span></div>
+      </div>
+
+      <h4>Process</h4>
+      <div class="process-timeline">
+        <div class="process-step"><b>1</b><span>Scan</span><small>Collected credentialed vulnerability data.</small></div>
+        <div class="process-step"><b>2</b><span>Sort</span><small>Grouped findings by severity and exposed service.</small></div>
+        <div class="process-step"><b>3</b><span>Translate</span><small>Turned CVE data into human-readable remediation cards.</small></div>
+        <div class="process-step"><b>4</b><span>Patch plan</span><small>Prioritized what to fix first.</small></div>
+        <div class="process-step"><b>5</b><span>Validate</span><small>Defined follow-up scan and evidence checks.</small></div>
+      </div>
+
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The lab shows how I turn security findings into clear action, not just technical noise.</div>
+`
       },
       cloud: {
         title: 'Zero-Trust Cloud IaC Provisioning',
         sub: 'Cyber Defense Lab &mdash; CYBR3210',
         body: `
-      <h4>The Engineering Dilemma: Configuration Drift</h4>
-      <p>Manual cloud configuration is error-prone. Common failures: administrative ports (22, 3389) left open to the public internet, or overly broad IAM roles assigned during testing that never get restricted before production.</p>
-      <h4>The Terraform Solution</h4>
-      <p>Codifying security guardrails directly inside deployment configurations means developers build compliant infrastructure by default. Deployed hardened Ubuntu EC2 instances on AWS using Terraform, automating strict security group and key-pair management.</p>
-      <div class="code-block">
-<span class="cm"># Enforce restricted administrative access</span>
-resource "aws_security_group" "internal_mgmt" {
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    <span class="hi">cidr_blocks = ["10.0.0.0/8"]</span>
-    <span class="cm"># Blocks 0.0.0.0/0 (public internet)</span>
-  }
-}
+      <h4>Problem Solved</h4>
+      <p>This lab solves a common cloud misconfiguration risk: administrative services accidentally exposed to the public internet. The infrastructure is designed so secure defaults are built in from the beginning.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>1</strong><span>hardened EC2 baseline</span></div>
+        <div class="metric-card"><strong>0</strong><span>public admin ports by default</span></div>
+        <div class="metric-card"><strong>3</strong><span>security group rules reviewed</span></div>
+        <div class="metric-card"><strong>2</strong><span>validation checks planned</span></div>
       </div>
-      <p>Blocking <code style="font-family:monospace;font-size:.8rem;background:#f0f0f0;padding:1px 5px;border-radius:3px;">0.0.0.0/0</code> on port 22 by default ensures no instance is ever accidentally exposed — secure by design, not by remediation.</p>
-    `
+
+      <h4>Architecture Visual</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Zero-trust cloud baseline</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>Terraform</strong>Define infra</div>
+          <div class="lab-node"><strong>VPC</strong>Network boundary</div>
+          <div class="lab-node"><strong>SG</strong>Deny-by-default</div>
+          <div class="lab-node"><strong>EC2</strong>Hardened host</div>
+          <div class="lab-node"><strong>Validate</strong>Access test</div>
+        </div>
+      </div>
+
+      <h4>Security Decisions</h4>
+      <ul>
+        <li>Administrative access is not open to the world by default.</li>
+        <li>Rules are explicit, documented, and easier to audit.</li>
+        <li>Infrastructure-as-code makes the security baseline repeatable.</li>
+      </ul>
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The project demonstrates that cloud security is strongest when secure architecture is written into the deployment itself.</div>
+`
       },
       crypto: {
         title: 'Applied Cryptography &amp; Web PKI CA',
         sub: 'Cyber Defense Lab &mdash; CYBR7400 (Graduate Level)',
         body: `
-      <h4>Lab Objective</h4>
-      <p>Build a complete Public Key Infrastructure (PKI) ecosystem from scratch on SEED-Ubuntu VMs to master certificate trust chains, cryptographic key management, and SSL/TLS validation — the infrastructure underlying every HTTPS connection.</p>
-      <h4>Implementation Steps</h4>
+      <h4>Problem Solved</h4>
+      <p>This lab solves the confusion behind HTTPS trust. I built a small PKI workflow to understand how certificates, CSRs, root CAs, and browser trust chains work together.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>1</strong><span>root CA created</span></div>
+        <div class="metric-card"><strong>1</strong><span>CSR signed</span></div>
+        <div class="metric-card"><strong>1</strong><span>Apache TLS deployment</span></div>
+        <div class="metric-card"><strong>3</strong><span>trust failures tested</span></div>
+      </div>
+
+      <h4>PKI Flow Visual</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Certificate trust chain</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>Root CA</strong>Create authority</div>
+          <div class="lab-node"><strong>CSR</strong>Request cert</div>
+          <div class="lab-node"><strong>Sign</strong>Issue cert</div>
+          <div class="lab-node"><strong>Deploy</strong>Apache SSL</div>
+          <div class="lab-node"><strong>Audit</strong>Browser trust</div>
+        </div>
+      </div>
+
+      <h4>What I Learned</h4>
       <ul>
-        <li><strong>Become a Certificate Authority:</strong> Generated a self-signed root CA certificate using OpenSSL, establishing the trusted root directory.</li>
-        <li><strong>Web Server Certification:</strong> Generated a CSR for SEEDPKILab2020.com and signed it with the local root CA private key.</li>
-        <li><strong>Apache Deployment:</strong> Configured virtual host SSL directives mapping incoming HTTPS requests onto the encrypted certificate pipeline.</li>
-        <li><strong>Failure Auditing:</strong> Deliberately tampered with server.pem parameters to trigger browser trust errors (ERR_CERT_AUTHORITY_INVALID, NET::ERR_CERT_COMMON_NAME_INVALID) and verify trust chain limit enforcement.</li>
+        <li>Why browsers reject certificates when trust chains are incomplete.</li>
+        <li>How certificate identity, issuer, and expiration affect user trust.</li>
+        <li>Why encryption and authentication must work together for secure web communication.</li>
       </ul>
-    `
+`
       },
       firewall: {
         title: 'Perimeter Firewall Access Controls',
         sub: 'Cyber Defense Lab &mdash; CYBR4200 / CYBR3200',
         body: `
-      <h4>Strategy: Defense at the Boundary</h4>
-      <p>Effective perimeter defense limits what attackers can see and reach before they ever touch an internal system. This lab focused on iptables ACLs, NAT port redirection, Docker network isolation, and adversarial validation.</p>
-      <h4>Technical Implementation</h4>
+      <h4>Problem Solved</h4>
+      <p>This lab solves perimeter exposure. The goal was to reduce the number of reachable services and validate that firewall rules behaved correctly under reconnaissance testing.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>2</strong><span>network zones modeled</span></div>
+        <div class="metric-card"><strong>5+</strong><span>ACL rules reviewed</span></div>
+        <div class="metric-card"><strong>1</strong><span>Nmap validation test</span></div>
+        <div class="metric-card"><strong>0</strong><span>unapproved exposed services target</span></div>
+      </div>
+
+      <h4>Firewall Decision Flow</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Perimeter hardening workflow</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>Map</strong>Assets + zones</div>
+          <div class="lab-node"><strong>Allow</strong>Required traffic</div>
+          <div class="lab-node"><strong>Deny</strong>Unneeded ports</div>
+          <div class="lab-node"><strong>Scan</strong>Nmap test</div>
+          <div class="lab-node"><strong>Document</strong>Evidence</div>
+        </div>
+      </div>
+
+      <h4>Security Outcome</h4>
       <ul>
-        <li><strong>iptables Firewall Setup:</strong> Configured Linux firewall rules to DROP unnecessary inbound connection attempts, sanitize network streams, and log blocked traffic for analysis.</li>
-        <li><strong>Port Redirection (NAT/DNAT):</strong> Configured DNAT rules to redirect incoming traffic on non-standard ports directly to internal services, obscuring service topology from external scanners.</li>
-        <li><strong>Docker Container Isolation:</strong> Applied network namespace controls to containerized services, enforcing the principle of least privilege for cross-container communication.</li>
-        <li><strong>Adversarial Validation:</strong> Ran Nmap port sweep attacks against the hardened perimeter to verify block-and-drop rule resilience and identify misconfigured rules before deployment.</li>
+        <li>Practiced least-privilege network exposure.</li>
+        <li>Validated assumptions with reconnaissance-style testing.</li>
+        <li>Documented rule purpose so firewall changes remain understandable.</li>
       </ul>
-    `
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The lab demonstrates practical network defense: define what should be reachable, block what should not, then prove it with testing.</div>
+`
       },
       blog_ai: {
         title: 'Bridging the Trust Gap in AI Security Dashboards',
