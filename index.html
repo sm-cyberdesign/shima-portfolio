@@ -1800,7 +1800,6 @@
       margin-top: 0.9rem !important;
       z-index: 3 !important;
     }
-    }
 
     /* Desktop-only mascot ring center fix */
     @media (min-width: 901px) {
@@ -1903,9 +1902,6 @@
     }
   </style>
 </head>
-<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-  ↑
-</button>
 
 <body>
 
@@ -2412,23 +2408,6 @@
       </div>
     </div>
   </div>
-  // Back to top button
-  const backToTopBtn = document.getElementById('backToTop');
-
-  window.addEventListener('scroll', function () {
-  if (window.scrollY > 500) {
-  backToTopBtn.classList.add('show');
-  } else {
-  backToTopBtn.classList.remove('show');
-  }
-  });
-
-  function scrollToTop() {
-  window.scrollTo({
-  top: 0,
-  behavior: 'smooth'
-  });
-  }
   <script>
     // ── Mobile menu ──────────────────────────────────────────────────────────────
     function openMob() { document.getElementById('mobileMenu').classList.add('open'); document.getElementById('hambBtn').setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
@@ -3066,11 +3045,7 @@ resource "aws_security_group" "internal_mgmt" {
 
 }
   </script>
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-    ↑
-  </button>
 
-  </script>
   <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
     ↑
   </button>
@@ -3080,6 +3055,7 @@ resource "aws_security_group" "internal_mgmt" {
     const backToTopBtn = document.getElementById('backToTop');
 
     window.addEventListener('scroll', function () {
+      if (!backToTopBtn) return;
       if (window.scrollY > 500) {
         backToTopBtn.classList.add('show');
       } else {
