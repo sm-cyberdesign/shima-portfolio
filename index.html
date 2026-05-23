@@ -3063,6 +3063,23 @@ resource "aws_security_group" "internal_mgmt" {
       }
       btn.textContent = 'Send Message'; btn.disabled = false;
     });
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   </script>
 </body>
 
