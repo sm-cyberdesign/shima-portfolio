@@ -3637,85 +3637,9 @@
     }
   </script>
 
-<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-  ↑
-</button>
-
-<script>
-  // Safe contact form + back-to-top script
-  (function () {
-    window.scrollToTop = function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const backToTopBtn = document.getElementById('backToTop');
-
-      if (backToTopBtn) {
-        window.addEventListener('scroll', function () {
-          if (window.scrollY > 500) {
-            backToTopBtn.classList.add('show');
-          } else {
-            backToTopBtn.classList.remove('show');
-          }
-        });
-      }
-
-      const contactForm = document.getElementById('contactForm');
-      const formSuccess = document.getElementById('formSuccess');
-
-      if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-          e.preventDefault();
-
-          const submitBtn = contactForm.querySelector('button[type="submit"]');
-          const originalText = submitBtn ? submitBtn.textContent : 'Send Message';
-
-          if (submitBtn) {
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-          }
-
-          try {
-            const response = await fetch(contactForm.action, {
-              method: 'POST',
-              body: new FormData(contactForm),
-              headers: {
-                'Accept': 'application/json'
-              }
-            });
-
-            if (response.ok) {
-              contactForm.reset();
-              if (formSuccess) {
-                formSuccess.classList.add('show');
-                formSuccess.textContent = '✓ Message sent! Thank you — I’ll be in touch soon.';
-              }
-            } else {
-              if (formSuccess) {
-                formSuccess.classList.add('show');
-                formSuccess.textContent = 'Something went wrong. Please email me directly at shmtlb@gmail.com.';
-              }
-            }
-          } catch (error) {
-            if (formSuccess) {
-              formSuccess.classList.add('show');
-              formSuccess.textContent = 'Something went wrong. Please email me directly at shmtlb@gmail.com.';
-            }
-          }
-
-          if (submitBtn) {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          }
-        });
-      }
-    });
-  })();
-</script>
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+    ↑
+  </button>
 
 </body>
 
