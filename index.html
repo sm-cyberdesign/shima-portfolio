@@ -2300,7 +2300,35 @@
         gap: .3rem;
       }
     }
-  </style>
+  
+/* Mobile: shorten secure terminal button */
+.secure-short-text {
+  display: none !important;
+}
+
+.secure-full-text {
+  display: inline !important;
+}
+
+@media (max-width: 600px) {
+  #secToggleBtn {
+    max-width: none !important;
+    width: auto !important;
+    padding: 0.42rem 0.68rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+
+  #secToggleBtn .secure-full-text {
+    display: none !important;
+  }
+
+  #secToggleBtn .secure-short-text {
+    display: inline !important;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -2342,7 +2370,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn" title="Switch to dark hacker theme">
+        <button onclick="toggleSecureMode()" class="btn-primary" id="secToggleBtn"
+          title="Switch to dark hacker theme">
           🔒 <span class="secure-full-text">Secure Terminal Mode</span><span class="secure-short-text">Secure</span>
         </button>
         <button class="hamburger" onclick="openMob()" aria-label="Open menu" aria-expanded="false" id="hambBtn">
