@@ -2897,8 +2897,6 @@
       </div>
     </div>
   </div>
-  );
-  }
   <script>
     // ── Mobile menu ──────────────────────────────────────────────────────────────
     function openMob() { document.getElementById('mobileMenu').classList.add('open'); document.getElementById('hambBtn').setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; }
@@ -3604,30 +3602,6 @@
     document.addEventListener('DOMContentLoaded', function () {
       const backToTopBtn = document.getElementById('backToTop');
       if (!backToTopBtn) return;
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 500) backToTopBtn.classList.add('show');
-        else backToTopBtn.classList.remove('show');
-      });
-    });
-
-  </script>
-
-  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
-    ↑
-  </button>
-
-  <script>
-    // Back to top button
-    window.scrollToTop = function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const backToTopBtn = document.getElementById('backToTop');
-      if (!backToTopBtn) return;
 
       window.addEventListener('scroll', function () {
         if (window.scrollY > 500) {
@@ -3637,7 +3611,12 @@
         }
       });
     });
+
   </script>
+
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Back to top">
+    ↑
+  </button>
 
 </body>
 
