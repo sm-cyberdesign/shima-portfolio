@@ -2245,6 +2245,111 @@
       }
     }
 
+
+    /* ForgeFire case study visuals */
+    .forge-hero-panel {
+      background: #120c14;
+      border: 1px solid rgba(214, 251, 81, .26);
+      border-radius: 18px;
+      padding: 1rem;
+      margin: 1rem 0 1.25rem;
+      color: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .forge-dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: .85rem;
+      align-items: stretch;
+    }
+
+    .forge-screen {
+      background: #09050a;
+      border: 1px solid rgba(219, 0, 161, .26);
+      border-radius: 14px;
+      padding: .9rem;
+      min-height: 170px;
+    }
+
+    .forge-screen h5 {
+      color: var(--lime);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .65rem;
+    }
+
+    .forge-kpi-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+      margin-bottom: .75rem;
+    }
+
+    .forge-kpi {
+      background: rgba(255, 255, 255, .055);
+      border: 1px solid rgba(214, 251, 81, .16);
+      border-radius: 10px;
+      padding: .65rem;
+    }
+
+    .forge-kpi strong {
+      display: block;
+      color: var(--lime);
+      font-size: 1rem;
+      line-height: 1;
+      margin-bottom: .25rem;
+    }
+
+    .forge-kpi span {
+      color: #94a3b8;
+      font-size: .62rem;
+      line-height: 1.3;
+    }
+
+    .forge-logline {
+      font-family: 'Fira Code', monospace;
+      font-size: .68rem;
+      line-height: 1.65;
+      color: #cbd5e1;
+      border-left: 3px solid var(--lime);
+      padding-left: .65rem;
+      margin-top: .5rem;
+      word-break: break-word;
+    }
+
+    .forge-stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin: .85rem 0 1rem;
+    }
+
+    .forge-stack-tags span {
+      background: rgba(146, 0, 107, .08);
+      border: 1px solid rgba(146, 0, 107, .15);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: .25rem .55rem;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    .secure-terminal-mode .forge-stack-tags span {
+      background: rgba(214, 251, 81, .08) !important;
+      border-color: rgba(214, 251, 81, .22) !important;
+      color: var(--lime) !important;
+    }
+
+    @media (max-width: 760px) {
+
+      .forge-dashboard-grid,
+      .forge-kpi-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Mobile: shorten secure terminal button */
     .secure-short-text {
       display: none !important;
@@ -2329,9 +2434,10 @@
       <div class="hero-grid">
         <div>
           <div class="hero-tag">Human-Centered Security Expert</div>
-          <h1 id="hero-h1">Design that<br><em>defends.</em><br>Security that<br><em>empowers.</em></h1>
-          <p class="hero-p">I bridge UX design and cybersecurity to build frictionless security systems — experiences
-            that help users stay safe without confusion, fear, or unnecessary complexity. Based in Tampa, Florida.</p>
+          <h1 id="hero-h1">Human-Centered<br><em>Cybersecurity.</em></h1>
+          <p class="hero-p">Building security systems people actually trust and use — with clear workflows, safer
+            decisions,
+            and human-centered cyber defense. Based in Tampa, Florida.</p>
           <div class="hero-btns">
             <a href="#portfolio" class="btn-primary">View Portfolio</a>
             <a href="#contact" class="btn-outline">Get in Touch</a>
@@ -2343,11 +2449,11 @@
             </div>
             <div class="stat">
               <div class="stat-num">4</div>
-              <div class="stat-lbl">UX Case Studies</div>
+              <div class="stat-lbl">Security Products</div>
             </div>
             <div class="stat">
               <div class="stat-num">5</div>
-              <div class="stat-lbl">Cyber Labs</div>
+              <div class="stat-lbl">Cyber Labs &amp; Apps</div>
             </div>
           </div>
         </div>
@@ -2654,6 +2760,43 @@
 
       <!-- Apps Lane -->
       <div id="lane-apps" class="projects-grid hidden">
+        <article class="project-card" aria-labelledby="proj-forgefire">
+          <div class="project-card-img-wrap">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
+              <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#D6fb51" stroke-width="2" />
+              <rect x="28" y="32" width="264" height="34" rx="8" fill="#1a121d" stroke="#db00a1" stroke-width="1.4" />
+              <text x="42" y="54" fill="#D6fb51" font-size="11" font-family="monospace">POST
+                /api/v1/alerts/ingest</text>
+              <rect x="28" y="84" width="76" height="58" rx="10" fill="rgba(214,251,81,.08)"
+                stroke="rgba(214,251,81,.45)" />
+              <rect x="122" y="84" width="76" height="58" rx="10" fill="rgba(219,0,161,.08)"
+                stroke="rgba(219,0,161,.55)" />
+              <rect x="216" y="84" width="76" height="58" rx="10" fill="rgba(214,251,81,.08)"
+                stroke="rgba(214,251,81,.45)" />
+              <text x="45" y="111" fill="#ffffff" font-size="10" font-family="sans-serif">Decoy</text>
+              <text x="139" y="111" fill="#ffffff" font-size="10" font-family="sans-serif">Async</text>
+              <text x="230" y="111" fill="#ffffff" font-size="10" font-family="sans-serif">SOAR</text>
+              <text x="45" y="127" fill="#D6fb51" font-size="9" font-family="monospace">trigger</text>
+              <text x="139" y="127" fill="#D6fb51" font-size="9" font-family="monospace">202</text>
+              <text x="229" y="127" fill="#D6fb51" font-size="9" font-family="monospace">contain</text>
+              <path d="M104 113 H122" stroke="#D6fb51" stroke-width="2" stroke-linecap="round" />
+              <path d="M198 113 H216" stroke="#D6fb51" stroke-width="2" stroke-linecap="round" />
+              <text x="32" y="168" fill="#cbd5e1" font-size="10" font-family="monospace">High-fidelity deception +
+                response orchestration</text>
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta"><span class="project-cat">Security Product</span><span class="project-type">SOAR /
+                Deception</span></div>
+            <h3 id="proj-forgefire">ForgeFire™ SOAR Gateway</h3>
+            <p>Built an asynchronous active-defense platform that ingests decoy-triggered telemetry, validates safety
+              guardrails, logs forensic records, and simulates SOAR-style containment.</p>
+            <button class="project-card-btn" onclick="openModal('forgefire')" aria-haspopup="dialog">View Case
+              Study</button>
+          </div>
+        </article>
+
         <article class="project-card" aria-labelledby="proj-cyber-companion">
           <div class="project-card-placeholder" aria-hidden="true">🤖</div>
           <div class="project-card-body">
@@ -3534,6 +3677,98 @@
         <li>Short screen recording or screenshots</li>
       </ul>
       <div class="outcome-ribbon"><strong>Best use:</strong> Show that you can turn ideas into working, testable security-aware products.</div>
+    `
+      },
+
+      forgefire: {
+        title: 'ForgeFire™ SOAR Gateway',
+        sub: 'Security Product Case Study &mdash; Active Defense &middot; Deception Engineering &middot; SOAR Automation',
+        body: `
+      <h4>Project Summary</h4>
+      <p><strong>ForgeFire™ SOAR Gateway</strong> is an enterprise-inspired active defense platform I built to explore how deception engineering can reduce SOC alert fatigue and accelerate containment. The system uses high-fidelity decoy triggers, asynchronous FastAPI ingestion, safety validation, forensic logging, and SOAR-style response logic.</p>
+
+      <div class="metric-grid">
+        <div class="metric-card"><strong>202</strong><span>Accepted async response</span></div>
+        <div class="metric-card"><strong>&lt;4ms</strong><span>target response latency</span></div>
+        <div class="metric-card"><strong>0%</strong><span>deterministic false-positive goal</span></div>
+        <div class="metric-card"><strong>5</strong><span>engineering layers</span></div>
+      </div>
+
+      <div class="forge-hero-panel">
+        <div class="forge-dashboard-grid">
+          <div class="forge-screen">
+            <h5>Live Ingestion Pipeline</h5>
+            <div class="forge-kpi-row">
+              <div class="forge-kpi"><strong>POST</strong><span>/api/v1/alerts/ingest</span></div>
+              <div class="forge-kpi"><strong>202</strong><span>non-blocking response</span></div>
+              <div class="forge-kpi"><strong>SQL</strong><span>forensic ledger</span></div>
+            </div>
+            <div class="forge-logline">WARNING: CRITICAL SIGNAL — host compromised-billing-srv tripped decoy DECOY-VAULT-02<br>INFO: mitigation_pipeline=queued · database_ledger=committed</div>
+          </div>
+          <div class="forge-screen">
+            <h5>Safety &amp; Containment Controls</h5>
+            <div class="lab-flow" style="grid-template-columns:1fr;gap:.45rem;margin:0">
+              <div class="lab-node"><strong>Whitelist</strong>Protect domain controllers and core infrastructure</div>
+              <div class="lab-node"><strong>CrowdStrike API Concept</strong>Host lookup, OAuth2 token flow, endpoint isolation</div>
+              <div class="lab-node"><strong>Audit Ledger</strong>Append-only incident evidence for review</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4>The Problem</h4>
+      <p>SOC analysts are often overwhelmed by ambiguous telemetry, repeated alerts, and noisy false positives. That cognitive overload slows containment and makes it harder to recognize lateral movement before damage spreads.</p>
+
+      <h4>The Solution</h4>
+      <p>ForgeFire shifts detection logic from ambiguous alert interpretation to deterministic deception. If a threat actor touches a honey asset, fake credential, decoy database, or isolated service, the signal is treated as high-confidence because legitimate users should have no business reason to interact with it.</p>
+
+      <h4>Architecture Flow</h4>
+      <div class="visual-panel">
+        <div class="visual-panel-title">Decoy-triggered active defense workflow</div>
+        <div class="lab-flow">
+          <div class="lab-node"><strong>1. Decoy</strong>Adversary touches honey asset</div>
+          <div class="lab-node"><strong>2. Ingest</strong>FastAPI receives JSON telemetry</div>
+          <div class="lab-node"><strong>3. Async</strong>HTTP 202 returned immediately</div>
+          <div class="lab-node"><strong>4. Guardrails</strong>Whitelist prevents self-DoS</div>
+          <div class="lab-node"><strong>5. Response</strong>Forensic log + containment workflow</div>
+        </div>
+      </div>
+
+      <h4>Technical Stack</h4>
+      <div class="forge-stack-tags">
+        <span>Python 3.13</span><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Swagger / OpenAPI</span><span>HTTPX</span><span>pytest-asyncio</span><span>CrowdStrike API Concepts</span><span>React / TypeScript</span><span>SOAR</span><span>STRIDE</span>
+      </div>
+
+      <h4>Security Controls &amp; Threat Modeling</h4>
+      <div class="two-col">
+        <div class="find-card good"><strong>Operational whitelist</strong>Designed safety gates to stop the engine from isolating critical infrastructure such as domain controllers, mail relays, or hypervisors.</div>
+        <div class="find-card good"><strong>Uniform response timing</strong>Used asynchronous handoff to return HTTP 202 quickly so adversaries do not receive timing feedback from defensive processing.</div>
+        <div class="find-card good"><strong>Schema validation</strong>Structured attacker and decoy telemetry with Pydantic models to validate payload boundaries before processing.</div>
+        <div class="find-card good"><strong>Append-only evidence</strong>Designed SQLAlchemy persistence as a forensic ledger for incident review, compliance evidence, and investigation context.</div>
+      </div>
+
+      <h4>Build Evidence</h4>
+      <ul>
+        <li>Built and tested a FastAPI backend with Swagger/OpenAPI documentation.</li>
+        <li>Created the live <code>/api/v1/alerts/ingest</code> endpoint for simulated decoy telemetry.</li>
+        <li>Validated success and error paths, including HTTP 202 accepted responses and 422 schema validation errors.</li>
+        <li>Captured terminal logs showing simulated adversary events, mitigation queueing, and database ledger commits.</li>
+        <li>Documented architecture, STRIDE risk thinking, engineering milestones, and QA strategy.</li>
+      </ul>
+
+      <h4>Human-Centered Security Value</h4>
+      <p>The goal was not only technical automation. The human-centered value is reducing analyst cognitive load. Instead of forcing analysts to classify thousands of uncertain alerts, deception-based signals create a clearer investigation path: a decoy was touched, the event is high-confidence, and response can begin immediately with safety controls in place.</p>
+
+      <h4>What I Learned</h4>
+      <div class="process-timeline">
+        <div class="process-step"><b>1</b><span>Architecture</span><small>Mapped event-driven ingestion, background processing, and response orchestration.</small></div>
+        <div class="process-step"><b>2</b><span>Validation</span><small>Used schema boundaries to make telemetry safer and more reliable.</small></div>
+        <div class="process-step"><b>3</b><span>Safety</span><small>Balanced automation with guardrails to prevent operational harm.</small></div>
+        <div class="process-step"><b>4</b><span>Testing</span><small>Verified simulated attack payloads, API responses, and failure behavior.</small></div>
+        <div class="process-step"><b>5</b><span>Storytelling</span><small>Converted technical evidence into a recruiter-ready security product case study.</small></div>
+      </div>
+
+      <div class="outcome-ribbon"><strong>Outcome:</strong> ForgeFire demonstrates my ability to combine cybersecurity architecture, product thinking, UX clarity, and AI-assisted engineering into a working proof-of-capability project.</div>
     `
       },
 
