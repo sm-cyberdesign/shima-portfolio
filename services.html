@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services & Pricing | SM Cyber Design</title>
+  <meta name="description" content="Build a custom package from SM Cyber Design's brand, website, SEO, and marketing services, and get a clear price range instantly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
+  <style>
+    :root{--deep:#92006b;--vivid:#db00a1;--lime:#d6fb51;--ink:#170e16;--paper:#f4f1f3;--white:#fff;--muted:#6d6069;--line:rgba(146,0,107,.15);--radius:24px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden}
+    a{color:inherit}
+    button,a{font:inherit}
+    :focus-visible{outline:3px solid var(--vivid);outline-offset:4px;border-radius:4px}
+    .skip{position:absolute;left:1rem;top:-5rem;background:var(--lime);color:var(--ink);padding:.7rem 1rem;z-index:999;text-decoration:none;font-weight:700}
+    .skip:focus{top:1rem}
+    .container{width:min(1120px,calc(100% - 3rem));margin-inline:auto}
+    .eyebrow{font-family:"Fira Code",monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--deep);font-size:.72rem;font-weight:700;margin-bottom:.8rem}
+    h1,h2,h3{font-family:"DM Serif Display",serif;font-weight:400;line-height:1.08}
+    h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.03em;max-width:820px}
+    h2{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.02em}
+    h3{font-size:1.4rem}
+    .accent{color:var(--vivid);font-style:italic}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:48px;padding:.7rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:700;border:1.5px solid transparent;transition:.2s ease;cursor:pointer}
+    .btn-primary{background:var(--vivid);color:white}
+    .btn-primary:hover{background:var(--deep);transform:translateY(-2px)}
+    .btn-primary:disabled{background:#c9c2c7;cursor:not-allowed;transform:none}
+    .btn-secondary{border-color:var(--deep);color:var(--deep);background:transparent}
+    .btn-secondary:hover{background:var(--deep);color:white}
+    nav{position:sticky;top:0;z-index:100;background:rgba(244,241,243,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+    .logo{text-decoration:none;display:flex;align-items:center;gap:.7rem;font-family:"DM Serif Display",serif;font-size:1.25rem;white-space:nowrap}
+    .logo-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;overflow:hidden;flex-shrink:0}
+    .logo-mark svg{width:100%;height:100%;display:block}
+    .logo span{color:var(--vivid)}
+    .nav-links{display:flex;align-items:center;gap:1.7rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:600}
+    .nav-links a:hover,.nav-links a[aria-current]{color:var(--vivid)}
+    .menu-btn{display:none;border:0;background:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+
+    .pg-hero{padding:4.5rem 0 3rem}
+    .pg-hero p{font-size:clamp(1.05rem,1.8vw,1.2rem);color:var(--muted);max-width:640px;margin-top:1.2rem}
+
+    .quote-layout{display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:start;padding-bottom:6rem}
+    .package-list{display:flex;flex-direction:column;gap:1.1rem}
+    .package-card{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:start;background:white;border:1.5px solid var(--line);border-radius:20px;padding:1.6rem 1.7rem;transition:border-color .2s, box-shadow .2s}
+    .package-card:has(.pkg-toggle:checked){border-color:var(--vivid);box-shadow:0 6px 24px rgba(219,0,161,.12)}
+    .pkg-num{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--lime);color:var(--deep);font-family:"Fira Code",monospace;font-size:.72rem;font-weight:700}
+    .pkg-body h3{margin-bottom:.4rem}
+    .pkg-body p{color:var(--muted);font-size:.92rem;max-width:480px}
+    .pkg-body ul{margin-top:.8rem;padding-left:1.1rem;color:var(--muted);font-size:.82rem;display:flex;gap:.4rem 1.2rem;flex-wrap:wrap}
+    .pkg-body li::marker{color:var(--vivid)}
+    .pkg-side{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}
+    .pkg-price{font-family:"Fira Code",monospace;font-weight:700;color:var(--deep);font-size:1rem;white-space:nowrap}
+    .pkg-toggle-label{display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.8rem;font-weight:700;color:var(--muted);user-select:none}
+    .pkg-toggle{width:19px;height:19px;accent-color:var(--vivid);cursor:pointer}
+
+    .quote-panel{position:sticky;top:96px;background:var(--ink);color:white;border-radius:24px;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem}
+    .quote-panel h2{font-family:"DM Sans",sans-serif;font-size:1.05rem;font-weight:700}
+    .quote-panel .eyebrow{color:var(--lime)}
+    #quoteItems{list-style:none;display:flex;flex-direction:column;gap:.55rem;font-size:.85rem;min-height:1.4rem}
+    #quoteItems li{display:flex;justify-content:space-between;gap:.6rem;padding-bottom:.55rem;border-bottom:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.85)}
+    #quoteEmpty{font-size:.85rem;color:rgba(255,255,255,.5)}
+    .quote-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:.4rem;border-top:1px solid rgba(255,255,255,.18)}
+    .quote-total strong{font-family:"Fira Code",monospace;color:var(--lime);font-size:1.05rem}
+    .quote-panel .btn-primary{background:var(--lime);color:var(--ink);width:100%}
+    .quote-note{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.5}
+
+    .cta-band{background:linear-gradient(120deg,var(--deep),#3c002c);color:#fff;padding:4.2rem 0;text-align:center}
+    .cta-band h2{color:#fff;font-size:clamp(1.9rem,4vw,2.9rem);max-width:680px;margin:0 auto}
+    .cta-band p{color:rgba(255,255,255,.72);max-width:520px;margin:1.1rem auto 2rem;font-size:1.02rem}
+    .cta-band .btn-primary{background:var(--lime);color:var(--ink)}
+    .cta-band .btn-secondary{border-color:rgba(255,255,255,.5);color:#fff}
+    .cta-band .btn-secondary:hover{background:rgba(255,255,255,.12);color:#fff}
+    .cta-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+    footer{padding:2rem 0;background:#0d080c;color:rgba(255,255,255,.65)}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.8rem}
+    .footer-links{display:flex;gap:1.25rem}
+    .footer-links a:hover{color:var(--lime)}
+
+    @media(max-width:900px){
+      .quote-layout{grid-template-columns:1fr}
+      .quote-panel{position:static;order:-1}
+    }
+    @media(max-width:800px){
+      .nav-links{position:fixed;left:0;right:0;top:76px;background:var(--paper);border-bottom:1px solid var(--line);padding:1.5rem;display:none;flex-direction:column;align-items:flex-start}
+      .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+      .package-card{grid-template-columns:auto 1fr;}
+      .pkg-side{grid-column:1 / -1;flex-direction:row;justify-content:space-between;align-items:center;margin-top:.6rem}
+    }
+    @media(max-width:520px){.container{width:min(100% - 2rem,1120px)}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.package-card{padding:1.3rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html" aria-label="SM Cyber Design home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="124" height="124" rx="34" fill="#170e16"/><path d="M20 100 C 46 100, 40 66, 64 66 C 88 66, 82 32, 108 32" fill="none" stroke="#db00a1" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/><circle cx="108" cy="32" r="4.5" fill="#db00a1"/><circle cx="20" cy="100" r="4.5" fill="#db00a1"/><text x="64" y="76" font-family="'Fira Code', monospace" font-size="40" font-weight="700" fill="#d6fb51" text-anchor="middle" letter-spacing="-1">SM</text></svg></span><span>SM Cyber Design</span></a>
+      <button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="contact.html">Start a project</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="pg-hero">
+      <div class="container">
+        <p class="eyebrow">Services &amp; pricing</p>
+        <h1>Pick what your business needs. <span class="accent">See the price before you ask.</span></h1>
+        <p>Select any combination of services below and the quote panel builds your estimate as you go. When you're ready, send it straight to my inbox — no discovery call required to get a number.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="container quote-layout">
+        <form class="package-list" id="packageForm">
+
+          <div class="package-card">
+            <span class="pkg-num">01</span>
+            <div class="pkg-body">
+              <h3>Brand Strategy &amp; Visual Identity</h3>
+              <p>A recognizable brand system that expresses who you are and stays consistent across every touchpoint.</p>
+              <ul><li>Brand direction</li><li>Visual identity</li><li>Messaging</li><li>Reusable design system</li></ul>
+            </div>
+            <div class="pkg-side">
+              <span class="pkg-price">$900–$1,600</span>
+              <label class="pkg-toggle-label"><input class="pkg-toggle" type="checkbox" data-name="Brand Strategy &amp; Visual Identity" data-low="900" data-high="1600"> Add to quote</label>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <span class="pkg-num">02</span>
+            <div class="pkg-body">
+              <h3>Secure, Accessible Website</h3>
+              <p>A responsive site (up to 5 pages) that's easy to navigate, inclusive by design, and built with a security-first mindset.</p>
+              <ul><li>UX/UI design</li><li>Responsive build</li><li>Accessibility pass</li><li>Basic security hardening</li></ul>
+            </div>
+            <div class="pkg-side">
+              <span class="pkg-price">$1,800–$3,200</span>
+              <label class="pkg-toggle-label"><input class="pkg-toggle" type="checkbox" data-name="Secure, Accessible Website" data-low="1800" data-high="3200"> Add to quote</label>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <span class="pkg-num">03</span>
+            <div class="pkg-body">
+              <h3>SEO &amp; Content Optimization</h3>
+              <p>Structure, language, and search foundations so the right audience can find and understand your business.</p>
+              <ul><li>Keyword direction</li><li>Page structure</li><li>On-page SEO</li><li>Content clarity pass</li></ul>
+            </div>
+            <div class="pkg-side">
+              <span class="pkg-price">$650–$1,200</span>
+              <label class="pkg-toggle-label"><input class="pkg-toggle" type="checkbox" data-name="SEO &amp; Content Optimization" data-low="650" data-high="1200"> Add to quote</label>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <span class="pkg-num">04</span>
+            <div class="pkg-body">
+              <h3>Marketing Strategy</h3>
+              <p>A focused 60-day digital plan with clear audiences, useful content, and channels that support sustainable visibility.</p>
+              <ul><li>Audience strategy</li><li>Campaign direction</li><li>Content plan</li><li>Customer journey map</li></ul>
+            </div>
+            <div class="pkg-side">
+              <span class="pkg-price">$750–$1,400</span>
+              <label class="pkg-toggle-label"><input class="pkg-toggle" type="checkbox" data-name="Marketing Strategy" data-low="750" data-high="1400"> Add to quote</label>
+            </div>
+          </div>
+
+        </form>
+
+        <aside class="quote-panel" aria-label="Your quote">
+          <div><p class="eyebrow">Your package</p><h2>Selected services</h2></div>
+          <ul id="quoteItems"></ul>
+          <p id="quoteEmpty">Nothing selected yet — check off any service to start building your quote.</p>
+          <div class="quote-total">
+            <span>Estimated total</span>
+            <strong id="quoteTotal">$0</strong>
+          </div>
+          <a class="btn btn-primary" id="quoteCta" href="contact.html">Get my quote <span aria-hidden="true">→</span></a>
+          <p class="quote-note">Ranges reflect typical project scope. Your contact message will list exactly what you selected so I can follow up with a firm number.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Not sure which services you need?</h2>
+        <p>Tell me about your business instead, and I'll recommend a package myself — no pressure, no obligation.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="contact.html">Ask Shima for a recommendation <span aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="portfolio.html">See past work first</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
+
+  <script>
+    const menuButton=document.getElementById('menuButton');
+    const navLinks=document.getElementById('navLinks');
+    menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'×':'☰'});
+    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰'}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    const toggles = Array.from(document.querySelectorAll('.pkg-toggle'));
+    const quoteItems = document.getElementById('quoteItems');
+    const quoteEmpty = document.getElementById('quoteEmpty');
+    const quoteTotal = document.getElementById('quoteTotal');
+    const quoteCta = document.getElementById('quoteCta');
+    const fmt = n => '$' + n.toLocaleString('en-US');
+
+    function updateQuote() {
+      const selected = toggles.filter(t => t.checked);
+      quoteItems.innerHTML = '';
+      if (selected.length === 0) {
+        quoteEmpty.style.display = 'block';
+        quoteTotal.textContent = '$0';
+        quoteCta.setAttribute('href', 'contact.html');
+        return;
+      }
+      quoteEmpty.style.display = 'none';
+      let low = 0, high = 0;
+      selected.forEach(t => {
+        low += Number(t.dataset.low);
+        high += Number(t.dataset.high);
+        const li = document.createElement('li');
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = t.dataset.name;
+        const priceSpan = document.createElement('span');
+        priceSpan.textContent = fmt(Number(t.dataset.low)) + '–' + fmt(Number(t.dataset.high));
+        li.appendChild(nameSpan);
+        li.appendChild(priceSpan);
+        quoteItems.appendChild(li);
+      });
+      quoteTotal.textContent = fmt(low) + '–' + fmt(high);
+      const names = selected.map(t => t.dataset.name).join(', ');
+      const params = new URLSearchParams({ packages: names, low, high });
+      quoteCta.setAttribute('href', 'contact.html?' + params.toString());
+    }
+
+    toggles.forEach(t => t.addEventListener('change', updateQuote));
+    updateQuote();
+  </script>
+</body>
+</html>
