@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SM Cyber Design | Secure, Accessible Websites &amp; Digital Strategy</title>
-  <meta name="description" content="SM Cyber Design creates secure, accessible websites, apps, brand identities, SEO foundations, and marketing strategies for growing businesses.">
+  <meta name="description" content="SM Cyber Design brings a cybersecurity perspective to every design decision — secure websites, apps, brand identity, SEO, and marketing strategy for growing businesses.">
   <link rel="canonical" href="https://shimamudakha.design/">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SM Cyber Design">
   <meta property="og:title" content="SM Cyber Design | Secure, Accessible Websites & Digital Strategy">
-  <meta property="og:description" content="SM Cyber Design creates secure, accessible websites, apps, brand identities, SEO foundations, and marketing strategies for growing businesses.">
+  <meta property="og:description" content="SM Cyber Design brings a cybersecurity perspective to every design decision — secure websites, apps, brand identity, SEO, and marketing strategy for growing businesses.">
   <meta property="og:url" content="https://shimamudakha.design/">
   <meta property="og:image" content="https://shimamudakha.design/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SM Cyber Design | Secure, Accessible Websites & Digital Strategy">
-  <meta name="twitter:description" content="SM Cyber Design creates secure, accessible websites, apps, brand identities, SEO foundations, and marketing strategies for growing businesses.">
+  <meta name="twitter:description" content="SM Cyber Design brings a cybersecurity perspective to every design decision — secure websites, apps, brand identity, SEO, and marketing strategy for growing businesses.">
   <meta name="twitter:image" content="https://shimamudakha.design/og-image.png">
   <script type="application/ld+json">
   {
@@ -81,6 +81,32 @@
     .cta-band .btn-secondary{border-color:rgba(255,255,255,.5);color:#fff}
     .cta-band .btn-secondary:hover{background:rgba(255,255,255,.12);color:#fff}
     .cta-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .chat-widget{position:fixed;right:1.3rem;bottom:1.3rem;z-index:200}
+    .chat-fab{width:58px;height:58px;border-radius:50%;background:var(--vivid);color:white;border:none;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(146,0,107,.35);transition:.2s ease}
+    .chat-fab:hover{background:var(--deep);transform:translateY(-2px)}
+    .chat-panel{position:absolute;right:0;bottom:74px;width:min(360px,calc(100vw - 2.6rem));max-height:min(560px,70vh);background:white;border-radius:22px;border:1.5px solid var(--line);box-shadow:0 20px 50px rgba(23,14,22,.25);display:flex;flex-direction:column;overflow:hidden}
+    .chat-header{background:var(--ink);color:white;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .chat-header strong{display:block;font-size:.92rem}
+    .chat-header span{display:block;font-size:.72rem;color:rgba(255,255,255,.6);margin-top:.15rem}
+    .chat-header button{background:none;border:none;color:white;font-size:1rem;cursor:pointer;line-height:1;padding:.2rem}
+    .chat-log{flex:1;overflow-y:auto;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.65rem;min-height:120px}
+    .chat-msg{font-size:.86rem;line-height:1.5;padding:.65rem .85rem;border-radius:14px;max-width:88%}
+    .chat-msg.bot{background:var(--paper);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
+    .chat-msg.user{background:var(--vivid);color:white;align-self:flex-end;border-bottom-right-radius:4px}
+    .chat-msg a{color:var(--deep);font-weight:700}
+    .chat-msg.user a{color:white;text-decoration:underline}
+    .chat-chips{display:flex;gap:.5rem;flex-wrap:wrap;padding:0 1.1rem .8rem}
+    .chip{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-size:.74rem;font-weight:600;color:var(--deep);cursor:pointer}
+    .chip:hover{border-color:var(--vivid)}
+    .chat-form{display:flex;gap:.5rem;padding:.7rem 1.1rem;border-top:1px solid var(--line)}
+    .chat-form input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:inherit;font-size:.85rem;background:var(--paper)}
+    .chat-form input:focus{outline:none;border-color:var(--vivid)}
+    .chat-form button{width:38px;height:38px;border-radius:50%;background:var(--vivid);color:white;border:none;cursor:pointer;flex-shrink:0}
+    .chat-disclaimer{font-size:.68rem;color:var(--muted);padding:0 1.1rem .9rem;line-height:1.4}
+    .chat-disclaimer a{color:var(--deep);font-weight:700}
+    @media(max-width:480px){.chat-panel{right:-0.2rem}}
     .nav-links{display:flex;align-items:center;gap:1.7rem;list-style:none}
     .nav-links a{text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:600}
     .nav-links a:hover{color:var(--vivid)}
@@ -88,6 +114,7 @@
     .hero{position:relative;padding:7.5rem 0 5.5rem;isolation:isolate}
     .hero:before{content:"";position:absolute;z-index:-1;width:680px;height:680px;border-radius:50%;right:-260px;top:-220px;background:radial-gradient(circle,rgba(219,0,161,.17),transparent 67%)}
     .hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:var(--muted);max-width:710px;margin:1.6rem 0 2rem}
+    .hero p.slogan{font-family:"Fira Code",monospace;font-size:.95rem;color:var(--deep);font-weight:700;margin:1.1rem 0 0;letter-spacing:.01em}
     .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
     .trust-row{margin-top:4.5rem;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);color:white;border-radius:var(--radius);overflow:hidden}
     .trust-item{padding:1.5rem 1.7rem;border-right:1px solid rgba(255,255,255,.12)}
@@ -161,6 +188,7 @@
         <li><a href="#process">Process</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a class="btn btn-primary nav-cta" href="services.html">Get a quote</a>
@@ -172,7 +200,9 @@
       <div class="container">
         <p class="eyebrow">Secure digital design for growing businesses</p>
         <h1>Design that defends.<br><span class="accent">Security that empowers.</span></h1>
-        <p>SM Cyber Design helps businesses build a clear, credible digital presence through brand strategy, secure and accessible websites, thoughtful app experiences, SEO foundations, and practical marketing direction.</p>
+        <p class="slogan">Where a security mindset shapes every design decision.</p>
+        <p>SM Cyber Design helps businesses build a clear, credible digital presence through brand strategy, secure and accessible websites, thoughtful app experiences, SEO foundations, and practical marketing direction — grounded in an active, ongoing pursuit of cybersecurity expertise so every design choice is made with a defender's eye.</p>
+        <p><a href="blog.html" style="text-decoration:underline;text-decoration-color:var(--vivid);text-underline-offset:4px;font-weight:700;color:var(--deep)">Read the security &amp; design blog →</a></p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="services.html">See services &amp; pricing <span aria-hidden="true">→</span></a>
           <a class="btn btn-secondary" href="portfolio.html">Explore the portfolio</a>
@@ -252,13 +282,120 @@
     </section>
   </main>
 
-  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
+  <div id="chatWidget" class="chat-widget">
+    <button id="chatToggle" class="chat-fab" aria-expanded="false" aria-controls="chatPanel" aria-label="Open security &amp; design assistant">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4h16v12H8l-4 4V4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
+    <section id="chatPanel" class="chat-panel" role="dialog" aria-label="Security and design assistant" aria-hidden="true" hidden>
+      <header class="chat-header">
+        <div><strong>Site Assistant</strong><span>Quick answers on security &amp; design</span></div>
+        <button id="chatClose" aria-label="Close assistant" type="button">✕</button>
+      </header>
+      <div id="chatLog" class="chat-log" role="log" aria-live="polite">
+        <div class="chat-msg bot">Hi! I'm a quick-answer assistant covering common security and design questions — ask me something, or try a suggestion below.</div>
+      </div>
+      <div class="chat-chips" id="chatChips">
+        <button type="button" class="chip">Is my website secure?</button>
+        <button type="button" class="chip">What services do you offer?</button>
+        <button type="button" class="chip">How much does a website cost?</button>
+        <button type="button" class="chip">What's a strong password policy?</button>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <label for="chatInput" class="sr-only">Ask a question</label>
+        <input id="chatInput" type="text" placeholder="Ask about security or design…" autocomplete="off">
+        <button type="submit" aria-label="Send">→</button>
+      </form>
+      <p class="chat-disclaimer">A lightweight FAQ assistant, not a live AI model — for anything specific, <a href="contact.html">contact Shima directly</a>.</p>
+    </section>
+  </div>
+
+  <footer><div class="container footer-inner"><p>© <span id="year"></span> SM Cyber Design LLC. Designed with clarity, accessibility, and security in mind.</p><div class="footer-links"><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/sm-cyberdesign" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></footer>
   <script>
     const menuButton=document.getElementById('menuButton');
     const navLinks=document.getElementById('navLinks');
     menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'×':'☰'});
     navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰'}));
     document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+  <script>
+    (function(){
+      const KB = [
+        {kw:['secure','safe','is my website','website security'], a:"The essentials: HTTPS everywhere, two-factor authentication on admin and registrar accounts, regular patching of your CMS and plugins, parameterized database queries, and tested backups. I wrote a full walkthrough on the blog: <a href='website-security-fundamentals.html'>How to Make a Website Secure</a>."},
+        {kw:['service','offer','what do you do','what services'], a:"Brand strategy & visual identity, secure & accessible websites, SEO foundations, and marketing strategy — each can be booked separately. See <a href='services.html'>Services & Pricing</a> to build a custom package."},
+        {kw:['cost','price','pricing','how much','quote'], a:"It depends on scope — packages range roughly $650 to $3,200 depending on what you combine. The <a href='services.html'>Services & Pricing</a> page has a quote builder that totals it up as you select."},
+        {kw:['password','2fa','mfa','multi-factor','multi factor'], a:"Use unique passwords per account (a password manager helps), and turn on multi-factor authentication everywhere it's offered — it's the single highest-leverage security control for most small businesses."},
+        {kw:['phishing','scam','fake email','social engineering'], a:"Verify unusual or urgent requests (wire transfers, password resets, vendor changes) through a second channel you already trust — not by replying to the same email or call. More in the blog's <a href='ai-effect-on-security.html'>AI & Security</a> article."},
+        {kw:['accessible','accessibility','a11y','wcag'], a:"Accessible design means real color contrast, keyboard navigation, alt text on meaningful images, and semantic HTML so screen readers can make sense of the page — it's built into every site I design, not bolted on after."},
+        {kw:['backup','backups','restore'], a:"Back up regularly and actually test that a restore works — an untested backup is a hope, not a plan."},
+        {kw:['ux','design principle','good design','ui'], a:"Good UX starts with clarity: one primary action per screen, consistent patterns, and content that answers the visitor's actual question before asking anything of them. Security and usability aren't opposites when they're designed together from the start."},
+        {kw:['contact','talk','reach','email','get in touch'], a:"Best place is the <a href='contact.html'>contact page</a> — tell me your business, the service you need, and your timeline, and I'll follow up personally."},
+        {kw:['blog','article','read more','topics'], a:"The <a href='blog.html'>blog</a> covers website security fundamentals, AI and security, and specific technical topics like template injection and incident response frameworks."},
+        {kw:['ai','artificial intelligence','chatgpt','llm'], a:"AI is changing both sides of security — faster, more convincing attacks, but also faster detection and triage for defenders. See the <a href='ai-effect-on-security.html'>AI Effect on Security</a> article."},
+        {kw:['gdpr','privacy','data protection','ccpa'], a:"General principle: collect only what you need, encrypt sensitive data at rest, and know exactly where customer data lives and who can access it. For a specific compliance question, that's worth a direct conversation — <a href='contact.html'>reach out</a>."},
+        {kw:['who are you','shima','about'], a:"SM Cyber Design is Shima Mudakha's studio — a UX/UI designer and cybersecurity analyst bringing a security-first perspective to design work. More on the <a href='portfolio.html'>portfolio</a>."},
+        {kw:['hello','hi','hey'], a:"Hi there! Ask me about website security, accessible design, or what a project with SM Cyber Design looks like."}
+      ];
+      const FALLBACK = "I don't have a good answer for that one — it's worth a real conversation. <a href='contact.html'>Contact Shima directly</a>, or browse the <a href='blog.html'>blog</a> for related topics.";
+
+      function findAnswer(q){
+        const s = q.toLowerCase();
+        let best = null, bestScore = 0;
+        KB.forEach(entry => {
+          let score = 0;
+          entry.kw.forEach(k => { if (s.includes(k)) score += k.length; });
+          if (score > bestScore) { bestScore = score; best = entry; }
+        });
+        return best ? best.a : FALLBACK;
+      }
+
+      const toggle = document.getElementById('chatToggle');
+      const panel = document.getElementById('chatPanel');
+      const closeBtn = document.getElementById('chatClose');
+      const log = document.getElementById('chatLog');
+      const form = document.getElementById('chatForm');
+      const input = document.getElementById('chatInput');
+      const chips = document.getElementById('chatChips');
+
+      function openChat(){
+        panel.hidden = false;
+        panel.setAttribute('aria-hidden','false');
+        toggle.setAttribute('aria-expanded','true');
+        setTimeout(()=>input.focus(), 50);
+      }
+      function closeChat(){
+        panel.hidden = true;
+        panel.setAttribute('aria-hidden','true');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.focus();
+      }
+      toggle.addEventListener('click', () => panel.hidden ? openChat() : closeChat());
+      closeBtn.addEventListener('click', closeChat);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) closeChat(); });
+
+      function addMsg(text, who){
+        const div = document.createElement('div');
+        div.className = 'chat-msg ' + who;
+        div.innerHTML = text;
+        log.appendChild(div);
+        log.scrollTop = log.scrollHeight;
+      }
+
+      function ask(text){
+        if (!text.trim()) return;
+        addMsg(text.replace(/</g,'&lt;'), 'user');
+        chips.style.display = 'none';
+        setTimeout(() => addMsg(findAnswer(text), 'bot'), 350);
+      }
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        ask(input.value);
+        input.value = '';
+      });
+      chips.querySelectorAll('.chip').forEach(btn => {
+        btn.addEventListener('click', () => ask(btn.textContent));
+      });
+    })();
   </script>
 </body>
 </html>
