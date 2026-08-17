@@ -2488,12 +2488,12 @@
               <div class="stat-lbl">Certifications</div>
             </div>
             <div class="stat">
-              <div class="stat-num">4</div>
-              <div class="stat-lbl">Security Products</div>
+              <div class="stat-num">5</div>
+              <div class="stat-lbl">UX &amp; AI Projects</div>
             </div>
             <div class="stat">
-              <div class="stat-num">5</div>
-              <div class="stat-lbl">Cyber Labs &amp; Apps</div>
+              <div class="stat-num">7</div>
+              <div class="stat-lbl">Cyber Projects</div>
             </div>
           </div>
         </div>
@@ -2575,7 +2575,7 @@
     <div class="container">
       <div class="portfolio-header">
         <div>
-          <p class="section-label">Case Studies, Labs &amp; Apps</p>
+          <p class="section-label">UX Case Studies &amp; Cybersecurity Labs</p>
           <h2 id="portfolio-h2">Selected Work with Evidence</h2>
           <p style="color:var(--muted);font-size:.9rem;max-width:620px;line-height:1.75;margin-top:.35rem;">Each project
             highlights the problem solved, process, metrics, and visual evidence so recruiters can understand the
@@ -2586,7 +2586,6 @@
             Labs</button>
           <button class="lane-btn" id="laneBtn-ux" onclick="setLane('ux',this)" aria-pressed="false">UX
             Design</button>
-          <button class="lane-btn" id="laneBtn-apps" onclick="setLane('apps',this)" aria-pressed="false">Apps</button>
         </div>
       </div>
 
@@ -2662,6 +2661,60 @@
               Study</button>
           </div>
         </article>
+
+        <article class="project-card" aria-labelledby="proj-south-america">
+          <div class="project-card-img-wrap">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
+              <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
+              <path d="M54 138 C92 62, 140 150, 190 70 S262 110, 280 54" stroke="#D6fb51" stroke-width="3"
+                stroke-linecap="round" stroke-dasharray="6 6" />
+              <circle cx="55" cy="137" r="7" fill="#db00a1" />
+              <circle cx="190" cy="70" r="7" fill="#db00a1" />
+              <circle cx="280" cy="54" r="7" fill="#db00a1" />
+              <text x="34" y="42" fill="#ffffff" font-size="13" font-weight="bold"
+                font-family="sans-serif">SOUTH AMERICA EXPLORER</text>
+              <text x="34" y="166" fill="#cbd5e1" font-size="10" font-family="monospace">48 days · map · weather · currency</text>
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta"><span class="project-cat">Travel Experience Design</span><span
+                class="project-type">Responsive App</span></div>
+            <h3 id="proj-south-america">South America Explorer</h3>
+            <p>Designed and built a personalized 48-day travel experience with an interactive route map, daily itinerary
+              cards, weather context, currency conversion, and shareable trip planning.</p>
+            <button class="project-card-btn" onclick="openModal('south_america')" aria-haspopup="dialog">View UX
+              Project</button>
+          </div>
+        </article>
+
+        <article class="project-card" aria-labelledby="proj-study-guide">
+          <div class="project-card-img-wrap">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="display:block;width:100%;height:auto">
+              <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
+              <rect x="38" y="34" width="106" height="132" rx="10" fill="#1a121d" stroke="#92006B" stroke-width="1.5" />
+              <path d="M62 62 H121 M62 82 H121 M62 102 H108" stroke="#cbd5e1" stroke-width="5"
+                stroke-linecap="round" />
+              <rect x="171" y="44" width="111" height="38" rx="9" fill="rgba(214,251,81,.08)"
+                stroke="#D6fb51" />
+              <rect x="171" y="96" width="111" height="38" rx="9" fill="rgba(219,0,161,.08)"
+                stroke="#db00a1" />
+              <text x="192" y="67" fill="#D6fb51" font-size="11" font-family="sans-serif">FLASHCARDS</text>
+              <text x="202" y="119" fill="#ffffff" font-size="11" font-family="sans-serif">QUIZZES</text>
+              <text x="171" y="158" fill="#cbd5e1" font-size="10" font-family="monospace">PDF → active learning</text>
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta"><span class="project-cat">AI Learning Experience</span><span
+                class="project-type">Web App</span></div>
+            <h3 id="proj-study-guide">Interactive PDF Study Guide</h3>
+            <p>Designed an accessible AI-assisted learning flow that transforms uploaded study material into structured
+              summaries, quizzes, flashcards, visual aids, audio readings, and progress tracking.</p>
+            <button class="project-card-btn" onclick="openModal('study_guide')" aria-haspopup="dialog">View UX
+              Project</button>
+          </div>
+        </article>
       </div>
 
       <!-- Cyber Lane -->
@@ -2695,9 +2748,9 @@
           <div class="project-card-body">
             <div class="project-meta"><span class="project-cat">Security Product</span><span class="project-type">SOAR /
                 Deception</span></div>
-            <h3 id="proj-forgefire">ForgeFire™ SOAR Gateway</h3>
-            <p>Built an asynchronous active-defense platform that ingests decoy-triggered telemetry, validates safety
-              guardrails, logs forensic records, and simulates SOAR-style containment.</p>
+            <h3 id="proj-forgefire">DeceptionForge SOAR Gateway</h3>
+            <p>Built a Google AI Studio active-defense application that generates context-aware decoys, ingests
+              threat telemetry, records incidents, and supports SIEM forwarding and SOAR-style response workflows.</p>
             <button class="project-card-btn" onclick="openModal('forgefire')" aria-haspopup="dialog">View Case
               Study</button>
           </div>
@@ -2794,21 +2847,6 @@
         </article>
       </div>
 
-      <!-- Apps Lane -->
-      <div id="lane-apps" class="projects-grid hidden">
-        <article class="project-card" aria-labelledby="proj-cyber-companion">
-          <div class="project-card-placeholder" aria-hidden="true">🤖</div>
-          <div class="project-card-body">
-            <div class="project-meta"><span class="project-cat">AI Product</span><span class="project-type">App</span>
-            </div>
-            <h3 id="proj-cyber-companion">AI Cyber Safety Companion</h3>
-            <p>App concept for helping everyday users check suspicious messages, links, and online decisions with simple
-              security guidance before they click or reply.</p>
-            <button class="project-card-btn" onclick="openModal('app_cyber_companion')" aria-haspopup="dialog">View
-              App</button>
-          </div>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -2967,11 +3005,14 @@
             <button onclick="openModal('coffee')">Coffee House App</button>
             <button onclick="openModal('artish')">Artish Platform</button>
             <button onclick="openModal('paws_protect')">Paws &amp; Protect Flow</button>
+            <button onclick="openModal('south_america')">South America Explorer</button>
+            <button onclick="openModal('study_guide')">Interactive PDF Study Guide</button>
           </div>
         </div>
         <div class="footer-col">
           <h5>Cyber Labs</h5>
           <div class="footer-links">
+            <button onclick="openModal('forgefire')">DeceptionForge SOAR</button>
             <button onclick="openModal('siem')">SIEM Triage</button>
             <button onclick="openModal('vuln')">Vulnerability Mgmt</button>
             <button onclick="openModal('cloud')">Cloud IaC</button>
@@ -3011,7 +3052,7 @@
 
     // ── Lane toggle ──────────────────────────────────────────────────────────────
     function setLane(l, btn) {
-      const lanes = ['ux', 'cyber', 'apps'];
+      const lanes = ['ux', 'cyber'];
 
       lanes.forEach(name => {
         const lane = document.getElementById(`lane-${name}`);
@@ -3579,85 +3620,75 @@
       <div class="outcome-ribbon"><strong>Outcome:</strong> Post-hardening Nmap scan from the external zone showed only ports 80 and 443 visible. SSH, admin panel, and all internal services completely hidden. Every rule is documented with a reason — making the ruleset auditable, not just functional.</div>
 `
       },
-      app_cyber_companion: {
-        title: 'AI Cyber Safety Companion',
-        sub: 'AI App Concept &mdash; Human-Centered Cybersecurity &mdash; Product Build',
+      south_america: {
+        title: 'South America Explorer',
+        sub: 'UX &amp; Product Design &mdash; Google AI Studio &mdash; React &amp; TypeScript',
         body: `
-      <h4>Project Purpose</h4>
-      <p>This app helps everyday users make safer digital decisions before they click, reply, download, or share sensitive information. The goal is to translate cybersecurity judgment into simple, calm guidance that non-technical users can understand.</p>
+      <h4>Project Summary</h4>
+      <p>I designed and built <strong>South America Explorer</strong> to make a complex 48-day, multi-country journey easier to understand and manage. Instead of switching among booking documents, weather sites, maps, and currency tools, the experience brings the essential travel context into one responsive interface.</p>
       <div class="metric-grid">
-        <div class="metric-card"><strong>AI</strong><span>guided suspicious message review</span></div>
-        <div class="metric-card"><strong>UX</strong><span>plain-language risk explanation</span></div>
-        <div class="metric-card"><strong>Cyber</strong><span>phishing and social engineering focus</span></div>
-        <div class="metric-card"><strong>Trust</strong><span>decision support, not fear</span></div>
+        <div class="metric-card"><strong>48</strong><span>days organized</span></div>
+        <div class="metric-card"><strong>1</strong><span>interactive route map</span></div>
+        <div class="metric-card"><strong>Live</strong><span>weather context</span></div>
+        <div class="metric-card"><strong>Multi</strong><span>currency planning</span></div>
       </div>
-      <h4>Problem Solved</h4>
-      <p>Most people do not need a technical threat report. They need to know: Is this message suspicious? What should I check? What should I avoid doing next? This app frames cyber safety as a guided decision process instead of a scary warning.</p>
-      <h4>Core Features</h4>
-      <ul>
-        <li>Paste a suspicious message, email, or link context.</li>
-        <li>Receive a plain-English risk summary.</li>
-        <li>See the specific red flags that triggered concern.</li>
-        <li>Get safe next steps such as verifying sender identity, avoiding attachments, or contacting the organization directly.</li>
-      </ul>
-      <h4>Portfolio Update Notes</h4>
-      <p>Replace this section with the real app URL, GitHub repository, screenshots, tech stack, and any user testing results when the build is ready.</p>
-      <div class="outcome-ribbon"><strong>Positioning:</strong> This project shows your rare blend of UX, cybersecurity awareness, and AI-assisted product thinking.</div>
-    `
-      },
-      app_placeholder: {
-        title: 'New App Project Template',
-        sub: 'Reusable Portfolio Template &mdash; Replace With Your Real App Details',
-        body: `
-      <h4>What to Add Here</h4>
-      <p>Use this template for your next real app. Keep the story recruiter-friendly: problem, user, solution, technical build, security thinking, and outcome.</p>
-      <div class="m-grid-2">
-        <div class="find-card good"><strong>App Name</strong>Replace “New App Project” with the real product name.</div>
-        <div class="find-card good"><strong>Target User</strong>Who is the app for? Beginner users, small businesses, job seekers, students, analysts, etc.</div>
-        <div class="find-card good"><strong>Problem</strong>What pain point does the app solve?</div>
-        <div class="find-card good"><strong>Proof</strong>Add live demo, GitHub link, screenshots, or user feedback.</div>
-      </div>
-      <h4>Recommended App Card Format</h4>
-      <ul>
-        <li><strong>One-line value:</strong> What the app helps users do.</li>
-        <li><strong>Tech stack:</strong> Tools used to build it.</li>
-        <li><strong>Security angle:</strong> Privacy, authentication, safe defaults, threat model, or user education.</li>
-        <li><strong>Outcome:</strong> What improved, what was tested, or what was learned.</li>
-      </ul>
-      <div class="outcome-ribbon"><strong>Next update:</strong> Send me the app name, link, screenshots, and what it does. This template can be replaced with the finished project story.</div>
-    `
-      },
-      app_demo_template: {
-        title: 'App Prototype / Demo Template',
-        sub: 'Working Prototype &mdash; Demo Link &mdash; Product Build',
-        body: `
-      <h4>Purpose</h4>
-      <p>This template is for a working prototype or demo built with tools like Figma, Lovable, Bolt, Replit, GitHub Pages, or a custom HTML/CSS/JavaScript build.</p>
-      <h4>What Recruiters Should Understand</h4>
+      <h4>User Problem</h4>
+      <p>Long international trips create information overload. Travelers need to understand where they are going, what happens each day, how conditions may change, and how local costs translate—without repeatedly searching through disconnected sources.</p>
+      <h4>Experience Design</h4>
       <div class="process-timeline">
-        <div class="process-step"><b>1</b><span>Problem</span><small>What user problem started the project?</small></div>
-        <div class="process-step"><b>2</b><span>Build</span><small>What tools, code, or AI workflow did you use?</small></div>
-        <div class="process-step"><b>3</b><span>Security</span><small>How did you protect users, data, or decisions?</small></div>
-        <div class="process-step"><b>4</b><span>Test</span><small>How did you check whether it works?</small></div>
-        <div class="process-step"><b>5</b><span>Outcome</span><small>What changed after iteration?</small></div>
+        <div class="process-step"><b>1</b><span>Structure</span><small>Organized a 48-day itinerary into scannable daily cards and destinations.</small></div>
+        <div class="process-step"><b>2</b><span>Orient</span><small>Connected locations through an interactive Leaflet route map.</small></div>
+        <div class="process-step"><b>3</b><span>Prepare</span><small>Added weather context and destination-specific information.</small></div>
+        <div class="process-step"><b>4</b><span>Budget</span><small>Integrated a dynamic currency-conversion experience.</small></div>
+        <div class="process-step"><b>5</b><span>Share</span><small>Designed a modal for communicating itinerary details with others.</small></div>
       </div>
-      <h4>Links to Add</h4>
-      <ul>
-        <li>Live demo link</li>
-        <li>GitHub repository</li>
-        <li>Figma prototype</li>
-        <li>Short screen recording or screenshots</li>
-      </ul>
-      <div class="outcome-ribbon"><strong>Best use:</strong> Show that you can turn ideas into working, testable security-aware products.</div>
+      <h4>Technical Build</h4>
+      <div class="forge-stack-tags">
+        <span>Google AI Studio</span><span>React 19</span><span>TypeScript</span><span>Vite</span><span>Leaflet</span><span>Motion</span><span>Responsive Design</span>
+      </div>
+      <h4>UX Value</h4>
+      <p>This project demonstrates information architecture, map-based interaction design, responsive UI development, and the ability to turn a real personal planning challenge into a working digital product.</p>
+      <div class="outcome-ribbon"><strong>Outcome:</strong> One coherent travel dashboard replaced a fragmented planning process and made a long, multi-country itinerary easier to navigate, understand, and share.</div>
+    `
+      },
+
+      study_guide: {
+        title: 'Interactive PDF Study Guide',
+        sub: 'AI Learning Experience &mdash; Google AI Studio &mdash; Gemini &amp; React',
+        body: `
+      <h4>Project Summary</h4>
+      <p>I designed and built the <strong>Interactive PDF Study Guide</strong> to transform passive reading into an active, multimodal study experience. Users can upload study material and receive structured learning tools matched to different preparation stages.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>PDF</strong><span>content transformation</span></div>
+        <div class="metric-card"><strong>5</strong><span>question practice quizzes</span></div>
+        <div class="metric-card"><strong>AI</strong><span>generated flashcards</span></div>
+        <div class="metric-card"><strong>Audio</strong><span>accessible reading support</span></div>
+      </div>
+      <h4>User Problem</h4>
+      <p>Dense study materials are difficult to review efficiently. Learners often need separate tools for summaries, quizzes, flashcards, diagrams, audio, and exam planning, creating unnecessary cognitive and workflow friction.</p>
+      <h4>Core Experience</h4>
+      <div class="two-col">
+        <div class="find-card good"><strong>Adaptive summaries</strong>Detailed review content for the week before an exam and concise cheat sheets for the final days.</div>
+        <div class="find-card good"><strong>Practice and recall</strong>AI-generated quizzes and flashcards reinforce understanding instead of passive memorization.</div>
+        <div class="find-card good"><strong>Visual learning</strong>Structured aids support flowcharts, mind maps, comparisons, and timelines.</div>
+        <div class="find-card good"><strong>Multimodal access</strong>Gemini text-to-speech with browser speech fallback supports listening and accessibility.</div>
+      </div>
+      <h4>Technical Build</h4>
+      <div class="forge-stack-tags">
+        <span>Google AI Studio</span><span>Gemini</span><span>React 19</span><span>TypeScript</span><span>Express</span><span>Recharts</span><span>Text-to-Speech</span><span>Structured AI Output</span>
+      </div>
+      <h4>Human-Centered AI Approach</h4>
+      <p>The AI is used to reorganize and explain user-provided material, while the interface gives learners clear control over study mode, pacing, and review depth. The product combines AI generation with UX principles such as progressive disclosure, readable hierarchy, and multiple learning formats.</p>
+      <div class="outcome-ribbon"><strong>Outcome:</strong> The application turns one uploaded study resource into a unified study environment with summaries, practice, recall, visualization, audio, and progress support.</div>
     `
       },
 
       forgefire: {
-        title: 'ForgeFire™ SOAR Gateway',
+        title: 'DeceptionForge SOAR Gateway',
         sub: 'Security Product Case Study &mdash; Active Defense &middot; Deception Engineering &middot; SOAR Automation',
         body: `
       <h4>Project Summary</h4>
-      <p><strong>ForgeFire™ SOAR Gateway</strong> is an enterprise-inspired active defense platform I built to explore how deception engineering can reduce SOC alert fatigue and accelerate containment. The system uses high-fidelity decoy triggers, asynchronous FastAPI ingestion, safety validation, forensic logging, and SOAR-style response logic.</p>
+      <p><strong>DeceptionForge SOAR Gateway</strong> is an enterprise-inspired active-defense application built in Google AI Studio. It combines Gemini-assisted, context-aware decoy generation with threat ingestion, incident logging, SIEM forwarding, safety controls, and CrowdStrike Falcon SOAR playbook concepts.</p>
 
       <div class="metric-grid">
         <div class="metric-card"><strong>202</strong><span>Accepted async response</span></div>
@@ -3692,15 +3723,15 @@
       <p>SOC analysts are often overwhelmed by ambiguous telemetry, repeated alerts, and noisy false positives. That cognitive overload slows containment and makes it harder to recognize lateral movement before damage spreads.</p>
 
       <h4>The Solution</h4>
-      <p>ForgeFire shifts detection logic from ambiguous alert interpretation to deterministic deception. If a threat actor touches a honey asset, fake credential, decoy database, or isolated service, the signal is treated as high-confidence because legitimate users should have no business reason to interact with it.</p>
+      <p>DeceptionForge shifts detection logic from ambiguous alert interpretation to deterministic deception. If a threat actor touches a honey asset, fake credential, decoy database, or isolated service, the signal is treated as high-confidence because legitimate users should have no business reason to interact with it.</p>
 
       <h4>Architecture Flow</h4>
       <div class="visual-panel">
         <div class="visual-panel-title">Decoy-triggered active defense workflow</div>
         <div class="lab-flow">
           <div class="lab-node"><strong>1. Decoy</strong>Adversary touches honey asset</div>
-          <div class="lab-node"><strong>2. Ingest</strong>FastAPI receives JSON telemetry</div>
-          <div class="lab-node"><strong>3. Async</strong>HTTP 202 returned immediately</div>
+          <div class="lab-node"><strong>2. Ingest</strong>Express API receives structured threat telemetry</div>
+          <div class="lab-node"><strong>3. Enrich</strong>Gemini generates business-aware decoy context</div>
           <div class="lab-node"><strong>4. Guardrails</strong>Whitelist prevents self-DoS</div>
           <div class="lab-node"><strong>5. Response</strong>Forensic log + containment workflow</div>
         </div>
@@ -3708,7 +3739,7 @@
 
       <h4>Technical Stack</h4>
       <div class="forge-stack-tags">
-        <span>Python 3.13</span><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>asyncpg</span><span>Swagger / OpenAPI</span><span>HTTPX</span><span>pytest-asyncio</span><span>CrowdStrike API Concepts</span><span>React / TypeScript</span><span>SOAR</span><span>STRIDE</span>
+        <span>Google AI Studio</span><span>Gemini</span><span>React 19</span><span>TypeScript</span><span>Express</span><span>Recharts</span><span>Structured AI Output</span><span>SIEM Forwarding</span><span>CrowdStrike Falcon Concepts</span><span>SOAR</span>
       </div>
 
       <h4>Security Controls &amp; Threat Modeling</h4>
@@ -3721,11 +3752,11 @@
 
       <h4>Build Evidence</h4>
       <ul>
-        <li>Built and tested a FastAPI backend with Swagger/OpenAPI documentation.</li>
-        <li>Created the live <code>/api/v1/alerts/ingest</code> endpoint for simulated decoy telemetry.</li>
-        <li>Validated success and error paths, including HTTP 202 accepted responses and 422 schema validation errors.</li>
-        <li>Captured terminal logs showing simulated adversary events, mitigation queueing, and database ledger commits.</li>
-        <li>Documented architecture, STRIDE risk thinking, engineering milestones, and QA strategy.</li>
+        <li>Built a React and TypeScript security dashboard with an Express API layer.</li>
+        <li>Created threat-ingestion workflows for simulated decoy telemetry and incident records.</li>
+        <li>Used Gemini structured output to generate context-aware decoys based on business and technology context.</li>
+        <li>Implemented simulated forwarding for Splunk HEC and Elastic SIEM workflows.</li>
+        <li>Designed CrowdStrike Falcon SOAR playbook concepts, safety controls, audit visibility, and local rule-based fallback generation.</li>
       </ul>
 
       <h4>Human-Centered Security Value</h4>
@@ -3740,7 +3771,7 @@
         <div class="process-step"><b>5</b><span>Storytelling</span><small>Converted technical evidence into a recruiter-ready security product case study.</small></div>
       </div>
 
-      <div class="outcome-ribbon"><strong>Outcome:</strong> ForgeFire demonstrates my ability to combine cybersecurity architecture, product thinking, UX clarity, and AI-assisted engineering into a working proof-of-capability project.</div>
+      <div class="outcome-ribbon"><strong>Outcome:</strong> DeceptionForge demonstrates my ability to combine cybersecurity architecture, product thinking, UX clarity, and AI-assisted engineering into a working proof-of-capability project.</div>
     `
       },
 
