@@ -112,12 +112,12 @@
     .nav-links a{text-decoration:none;color:var(--muted);font-size:.88rem;font-weight:600}
     .nav-links a:hover{color:var(--vivid)}
     .menu-btn{display:none;border:0;background:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
-    .hero{position:relative;padding:7.5rem 0 5.5rem;isolation:isolate}
+    .hero{position:relative;padding:4.5rem 0 4.5rem;isolation:isolate}
     .hero:before{content:"";position:absolute;z-index:-1;width:680px;height:680px;border-radius:50%;right:-260px;top:-220px;background:radial-gradient(circle,rgba(219,0,161,.17),transparent 67%)}
-    .hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:var(--muted);max-width:710px;margin:1.6rem 0 2rem}
+    .hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:var(--muted);max-width:710px;margin:1.25rem 0 1.5rem}
     .hero p.slogan{font-family:"Fira Code",monospace;font-size:.95rem;color:var(--deep);font-weight:700;margin:1.1rem 0 0;letter-spacing:.01em}
     .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
-    .trust-row{margin-top:4.5rem;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);color:white;border-radius:var(--radius);overflow:hidden}
+    .trust-row{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);color:white;border-radius:var(--radius);overflow:hidden}
     .trust-item{padding:1.5rem 1.7rem;border-right:1px solid rgba(255,255,255,.12)}
     .trust-item:last-child{border:0}
     .trust-item strong{display:block;color:var(--lime);font-family:"Fira Code",monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
@@ -171,7 +171,7 @@
     @media(max-width:800px){
       .nav-links{position:fixed;left:0;right:0;top:76px;background:var(--paper);border-bottom:1px solid var(--line);padding:1.5rem;display:none;flex-direction:column;align-items:flex-start}
       .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
-      .hero{padding-top:5.5rem}.trust-row,.section-head,.about-grid,.contact-wrap{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+      .hero{padding-top:4rem}.trust-row,.section-head,.about-grid,.contact-wrap{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
       .section-head{gap:1.2rem}.service-grid,.outcome-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-wrap{gap:2.5rem}
     }
     @media(max-width:520px){.container{width:min(100% - 2rem,1120px)}section{padding:5rem 0}.process-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.service-card{padding:1.5rem}}
