@@ -133,6 +133,9 @@
     section{padding:6.5rem 0}
     .section-head{display:grid;grid-template-columns:1fr 1.62fr;gap:4rem;align-items:end;margin-bottom:3rem}
     .section-head p{color:var(--muted);font-size:1.05rem;max-width:580px}
+    .services .section-head{display:block}
+    .services .section-head h2{font-size:clamp(2.2rem,3.5vw,2.75rem);max-width:none;white-space:nowrap}
+    .services .section-head>p{margin-top:1rem;max-width:780px}
     .services{background:white}
     .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
     .service-card{position:relative;padding:2.1rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);min-height:270px;overflow:hidden}
@@ -181,6 +184,7 @@
       .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
       .hero{padding-top:3rem}.hero .container{width:min(100% - 3rem,1120px)}.hero-grid,.trust-row,.section-head,.about-grid,.contact-wrap{grid-template-columns:1fr}.hero-animation{justify-self:center;width:min(100%,420px);margin-top:.5rem}.trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
       .section-head{gap:1.2rem}.service-grid,.outcome-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-wrap{gap:2.5rem}
+      .services .section-head h2{white-space:normal}
     }
     @media(max-width:520px){.container,.hero .container{width:min(100% - 2rem,1120px)}section{padding:5rem 0}.process-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.service-card{padding:1.5rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.hero-animation{display:none}.hero-grid{grid-template-columns:1fr}}
