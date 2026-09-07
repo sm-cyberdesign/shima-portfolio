@@ -231,9 +231,9 @@
     <section class="consultation" id="consultation" aria-labelledby="consultation-title">
       <div class="container consultation-grid">
         <div class="consultation-copy">
-          <p class="eyebrow">Free 10-minute consultation</p>
+          <p class="eyebrow">Free consultation</p>
           <h2 id="consultation-title">Not sure what you need yet?</h2>
-          <p>Request a short, no-pressure call. Tell me what feels unclear, and I’ll help you identify the most useful next step.</p>
+          <p>Request a free 20-minute, no-pressure call. Tell me what feels unclear, and I’ll help you identify the most useful next step.</p>
           <ol class="consultation-steps">
             <li><span>01</span><div>Choose a preferred date and time.</div></li>
             <li><span>02</span><div>I review your request and confirm availability by email.</div></li>
@@ -241,7 +241,8 @@
           </ol>
         </div>
         <form class="booking-form" id="consultationForm" action="https://formspree.io/f/mqejlbkl" method="POST">
-          <input type="hidden" name="_subject" value="10-minute consultation request — SM Cyber Design">
+          <input type="hidden" name="_subject" value="Consultation call request — SM Cyber Design">
+          <input type="hidden" name="call_duration" value="20 minutes">
           <input type="hidden" name="meeting_platform" value="Google Meet after email confirmation">
           <div class="form-group">
             <label for="consultName">Name</label>
@@ -263,7 +264,7 @@
             <label for="consultNeed">What would you like help clarifying?</label>
             <textarea id="consultNeed" name="consultation_topic" placeholder="A website, brand, security concern, marketing direction, or something else…" required></textarea>
           </div>
-          <button class="btn btn-primary full" type="submit">Request my free 10-minute call <span aria-hidden="true">→</span></button>
+          <button class="btn btn-primary full" type="submit">Request a call <span aria-hidden="true">→</span></button>
           <p class="booking-note">This is a request, not an automatic booking. I’ll email you to confirm the time before sending the Google Meet link.</p>
           <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite">Request sent. I’ll review your preferred time and reply by email with confirmation and a Google Meet invitation.</div>
         </form>
@@ -273,9 +274,9 @@
     <section class="cta-band">
       <div class="container">
         <h2>Not sure which services you need?</h2>
-        <p>Tell me about your business or request a free 10-minute call, and I’ll help you identify the best next step.</p>
+        <p>Tell me about your business or request a free consultation call, and I’ll help you identify the best next step.</p>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="#consultation">Request a free 10-minute call <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" href="#consultation">Request a call <span aria-hidden="true">→</span></a>
           <a class="btn btn-secondary" href="portfolio.html">See past work first</a>
         </div>
       </div>
