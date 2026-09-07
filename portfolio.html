@@ -126,6 +126,12 @@
       line-height: 1.4;
     }
 
+    .secure-terminal-mode .resume-availability {
+      color: #f4f7ef !important;
+      background: rgba(214, 251, 81, .1) !important;
+      border-color: rgba(214, 251, 81, .55) !important;
+    }
+
     .nav-logo-divider {
       width: 1px;
       height: 1rem;
@@ -2482,7 +2488,7 @@
               <div class="stat-lbl">UX &amp; AI Projects</div>
             </div>
             <div class="stat">
-              <div class="stat-num">7</div>
+              <div class="stat-num">8</div>
               <div class="stat-lbl">Cyber Projects</div>
             </div>
           </div>
@@ -2709,6 +2715,26 @@
 
       <!-- Cyber Lane -->
       <div id="lane-cyber" class="projects-grid">
+        <article class="project-card" aria-labelledby="proj-trading-agent">
+          <div class="project-card-img-wrap">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto">
+              <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#D6fb51" stroke-width="2" />
+              <path d="M38 142 L90 112 L132 124 L184 74 L226 92 L282 48" stroke="#D6fb51" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M38 158 H282" stroke="rgba(255,255,255,.2)" />
+              <rect x="38" y="38" width="118" height="28" rx="7" fill="rgba(219,0,161,.12)" stroke="#db00a1" />
+              <text x="51" y="56" fill="#ffffff" font-size="10" font-family="monospace">AI AGENT / PAPER API</text>
+              <circle cx="282" cy="48" r="6" fill="#db00a1" />
+              <text x="38" y="177" fill="#cbd5e1" font-size="9" font-family="monospace">guardrails · validation · audit logs</text>
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta"><span class="project-cat">AI Security Project</span><span class="project-type">Automation / APIs</span></div>
+            <h3 id="proj-trading-agent">Secure AI Trading Agent</h3>
+            <p>Built an AI-assisted market research and paper-trading workflow with protected API access, validation checks, human approval controls, and auditable activity logs.</p>
+            <button class="project-card-btn" onclick="openModal('trading_agent')" aria-haspopup="dialog">View Project Details</button>
+          </div>
+        </article>
+
         <article class="project-card" aria-labelledby="proj-forgefire">
           <div class="project-card-img-wrap">
             <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -3003,6 +3029,7 @@
           <h5>Cyber Labs</h5>
           <div class="footer-links">
             <button onclick="openModal('forgefire')">DeceptionForge SOAR</button>
+            <button onclick="openModal('trading_agent')">Secure AI Trading Agent</button>
             <button onclick="openModal('siem')">SIEM Triage</button>
             <button onclick="openModal('vuln')">Vulnerability Mgmt</button>
             <button onclick="openModal('cloud')">Cloud IaC</button>
@@ -3059,6 +3086,30 @@
 
     // ── Modal data ───────────────────────────────────────────────────────────────
     const MD = {
+      trading_agent: {
+        title: 'Secure AI Trading Agent',
+        sub: 'AI Automation Project &mdash; Python &mdash; Claude &mdash; Alpaca Paper Trading API &mdash; Git/GitHub',
+        body: `
+      <h4>Project Overview</h4>
+      <p>Designed and built an AI-assisted workflow for market research, structured decision support, and paper-trading execution. This portfolio summary focuses on the system architecture, tools, and security controls; the proprietary strategy, prompts, thresholds, and financial details are intentionally not disclosed.</p>
+      <div class="metric-grid">
+        <div class="metric-card"><strong>Python</strong><span>workflow and validation logic</span></div>
+        <div class="metric-card"><strong>Claude</strong><span>AI-assisted research and analysis</span></div>
+        <div class="metric-card"><strong>Alpaca API</strong><span>paper-trading integration</span></div>
+        <div class="metric-card"><strong>Git/GitHub</strong><span>version control and change history</span></div>
+      </div>
+      <h4>Security &amp; Reliability Design</h4>
+      <div class="two-col">
+        <div class="find-card good"><strong>Protected credentials</strong>API keys are kept outside the codebase using environment-based configuration and are never displayed in the interface or committed to version control.</div>
+        <div class="find-card good"><strong>Paper-first testing</strong>Automation is validated in a paper-trading environment before any consideration of live execution.</div>
+        <div class="find-card good"><strong>Human approval</strong>The agent supports analysis and preparation while retaining a deliberate human decision point for consequential actions.</div>
+        <div class="find-card good"><strong>Auditable workflow</strong>Structured logs and version history make system behavior easier to review, troubleshoot, and improve.</div>
+      </div>
+      <h4>Tools Used</h4>
+      <div class="forge-stack-tags"><span>Python</span><span>Claude</span><span>Alpaca Paper Trading API</span><span>REST APIs</span><span>Environment Variables</span><span>Git</span><span>GitHub</span></div>
+      <div class="outcome-ribbon"><strong>Outcome:</strong> A security-conscious AI automation prototype that demonstrates API integration, credential protection, validation, logging, and human-in-the-loop controls without exposing the private trading methodology.</div>
+`
+      },
       foodwill: {
         title: 'FoodWill Donation Service',
         sub: 'UX Case Study &mdash; Mobile App &mdash; Google UX Design Certificate &mdash; Figma',
