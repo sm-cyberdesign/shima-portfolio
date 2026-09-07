@@ -114,9 +114,14 @@
     .menu-btn{display:none;border:0;background:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
     .hero{position:relative;padding:4.5rem 0 4.5rem;isolation:isolate}
     .hero:before{content:"";position:absolute;z-index:-1;width:680px;height:680px;border-radius:50%;right:-260px;top:-220px;background:radial-gradient(circle,rgba(219,0,161,.17),transparent 67%)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:3.5rem;align-items:center}
+    .hero-copy{min-width:0}
     .hero p{font-size:clamp(1.08rem,2vw,1.28rem);color:var(--muted);max-width:710px;margin:1.25rem 0 1.5rem}
     .hero p.slogan{font-family:"Fira Code",monospace;font-size:.95rem;color:var(--deep);font-weight:700;margin:1.1rem 0 0;letter-spacing:.01em}
     .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+    .hero-animation{justify-self:end;width:min(100%,450px);aspect-ratio:1;background:#0e090c;border:1px solid rgba(146,0,107,.2);border-radius:28px;overflow:hidden;box-shadow:0 24px 60px rgba(23,14,22,.18);position:relative}
+    .hero-animation:after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(214,251,81,.08);pointer-events:none}
+    .hero-animation iframe{display:block;width:100%;height:100%;border:0;background:#0e090c;pointer-events:none}
     .trust-row{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);color:white;border-radius:var(--radius);overflow:hidden}
     .trust-item{padding:1.5rem 1.7rem;border-right:1px solid rgba(255,255,255,.12)}
     .trust-item:last-child{border:0}
@@ -171,11 +176,11 @@
     @media(max-width:800px){
       .nav-links{position:fixed;left:0;right:0;top:76px;background:var(--paper);border-bottom:1px solid var(--line);padding:1.5rem;display:none;flex-direction:column;align-items:flex-start}
       .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
-      .hero{padding-top:4rem}.trust-row,.section-head,.about-grid,.contact-wrap{grid-template-columns:1fr}.trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+      .hero{padding-top:4rem}.hero-grid,.trust-row,.section-head,.about-grid,.contact-wrap{grid-template-columns:1fr}.hero-animation{justify-self:center;width:min(100%,420px);margin-top:.5rem}.trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
       .section-head{gap:1.2rem}.service-grid,.outcome-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-wrap{gap:2.5rem}
     }
     @media(max-width:520px){.container{width:min(100% - 2rem,1120px)}section{padding:5rem 0}.process-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.service-card{padding:1.5rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.hero-animation{display:none}.hero-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -199,14 +204,21 @@
   <main id="main">
     <header class="hero">
       <div class="container">
-        <p class="eyebrow">Secure digital design for growing businesses</p>
-        <h1>Design that defends.<br><span class="accent">Security that empowers.</span></h1>
-        <p class="slogan">Where a security mindset shapes every design decision.</p>
-        <p>SM Cyber Design helps businesses build a clear, credible digital presence through brand strategy, secure and accessible websites, thoughtful app experiences, SEO foundations, and practical marketing direction — grounded in an active, ongoing pursuit of cybersecurity expertise so every design choice is made with a defender's eye.</p>
-        <p><a href="blog.html" style="text-decoration:underline;text-decoration-color:var(--vivid);text-underline-offset:4px;font-weight:700;color:var(--deep)">Read the security &amp; design blog →</a></p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="services.html">See services &amp; pricing <span aria-hidden="true">→</span></a>
-          <a class="btn btn-secondary" href="portfolio.html">Explore the portfolio</a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Secure digital design for growing businesses</p>
+            <h1>Design that defends.<br><span class="accent">Security that empowers.</span></h1>
+            <p class="slogan">Where a security mindset shapes every design decision.</p>
+            <p>SM Cyber Design helps businesses build a clear, credible digital presence through brand strategy, secure and accessible websites, thoughtful app experiences, SEO foundations, and practical marketing direction — grounded in an active, ongoing pursuit of cybersecurity expertise so every design choice is made with a defender's eye.</p>
+            <p><a href="blog.html" style="text-decoration:underline;text-decoration-color:var(--vivid);text-underline-offset:4px;font-weight:700;color:var(--deep)">Read the security &amp; design blog →</a></p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="services.html">See services &amp; pricing <span aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="portfolio.html">Explore the portfolio</a>
+            </div>
+          </div>
+          <div class="hero-animation" aria-label="Animated overview of SM Cyber Design services">
+            <iframe src="services-teaser/index.html" title="SM Cyber Design services animation" loading="eager" tabindex="-1"></iframe>
+          </div>
         </div>
         <div class="trust-row" aria-label="SM Cyber Design principles">
           <div class="trust-item"><strong>Security-first</strong><span>Protection considered from the start—not added at the end.</span></div>
