@@ -781,6 +781,7 @@
       cursor: pointer;
       font-family: inherit;
       transition: background .2s;
+      text-decoration: none;
     }
 
     .project-card-btn:hover {
@@ -2484,7 +2485,7 @@
               <div class="stat-lbl">Certifications</div>
             </div>
             <div class="stat">
-              <div class="stat-num">5</div>
+              <div class="stat-num">6</div>
               <div class="stat-lbl">UX &amp; AI Projects</div>
             </div>
             <div class="stat">
@@ -2571,22 +2572,40 @@
     <div class="container">
       <div class="portfolio-header">
         <div>
-          <p class="section-label">UX Case Studies &amp; Cybersecurity Labs</p>
+          <p class="section-label">Client Work, UX Case Studies &amp; Cybersecurity Labs</p>
           <h2 id="portfolio-h2">Selected Work with Evidence</h2>
           <p style="color:var(--muted);font-size:.9rem;max-width:620px;line-height:1.75;margin-top:.35rem;">Each project
-            highlights the problem solved, process, metrics, and visual evidence so recruiters can understand the
+            highlights the problem addressed, process, and available evidence so recruiters and prospective clients can understand the
             security thinking, product-building ability, and human-centered impact quickly.</p>
         </div>
         <div class="lane-toggle" role="group" aria-label="Filter work">
           <button class="lane-btn active" id="laneBtn-cyber" onclick="setLane('cyber',this)" aria-pressed="true">Cyber
             Labs</button>
-          <button class="lane-btn" id="laneBtn-ux" onclick="setLane('ux',this)" aria-pressed="false">UX
-            Design</button>
+          <button class="lane-btn" id="laneBtn-ux" onclick="setLane('ux',this)" aria-pressed="false">Client &amp; UX
+            Work</button>
         </div>
       </div>
 
       <!-- UX Lane -->
       <div id="lane-ux" class="projects-grid hidden">
+        <article class="project-card" aria-labelledby="proj-clever">
+          <div class="project-card-img-wrap">
+            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto">
+              <rect x="10" y="10" width="300" height="180" rx="16" fill="#120c14" stroke="#db00a1" stroke-width="2" />
+              <path d="M42 52H278M42 86H222M42 120H252" stroke="#D6fb51" stroke-width="5" stroke-linecap="round" opacity=".85" />
+              <rect x="42" y="145" width="112" height="24" rx="12" fill="#92006B" />
+              <text x="56" y="161" fill="#ffffff" font-size="9" font-family="monospace">CLEARER ACTIONS</text>
+              <text x="278" y="166" fill="#ffffff" font-size="16" font-weight="700" text-anchor="end" font-family="sans-serif">C-LEVER</text>
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <div class="project-meta"><span class="project-cat">Client Work</span><span class="project-type">Website Redesign Concept</span></div>
+            <h3 id="proj-clever">C-Lever Professional Services</h3>
+            <p>Developed a website redesign concept for a cybersecurity leadership consultancy, focusing on clearer service communication, stronger visual hierarchy, easier navigation, and more visible calls to action.</p>
+            <a class="project-card-btn" href="https://clever-ps.com/" target="_blank" rel="noopener noreferrer">Visit Client Website</a>
+          </div>
+        </article>
+
         <article class="project-card" aria-labelledby="proj-fw">
           <div class="project-card-img-wrap">
             <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg"
