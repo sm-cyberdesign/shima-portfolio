@@ -218,7 +218,7 @@
             </div>
           </div>
           <div class="hero-animation" aria-label="Animated overview of SM Cyber Design services">
-            <iframe src="services-teaser/index.html" title="SM Cyber Design services animation" loading="eager" tabindex="-1"></iframe>
+            <iframe id="servicesAnimation" src="services-teaser/index.html" title="SM Cyber Design services animation" loading="eager" tabindex="-1"></iframe>
           </div>
         </div>
         <div class="trust-row" aria-label="SM Cyber Design principles">
@@ -330,6 +330,16 @@
     menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'×':'☰'});
     navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰'}));
     document.getElementById('year').textContent=new Date().getFullYear();
+    const servicesAnimation=document.getElementById('servicesAnimation');
+    if(servicesAnimation&&'IntersectionObserver' in window){
+      let animationWasVisible=true;
+      const animationObserver=new IntersectionObserver(entries=>{
+        const isVisible=entries[0].isIntersecting;
+        if(isVisible&&!animationWasVisible) servicesAnimation.contentWindow.location.reload();
+        animationWasVisible=isVisible;
+      },{threshold:.35});
+      animationObserver.observe(servicesAnimation);
+    }
   </script>
   <script>
     (function(){
