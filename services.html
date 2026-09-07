@@ -91,6 +91,24 @@
     .cta-band .btn-secondary:hover{background:rgba(255,255,255,.12);color:#fff}
     .cta-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 
+    .consultation{padding:5.5rem 0;background:white}
+    .consultation-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start}
+    .consultation-copy p:not(.eyebrow){color:var(--muted);margin-top:1rem;max-width:470px}
+    .consultation-steps{list-style:none;margin-top:1.6rem;display:grid;gap:.8rem}
+    .consultation-steps li{display:flex;gap:.75rem;align-items:flex-start;color:var(--muted);font-size:.92rem}
+    .consultation-steps span{display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:50%;background:var(--lime);color:var(--deep);font-family:"Fira Code",monospace;font-size:.7rem;font-weight:700}
+    .booking-form{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .booking-form .full{grid-column:1 / -1}
+    .form-group{display:flex;flex-direction:column;gap:.4rem}
+    .form-group label{font-size:.82rem;font-weight:700;color:var(--ink)}
+    .form-group input,.form-group textarea{width:100%;border:1.5px solid rgba(146,0,107,.22);border-radius:12px;padding:.78rem .9rem;background:white;color:var(--ink);font:inherit;font-size:.92rem}
+    .form-group textarea{min-height:105px;resize:vertical}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--vivid);box-shadow:0 0 0 3px rgba(219,0,161,.1)}
+    .booking-form .btn{justify-self:start}
+    .booking-note{grid-column:1 / -1;font-size:.78rem;color:var(--muted);line-height:1.5}
+    .booking-success{display:none;grid-column:1 / -1;padding:.85rem 1rem;border-radius:12px;background:rgba(146,0,107,.08);color:var(--deep);font-weight:700;font-size:.88rem}
+    .booking-success.show{display:block}
+
     footer{padding:2rem 0;background:#0d080c;color:rgba(255,255,255,.65)}
     .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.8rem}
     .footer-links{display:flex;gap:1.25rem}
@@ -99,6 +117,7 @@
     @media(max-width:900px){
       .quote-layout{grid-template-columns:1fr}
       .quote-panel{position:static;order:-1}
+      .consultation-grid{grid-template-columns:1fr;gap:2rem}
     }
     @media(max-width:800px){
       .nav-links{position:fixed;left:0;right:0;top:76px;background:var(--paper);border-bottom:1px solid var(--line);padding:1.5rem;display:none;flex-direction:column;align-items:flex-start}
@@ -106,7 +125,7 @@
       .package-card{grid-template-columns:auto 1fr;}
       .pkg-side{grid-column:1 / -1;flex-direction:row;justify-content:space-between;align-items:center;margin-top:.6rem}
     }
-    @media(max-width:520px){.container{width:min(100% - 2rem,1120px)}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.package-card{padding:1.3rem}}
+    @media(max-width:520px){.container{width:min(100% - 2rem,1120px)}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}.package-card{padding:1.3rem}.booking-form{grid-template-columns:1fr;padding:1.3rem}.booking-form .full{grid-column:auto}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
@@ -209,12 +228,54 @@
       </div>
     </section>
 
+    <section class="consultation" id="consultation" aria-labelledby="consultation-title">
+      <div class="container consultation-grid">
+        <div class="consultation-copy">
+          <p class="eyebrow">Free 10-minute consultation</p>
+          <h2 id="consultation-title">Not sure what you need yet?</h2>
+          <p>Request a short, no-pressure call. Tell me what feels unclear, and I’ll help you identify the most useful next step.</p>
+          <ol class="consultation-steps">
+            <li><span>01</span><div>Choose a preferred date and time.</div></li>
+            <li><span>02</span><div>I review your request and confirm availability by email.</div></li>
+            <li><span>03</span><div>Once confirmed, you receive a Google Meet invitation.</div></li>
+          </ol>
+        </div>
+        <form class="booking-form" id="consultationForm" action="https://formspree.io/f/mqejlbkl" method="POST">
+          <input type="hidden" name="_subject" value="10-minute consultation request — SM Cyber Design">
+          <input type="hidden" name="meeting_platform" value="Google Meet after email confirmation">
+          <div class="form-group">
+            <label for="consultName">Name</label>
+            <input id="consultName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="consultEmail">Email</label>
+            <input id="consultEmail" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label for="consultDate">Preferred date</label>
+            <input id="consultDate" name="preferred_date" type="date" required>
+          </div>
+          <div class="form-group">
+            <label for="consultTime">Preferred time and time zone</label>
+            <input id="consultTime" name="preferred_time_and_timezone" type="text" placeholder="Example: 2:00 PM ET" required>
+          </div>
+          <div class="form-group full">
+            <label for="consultNeed">What would you like help clarifying?</label>
+            <textarea id="consultNeed" name="consultation_topic" placeholder="A website, brand, security concern, marketing direction, or something else…" required></textarea>
+          </div>
+          <button class="btn btn-primary full" type="submit">Request my free 10-minute call <span aria-hidden="true">→</span></button>
+          <p class="booking-note">This is a request, not an automatic booking. I’ll email you to confirm the time before sending the Google Meet link.</p>
+          <div class="booking-success" id="bookingSuccess" role="status" aria-live="polite">Request sent. I’ll review your preferred time and reply by email with confirmation and a Google Meet invitation.</div>
+        </form>
+      </div>
+    </section>
+
     <section class="cta-band">
       <div class="container">
         <h2>Not sure which services you need?</h2>
-        <p>Tell me about your business instead, and I'll recommend a package myself — no pressure, no obligation.</p>
+        <p>Tell me about your business or request a free 10-minute call, and I’ll help you identify the best next step.</p>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="contact.html">Ask Shima for a recommendation <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" href="#consultation">Request a free 10-minute call <span aria-hidden="true">→</span></a>
           <a class="btn btn-secondary" href="portfolio.html">See past work first</a>
         </div>
       </div>
@@ -268,6 +329,33 @@
 
     toggles.forEach(t => t.addEventListener('change', updateQuote));
     updateQuote();
+
+    const consultationForm = document.getElementById('consultationForm');
+    const bookingSuccess = document.getElementById('bookingSuccess');
+    const preferredDate = document.getElementById('consultDate');
+    preferredDate.min = new Date().toISOString().split('T')[0];
+    consultationForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const submitButton = consultationForm.querySelector('button[type="submit"]');
+      const originalLabel = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending request…';
+      try {
+        const response = await fetch(consultationForm.action, {
+          method: 'POST',
+          body: new FormData(consultationForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Request failed');
+        consultationForm.reset();
+        bookingSuccess.classList.add('show');
+      } catch (error) {
+        alert('The request could not be sent. Please email shmtlb@gmail.com directly.');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalLabel;
+      }
+    });
   </script>
 </body>
 </html>
