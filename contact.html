@@ -156,7 +156,7 @@
           <aside class="contact-card" aria-label="Project inquiry details">
             <strong>A useful first message includes</strong>
             <p>Your business or organization, the service you need, your main challenge, and any timeline you have in mind.</p>
-            <a href="mailto:shmtlb@gmail.com">shmtlb@gmail.com</a>
+            <span>Use the secure contact form to get in touch.</span>
           </aside>
           <aside class="contact-card" aria-label="Other ways to connect">
             <strong>Prefer another way?</strong>
@@ -222,11 +222,11 @@
           submitBtn.textContent = 'Send message';
         } else {
           submitBtn.textContent = 'Send message';
-          alert('Something went wrong sending your message. Please email shmtlb@gmail.com directly.');
+          alert('Something went wrong sending your message. Please try again in a moment.');
         }
       } catch (err) {
         submitBtn.textContent = 'Send message';
-        alert('Something went wrong sending your message. Please email shmtlb@gmail.com directly.');
+        alert('Something went wrong sending your message. Please try again in a moment.');
       }
       submitBtn.disabled = false;
     });
