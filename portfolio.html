@@ -622,6 +622,142 @@
       margin-bottom: 2px;
     }
 
+    /* ── PORTFOLIO PROOF ── */
+    .proof-strip {
+      background: var(--dark);
+      color: #fff;
+      padding: 1.4rem 0;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .proof-item {
+      padding: .45rem 1.5rem;
+      border-right: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .proof-item:last-child { border-right: 0; }
+
+    .proof-item strong {
+      display: block;
+      color: var(--lime);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .25rem;
+    }
+
+    .proof-item span {
+      color: rgba(255, 255, 255, .72);
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    /* ── HOME LAB, METHOD & TECHNICAL SKILLS ── */
+    .security-practice { background: var(--white); }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .practice-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.6rem;
+    }
+
+    .practice-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      margin-bottom: .65rem;
+    }
+
+    .practice-card p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    .practice-list {
+      list-style: none;
+      display: grid;
+      gap: .55rem;
+      margin-top: 1rem;
+    }
+
+    .practice-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .practice-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--vivid);
+      font-weight: 800;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .8rem;
+      margin: 2.5rem 0;
+    }
+
+    .method-step {
+      border-top: 3px solid var(--vivid);
+      background: var(--bg);
+      border-radius: 0 0 14px 14px;
+      padding: 1.2rem;
+    }
+
+    .method-step span {
+      color: var(--vivid);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .method-step h3 { font-size: 1rem; margin: .45rem 0; }
+    .method-step p { color: var(--muted); font-size: .8rem; line-height: 1.55; }
+
+    .technical-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+    }
+
+    .technical-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    .technical-card strong {
+      display: block;
+      color: var(--deep);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .35rem;
+    }
+
+    .technical-card span { color: var(--muted); font-size: .8rem; line-height: 1.55; }
+
     /* ── PORTFOLIO ── */
     .portfolio-header {
       display: flex;
@@ -1441,6 +1577,21 @@
         gap: 2.5rem;
       }
 
+      .proof-grid,
+      .technical-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .14);
+        padding: .75rem 0;
+      }
+
+      .proof-item:last-child { border-bottom: 0; }
+
+      .method-grid { grid-template-columns: 1fr 1fr; }
+
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1556,6 +1707,9 @@
       }
 
       /* ── GENERAL ── */
+      .practice-grid,
+      .method-grid { grid-template-columns: 1fr; }
+
       section {
         padding: 3rem 0;
       }
@@ -2519,6 +2673,15 @@
     </div>
   </section>
 
+  <!-- PORTFOLIO PROOF -->
+  <section class="proof-strip" aria-label="Portfolio evidence">
+    <div class="container proof-grid">
+      <div class="proof-item"><strong>Hands-on</strong><span>Documented cybersecurity projects built through practical labs and independent work.</span></div>
+      <div class="proof-item"><strong>Verifiable</strong><span>Supporting files and technical evidence are available on GitHub.</span></div>
+      <div class="proof-item"><strong>Clear</strong><span>Findings and recommendations are written for the people who need to act.</span></div>
+    </div>
+  </section>
+
   <!-- CERT STRIP -->
   <div class="cert-strip" aria-hidden="true">
     <div style="overflow:hidden">
@@ -2546,7 +2709,7 @@
         <p>My work connects cybersecurity analysis, secure UX thinking, AI-assisted documentation, and product-minded
           security projects. I care about reducing alert fatigue, preventing unsafe workarounds, and translating
           technical risk into clear decisions for users, teams, and organizations.</p>
-        <p><strong>Professional memberships:</strong> ISC2 Tampa Bay Chapter and WASP.</p>
+        <p><strong>Professional memberships:</strong> ISC2 Tampa Bay Chapter and OWASP.</p>
         <div class="skill-grid" role="list">
           <div class="skill-tag" role="listitem"><strong>Human-Centered Security</strong>Designing security around real
             behavior, trust, clarity, and decision-making.</div>
@@ -2932,6 +3095,55 @@
         </article>
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- SECURITY PRACTICE -->
+  <section id="security-practice" class="security-practice" aria-labelledby="security-practice-h2">
+    <div class="container">
+      <p class="section-label">Technical Practice</p>
+      <h2 id="security-practice-h2">Where I test, investigate, and build.</h2>
+      <p style="color:var(--muted);font-size:.92rem;max-width:720px;line-height:1.75;">My home lab gives me a controlled environment for practicing network defense, system administration, traffic analysis, incident investigation, and clear technical documentation.</p>
+
+      <div class="practice-grid">
+        <article class="practice-card">
+          <h3>Segmented Home Lab</h3>
+          <p>A virtual environment used to test security controls, observe system behavior, and document repeatable defensive workflows.</p>
+          <ul class="practice-list">
+            <li>Kali Linux, Ubuntu Desktop and Server, and Windows systems</li>
+            <li>OPNsense firewall, access-control rules, NAT, and segmentation</li>
+            <li>Wireshark, tcpdump, Nmap, and security-log analysis</li>
+            <li>Web, SSH, syslog, and certificate-service testing</li>
+          </ul>
+        </article>
+        <article class="practice-card">
+          <h3>Evidence-Driven Work</h3>
+          <p>Each lab connects technical activity to an understandable security decision rather than presenting tools without context.</p>
+          <ul class="practice-list">
+            <li>State the security problem and expected outcome</li>
+            <li>Capture relevant logs, traffic, configurations, or screenshots</li>
+            <li>Explain findings, limitations, and recommended next actions</li>
+            <li>Publish supporting evidence when it is safe to share</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="method-grid" aria-label="Cybersecurity investigation method">
+        <article class="method-step"><span>01 / Detect</span><h3>Collect</h3><p>Gather signals and organize repeated noise into a clearer picture.</p></article>
+        <article class="method-step"><span>02 / Prioritize</span><h3>Rank</h3><p>Evaluate severity, evidence, and affected systems to decide what comes first.</p></article>
+        <article class="method-step"><span>03 / Respond</span><h3>Recommend</h3><p>Propose practical containment, remediation, or follow-up actions.</p></article>
+        <article class="method-step"><span>04 / Explain</span><h3>Communicate</h3><p>Translate technical findings for both technical and nontechnical audiences.</p></article>
+      </div>
+
+      <div class="technical-grid" aria-label="Technical skills">
+        <div class="technical-card"><strong>Security Operations</strong><span>Alert triage, SIEM concepts, log review, and incident investigation</span></div>
+        <div class="technical-card"><strong>Network Security</strong><span>Wireshark, tcpdump, Nmap, OPNsense, ACLs, NAT, and segmentation</span></div>
+        <div class="technical-card"><strong>Systems</strong><span>Linux, Ubuntu Server, Windows, SSH, Apache, syslog, and UFW</span></div>
+        <div class="technical-card"><strong>Vulnerability Management</strong><span>Assessment, risk prioritization, remediation planning, and validation</span></div>
+        <div class="technical-card"><strong>Security Engineering</strong><span>TLS, PKI, certificates, least privilege, and secure configuration</span></div>
+        <div class="technical-card"><strong>Supporting Skills</strong><span>SQL, beginner Python, Figma, technical documentation, and accessible communication</span></div>
+      </div>
     </div>
   </section>
 
