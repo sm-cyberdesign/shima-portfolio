@@ -3025,9 +3025,6 @@
           <p>Open to full-time cybersecurity analyst roles, UX/security hybrid positions, and contract engagements.
             Based in Atlanta, GA &mdash; available remotely nationwide.</p>
           <div class="contact-links">
-            <a href="mailto:shmtlb@gmail.com" class="contact-link">
-              <div class="contact-link-icon">✉</div>shmtlb@gmail.com
-            </a>
             <a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer"
               class="contact-link">
               <div class="contact-link-icon">💼</div>linkedin.com/in/shimamudakha
@@ -3076,7 +3073,6 @@
         <div class="footer-col">
           <h5>Connect</h5>
           <div class="footer-links">
-            <a href="mailto:shmtlb@gmail.com">Email Me</a>
             <a href="https://www.linkedin.com/in/shimamudakha/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact
               Form</button>
@@ -4163,11 +4159,11 @@
             contactForm.reset();
             formSuccess.textContent = '✓ Message sent! Thank you — I’ll be in touch soon.';
           } else {
-            formSuccess.textContent = 'Something went wrong. Please email me directly at shmtlb@gmail.com.';
+            formSuccess.textContent = 'Something went wrong. Please try again in a moment.';
           }
         } catch (error) {
           formSuccess.classList.add('show');
-          formSuccess.textContent = 'Network error. Please email me directly at shmtlb@gmail.com.';
+          formSuccess.textContent = 'Network error. Please try again in a moment.';
           console.error('Contact form submission failed:', error);
         } finally {
           submitBtn.textContent = 'Send Message';
