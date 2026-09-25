@@ -81,7 +81,22 @@
     .quote-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:.4rem;border-top:1px solid rgba(255,255,255,.18)}
     .quote-total strong{font-family:"Fira Code",monospace;color:var(--lime);font-size:1.05rem}
     .quote-panel .btn-primary{background:var(--lime);color:var(--ink);width:100%}
-    .quote-note{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.5}
+    .quote-note{font-size:.72rem;color:rgba(255,255,255,.65);line-height:1.5}
+    .promo-box{background:white;border:1.5px solid var(--line);border-radius:20px;padding:1.6rem;margin:0 auto 2rem;max-width:1120px}
+    .promo-box h2{font-size:1.5rem;margin:.25rem 0 .5rem}
+    .promo-box p{color:var(--muted);font-size:.9rem}
+    .promo-form{display:flex;gap:.7rem;align-items:flex-end;flex-wrap:wrap;margin-top:1rem}
+    .promo-form label{display:block;font-size:.8rem;font-weight:700;margin-bottom:.35rem}
+    .promo-form input,.promo-code input{padding:.7rem .8rem;border:1.5px solid var(--line);border-radius:10px;font:inherit;min-width:220px}
+    .promo-form .btn{border:0;cursor:pointer}
+    .promo-consent{display:flex;align-items:flex-start;gap:.5rem;margin-top:.85rem;font-size:.8rem;color:var(--muted)}
+    .promo-consent input{margin-top:.25rem}
+    .promo-result{margin-top:1rem;font-weight:700;color:var(--deep)}
+    .promo-code label{display:block;font-size:.78rem;font-weight:700;margin-bottom:.4rem}
+    .promo-code input{width:100%;min-width:0}
+    .promo-code p{font-size:.75rem;margin-top:.4rem}
+    .promo-discount{display:none;justify-content:space-between;gap:.6rem;font-size:.85rem;color:var(--lime)}
+    .promo-discount.show{display:flex}
 
     .cta-band{background:linear-gradient(120deg,var(--deep),#3c002c);color:#fff;padding:4.2rem 0;text-align:center}
     .cta-band h2{color:#fff;font-size:clamp(1.9rem,4vw,2.9rem);max-width:680px;margin:0 auto}
@@ -156,7 +171,22 @@
       </div>
     </header>
 
-    <section>
+    <section aria-labelledby="promo-title">
+      <div class="container">
+        <div class="promo-box" id="subscriber-offer">
+          <p class="eyebrow">New subscriber offer</p>
+          <h2 id="promo-title">50% off your first project</h2>
+          <p>Subscribe to email updates to receive your promotion code. Enter it in your quote below. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
+          <form id="promoForm" class="promo-form" action="https://formspree.io/f/mqejlbkl" method="POST">
+            <input type="hidden" name="_subject" value="New subscriber — SM Cyber Design first-project offer">
+            <input type="hidden" name="signup_type" value="Email updates and first-project offer">
+            <div><label for="promoEmail">Email address</label><input type="email" id="promoEmail" name="email" autocomplete="email" required></div>
+            <button class="btn btn-primary" type="submit">Subscribe &amp; get code</button>
+            <label class="promo-consent"><input type="checkbox" name="email_updates_consent" value="Yes" required> I agree to receive email updates from SM Cyber Design.</label>
+          </form>
+          <p class="promo-result" id="promoResult" role="status" aria-live="polite" hidden></p>
+        </div>
+      </div>
       <div class="container quote-layout">
         <form class="package-list" id="packageForm">
 
@@ -212,18 +242,50 @@
             </div>
           </div>
 
+          <div class="package-card">
+            <span class="pkg-num">05</span>
+            <div class="pkg-body">
+              <h3>Logo Design</h3>
+              <p>A distinctive logo shaped around your business and its audience.</p>
+              <ul><li>Creative direction</li><li>Logo concepts</li><li>Refinement</li><li>Final files</li></ul>
+            </div>
+            <div class="pkg-side">
+              <span class="pkg-price">Custom quote</span>
+              <label class="pkg-toggle-label"><input class="pkg-toggle" type="checkbox" data-name="Logo Design" data-custom="true"> Add to quote</label>
+            </div>
+          </div>
+
+          <div class="package-card">
+            <span class="pkg-num">06</span>
+            <div class="pkg-body">
+              <h3>Business Card Design</h3>
+              <p>A polished, print-ready business card that fits your brand.</p>
+              <ul><li>Front and back layout</li><li>Contact details</li><li>Print-ready file</li></ul>
+            </div>
+            <div class="pkg-side">
+              <span class="pkg-price">Custom quote</span>
+              <label class="pkg-toggle-label"><input class="pkg-toggle" type="checkbox" data-name="Business Card Design" data-custom="true"> Add to quote</label>
+            </div>
+          </div>
+
         </form>
 
         <aside class="quote-panel" aria-label="Your quote">
           <div><p class="eyebrow">Your package</p><h2>Selected services</h2></div>
           <ul id="quoteItems"></ul>
           <p id="quoteEmpty">Nothing selected yet — check off any service to start building your quote.</p>
+          <div class="promo-code">
+            <label for="promoCode">Subscriber promotion code</label>
+            <input id="promoCode" type="text" autocomplete="off" placeholder="Enter your code">
+            <p id="promoStatus" role="status" aria-live="polite">Subscribe above to receive a code.</p>
+          </div>
+          <div class="promo-discount" id="promoDiscount"><span>First project offer (50%)</span><span id="discountAmount"></span></div>
           <div class="quote-total">
             <span>Estimated total</span>
             <strong id="quoteTotal">$0</strong>
           </div>
           <a class="btn btn-primary" id="quoteCta" href="contact.html">Get my quote <span aria-hidden="true">→</span></a>
-          <p class="quote-note">Ranges reflect typical project scope. Your contact message will list exactly what you selected so I can follow up with a firm number.</p>
+          <p class="quote-note">Ranges reflect typical project scope; custom quoted items are additional. The promotion is subject to first-time subscriber verification. I’ll confirm the scope and final amount, then send a secure invoice to pay. Your contact message will include your selections and code.</p>
         </aside>
       </div>
     </section>
@@ -297,39 +359,83 @@
     const quoteEmpty = document.getElementById('quoteEmpty');
     const quoteTotal = document.getElementById('quoteTotal');
     const quoteCta = document.getElementById('quoteCta');
+    const promoCode = document.getElementById('promoCode');
+    const promoStatus = document.getElementById('promoStatus');
+    const promoDiscount = document.getElementById('promoDiscount');
+    const discountAmount = document.getElementById('discountAmount');
     const fmt = n => '$' + n.toLocaleString('en-US');
+    const offerCode = 'WELCOME50';
 
     function updateQuote() {
       const selected = toggles.filter(t => t.checked);
-      quoteItems.innerHTML = '';
-      if (selected.length === 0) {
+      quoteItems.replaceChildren();
+      const validCode = promoCode.value.trim().toUpperCase() === offerCode;
+      promoStatus.textContent = validCode
+        ? 'Code applied to your estimate. First-time subscriber eligibility is confirmed before invoicing.'
+        : promoCode.value.trim() ? 'Code not recognized. Check the code you received after subscribing.' : 'Subscribe above to receive a code.';
+      promoDiscount.classList.toggle('show', validCode && selected.some(t => !t.dataset.custom));
+      if (!selected.length) {
         quoteEmpty.style.display = 'block';
         quoteTotal.textContent = '$0';
-        quoteCta.setAttribute('href', 'contact.html');
+        quoteCta.href = 'contact.html';
         return;
       }
       quoteEmpty.style.display = 'none';
       let low = 0, high = 0;
+      const hasCustom = selected.some(t => t.dataset.custom);
       selected.forEach(t => {
-        low += Number(t.dataset.low);
-        high += Number(t.dataset.high);
+        const custom = !!t.dataset.custom;
+        if (!custom) {
+          low += Number(t.dataset.low);
+          high += Number(t.dataset.high);
+        }
         const li = document.createElement('li');
         const nameSpan = document.createElement('span');
         nameSpan.textContent = t.dataset.name;
         const priceSpan = document.createElement('span');
-        priceSpan.textContent = fmt(Number(t.dataset.low)) + '–' + fmt(Number(t.dataset.high));
-        li.appendChild(nameSpan);
-        li.appendChild(priceSpan);
+        priceSpan.textContent = custom ? 'Custom quote' : fmt(Number(t.dataset.low)) + '–' + fmt(Number(t.dataset.high));
+        li.append(nameSpan, priceSpan);
         quoteItems.appendChild(li);
       });
-      quoteTotal.textContent = fmt(low) + '–' + fmt(high);
+      const discountLow = validCode ? low / 2 : 0;
+      const discountHigh = validCode ? high / 2 : 0;
+      discountAmount.textContent = low ? '−' + fmt(discountLow) + '–' + fmt(discountHigh) : '';
+      const total = low ? fmt(low - discountLow) + '–' + fmt(high - discountHigh) : 'Custom quote';
+      quoteTotal.textContent = hasCustom && low ? total + ' + custom quote' : total;
       const names = selected.map(t => t.dataset.name).join(', ');
-      const params = new URLSearchParams({ packages: names, low, high });
-      quoteCta.setAttribute('href', 'contact.html?' + params.toString());
+      const params = new URLSearchParams({ packages: names, low: low - discountLow, high: high - discountHigh });
+      if (hasCustom) params.set('custom', 'yes');
+      if (validCode) params.set('promo', offerCode);
+      quoteCta.href = 'contact.html?' + params.toString();
     }
 
     toggles.forEach(t => t.addEventListener('change', updateQuote));
+    promoCode.addEventListener('input', updateQuote);
     updateQuote();
+
+    const promoForm = document.getElementById('promoForm');
+    const promoResult = document.getElementById('promoResult');
+    promoForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const button = promoForm.querySelector('button[type="submit"]');
+      button.disabled = true;
+      try {
+        const response = await fetch(promoForm.action, {
+          method: 'POST', body: new FormData(promoForm), headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('Subscription request failed');
+        promoResult.textContent = 'Thanks for subscribing! Your code is ' + offerCode + '. Enter it in the quote panel below.';
+        promoResult.hidden = false;
+        promoCode.value = offerCode;
+        updateQuote();
+        promoForm.reset();
+      } catch (error) {
+        promoResult.textContent = 'We could not submit your subscription. Please try again.';
+        promoResult.hidden = false;
+      } finally {
+        button.disabled = false;
+      }
+    });
 
     const consultationForm = document.getElementById('consultationForm');
     const bookingSuccess = document.getElementById('bookingSuccess');
