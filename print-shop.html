@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Print Shop | SM Cyber Design</title>
+  <style>
+    :root{--ink:#21101d;--deep:#92006b;--vivid:#db00a1;--lime:#d6fb51;--paper:#fbf8fb;--line:#eadde7;--muted:#594b55}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit}
+    .container{width:min(100% - 2rem,1120px);margin:auto}
+    .top{background:white;border-bottom:1px solid var(--line)}.top .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0}
+    .logo{font-weight:800;text-decoration:none;letter-spacing:-.03em}.logo span{color:var(--vivid)}nav{display:flex;gap:1.3rem;flex-wrap:wrap}nav a{text-decoration:none;font-size:.9rem;font-weight:700}
+    .hero{background:linear-gradient(120deg,#26001d,#650048);color:white;padding:5rem 0 4rem}.eyebrow{color:var(--lime);text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:800}
+    h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.05;max-width:760px;margin:.8rem 0 1.2rem;letter-spacing:-.05em}.hero p{max-width:650px;font-size:1.1rem;color:#f2e8ef}
+    main section{padding:4.5rem 0}h2{font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.035em;margin:0 0 .6rem}.intro{max-width:680px;color:var(--muted);margin:0 0 2rem}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:2rem;min-height:220px;display:flex;flex-direction:column;align-items:flex-start}
+    .icon{display:grid;place-items:center;background:var(--lime);border-radius:15px;width:48px;height:48px;color:var(--deep);font-weight:800;font-size:1.3rem}.card h3{font-size:1.35rem;margin:1rem 0 .25rem}.card p{color:var(--muted);margin:0}.card a{display:inline-block;margin-top:auto;padding-top:1rem;color:var(--deep);font-weight:700}
+    .details{background:#fff}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.step{padding:1.4rem;border:1px solid var(--line);border-radius:16px}.step strong{display:block;color:var(--deep);margin-bottom:.35rem}
+    footer{background:#140d13;color:white;padding:2rem 0;font-size:.85rem}
+    @media(max-width:700px){.grid,.steps{grid-template-columns:1fr}.top .container{align-items:flex-start;flex-direction:column}.hero{padding:4rem 0}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="container"><a class="logo" href="index.html">SM <span>Cyber Design</span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Design services</a><a href="contact.html">Contact</a></nav></div></header>
+  <main>
+    <header class="hero"><div class="container"><span class="eyebrow">Print Shop</span><h1>Make your ideas tangible.</h1><p>Thoughtful designs for everyday use and memorable business moments. Explore printed apparel, stationery, drinkware, and more.</p></div></header>
+    <section aria-labelledby="collections-title"><div class="container"><h2 id="collections-title">Explore the collections</h2><p class="intro">Shop our current printed products through Shopify. For a custom design or a product you do not see yet, send an inquiry and I’ll check what is available.</p>
+      <div class="grid">
+        <article class="card"><span class="icon" aria-hidden="true">◡</span><h3>White glossy mug</h3><p>A simple everyday mug, available in the Shopify store.</p><a href="https://0wasb4-xc.myshopify.com/products/white-glossy-mug">View mug in shop →</a></article>
+        <article class="card"><span class="icon" aria-hidden="true">T</span><h3>Threat Model tote</h3><p>Organic cotton tote with an original design for security engineers.</p><a href="https://0wasb4-xc.myshopify.com/products/threat-model-organic-cotton-tote-for-security-engineers">View tote in shop →</a></article>
+        <article class="card"><span class="icon" aria-hidden="true">✦</span><h3>More products</h3><p>Browse the live catalog for all currently available prints and gifts.</p><a href="https://0wasb4-xc.myshopify.com/collections/all">Browse Shopify catalog →</a></article>
+        <article class="card"><span class="icon" aria-hidden="true">▣</span><h3>Business cards &amp; custom requests</h3><p>Need a print-ready business card design, custom apparel, or another item? Tell me what you have in mind.</p><a href="contact.html">Ask about a custom order →</a></article>
+      </div>
+    </div></section>
+    <section class="details" aria-labelledby="how-title"><div class="container"><h2 id="how-title">From idea to delivery</h2><div class="steps">
+      <div class="step"><strong>01 · Browse</strong>Explore the live Shopify catalog and check product options.</div>
+      <div class="step"><strong>02 · Request custom work</strong>For custom artwork or business card design, send a project inquiry before ordering.</div>
+      <div class="step"><strong>03 · Order</strong>Complete purchases in the Shopify store. Shipping and availability appear at checkout.</div>
+    </div></div></section>
+  </main>
+  <footer><div class="container">© <span id="year"></span> SM Cyber Design LLC</div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
