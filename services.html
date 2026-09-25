@@ -72,7 +72,8 @@
     .pkg-toggle-label{display:flex;align-items:center;gap:.5rem;cursor:pointer;font-size:.8rem;font-weight:700;color:var(--muted);user-select:none}
     .pkg-toggle{width:19px;height:19px;accent-color:var(--vivid);cursor:pointer}
 
-    .quote-panel{position:sticky;top:96px;background:var(--ink);color:white;border-radius:24px;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem}
+    .quote-sidebar{position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;gap:1rem}
+    .quote-panel{background:var(--ink);color:white;border-radius:24px;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem}
     .quote-panel h2{font-family:"DM Sans",sans-serif;font-size:1.05rem;font-weight:700}
     .quote-panel .eyebrow{color:var(--lime)}
     #quoteItems{list-style:none;display:flex;flex-direction:column;gap:.55rem;font-size:.85rem;min-height:1.4rem}
@@ -82,7 +83,7 @@
     .quote-total strong{font-family:"Fira Code",monospace;color:var(--lime);font-size:1.05rem}
     .quote-panel .btn-primary{background:var(--lime);color:var(--ink);width:100%}
     .quote-note{font-size:.72rem;color:rgba(255,255,255,.65);line-height:1.5}
-    .promo-box{background:white;border:1.5px solid var(--line);border-radius:20px;padding:1.6rem;margin:0 auto 2rem;max-width:1120px}
+    .promo-box{background:white;border:1.5px solid var(--line);border-radius:20px;padding:1.6rem;margin:0}
     .promo-box h2{font-size:1.5rem;margin:.25rem 0 .5rem}
     .promo-box p{color:var(--muted);font-size:.9rem}
     .promo-form{display:flex;gap:.7rem;align-items:flex-end;flex-wrap:wrap;margin-top:1rem}
@@ -131,7 +132,7 @@
 
     @media(max-width:900px){
       .quote-layout{grid-template-columns:1fr}
-      .quote-panel{position:static;order:-1}
+      .quote-sidebar{position:static;order:-1}
       .consultation-grid{grid-template-columns:1fr;gap:2rem}
     }
     @media(max-width:800px){
@@ -171,22 +172,7 @@
       </div>
     </header>
 
-    <section aria-labelledby="promo-title">
-      <div class="container">
-        <div class="promo-box" id="subscriber-offer">
-          <p class="eyebrow">New subscriber offer</p>
-          <h2 id="promo-title">50% off your first project</h2>
-          <p>Subscribe to email updates to receive your promotion code. Enter it in your quote below. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
-          <form id="promoForm" class="promo-form" action="https://formspree.io/f/mqejlbkl" method="POST">
-            <input type="hidden" name="_subject" value="New subscriber — SM Cyber Design first-project offer">
-            <input type="hidden" name="signup_type" value="Email updates and first-project offer">
-            <div><label for="promoEmail">Email address</label><input type="email" id="promoEmail" name="email" autocomplete="email" required></div>
-            <button class="btn btn-primary" type="submit">Subscribe &amp; get code</button>
-            <label class="promo-consent"><input type="checkbox" name="email_updates_consent" value="Yes" required> I agree to receive email updates from SM Cyber Design.</label>
-          </form>
-          <p class="promo-result" id="promoResult" role="status" aria-live="polite" hidden></p>
-        </div>
-      </div>
+    <section>
       <div class="container quote-layout">
         <form class="package-list" id="packageForm">
 
@@ -270,6 +256,7 @@
 
         </form>
 
+        <div class="quote-sidebar">
         <aside class="quote-panel" aria-label="Your quote">
           <div><p class="eyebrow">Your package</p><h2>Selected services</h2></div>
           <ul id="quoteItems"></ul>
@@ -277,7 +264,7 @@
           <div class="promo-code">
             <label for="promoCode">Subscriber promotion code</label>
             <input id="promoCode" type="text" autocomplete="off" placeholder="Enter your code">
-            <p id="promoStatus" role="status" aria-live="polite">Subscribe above to receive a code.</p>
+            <p id="promoStatus" role="status" aria-live="polite">Subscribe below to receive a code.</p>
           </div>
           <div class="promo-discount" id="promoDiscount"><span>First project offer (50%)</span><span id="discountAmount"></span></div>
           <div class="quote-total">
@@ -287,6 +274,21 @@
           <a class="btn btn-primary" id="quoteCta" href="contact.html">Get my quote <span aria-hidden="true">→</span></a>
           <p class="quote-note">These are USD project estimates for the listed scope. Printing, domains, hosting, and ad spend are separate. I’ll confirm the final amount before invoicing. The 50% first-project offer requires subscriber and first-time eligibility verification.</p>
         </aside>
+        <div class="promo-box" id="subscriber-offer">
+          <p class="eyebrow">New subscriber offer</p>
+          <h2 id="promo-title">50% off your first project</h2>
+          <p>Subscribe to email updates to receive your promotion code. It applies to your quote above automatically. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
+          <form id="promoForm" class="promo-form" action="https://formspree.io/f/mqejlbkl" method="POST">
+            <input type="hidden" name="_subject" value="New subscriber — SM Cyber Design first-project offer">
+            <input type="hidden" name="signup_type" value="Email updates and first-project offer">
+            <div><label for="promoEmail">Email address</label><input type="email" id="promoEmail" name="email" autocomplete="email" required></div>
+            <button class="btn btn-primary" type="submit">Subscribe &amp; get code</button>
+            <label class="promo-consent"><input type="checkbox" name="email_updates_consent" value="Yes" required> I agree to receive email updates from SM Cyber Design.</label>
+          </form>
+          <p class="promo-result" id="promoResult" role="status" aria-live="polite" hidden></p>
+        </div>
+
+        </div>
       </div>
     </section>
 
@@ -372,7 +374,7 @@
       const validCode = promoCode.value.trim().toUpperCase() === offerCode;
       promoStatus.textContent = validCode
         ? 'Code applied to your estimate. First-time subscriber eligibility is confirmed before invoicing.'
-        : promoCode.value.trim() ? 'Code not recognized. Check the code you received after subscribing.' : 'Subscribe above to receive a code.';
+        : promoCode.value.trim() ? 'Code not recognized. Check the code you received after subscribing.' : 'Subscribe below to receive a code.';
       promoDiscount.classList.toggle('show', validCode && selected.some(t => !t.dataset.custom));
       if (!selected.length) {
         quoteEmpty.style.display = 'block';
