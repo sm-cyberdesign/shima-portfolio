@@ -277,7 +277,7 @@
         <div class="promo-box" id="subscriber-offer">
           <p class="eyebrow">New subscriber offer</p>
           <h2 id="promo-title">50% off your first project</h2>
-          <p>Subscribe to email updates to receive your promotion code. It applies to your quote above automatically. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
+          <p>Subscribe to email updates to get your welcome code. After subscribing, enter WELCOME50 in Your package above to activate the 50% estimate. The discount applies to your first project service fee after I confirm your subscription and first-time eligibility on the final invoice.</p>
           <form id="promoForm" class="promo-form" action="https://formspree.io/f/mqejlbkl" method="POST">
             <input type="hidden" name="_subject" value="New subscriber — SM Cyber Design first-project offer">
             <input type="hidden" name="signup_type" value="Email updates and first-project offer">
@@ -426,10 +426,8 @@
           method: 'POST', body: new FormData(promoForm), headers: { Accept: 'application/json' }
         });
         if (!response.ok) throw new Error('Subscription request failed');
-        promoResult.textContent = 'Thanks for subscribing! Your code is ' + offerCode + '. Enter it in the quote panel below.';
+        promoResult.textContent = 'Thank you for subscribing! Your welcome code is ' + offerCode + '. Enter it in Your package above to activate 50% off your first project estimate.';
         promoResult.hidden = false;
-        promoCode.value = offerCode;
-        updateQuote();
         promoForm.reset();
       } catch (error) {
         promoResult.textContent = 'We could not submit your subscription. Please try again.';
