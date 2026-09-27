@@ -179,6 +179,12 @@
 
     // Pre-fill from a quote built on services.html
     const params = new URLSearchParams(window.location.search);
+    const customService = params.get('service');
+    if (customService) {
+      document.getElementById('fSubject').value = 'Custom print request: ' + customService;
+      document.getElementById('formSubjectField').value = 'Custom print request from SM Cyber Design site';
+      document.getElementById('fMsg').value = 'I would like ' + customService + ' with my logo.\n\nQuantity and sizes: \nLogo file link (if available): \nOther details: ';
+    }
     const packages = params.get('packages');
     if (packages) {
       const low = params.get('low');
