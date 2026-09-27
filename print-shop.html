@@ -42,13 +42,13 @@
     <section aria-labelledby="collections-title"><div class="container"><div class="shop-actions"><div><h2 id="collections-title">Shop printed designs</h2><p class="intro">Choose an item and size here. Your cart stays on this page; secure payment opens in Shopify checkout.</p></div><button class="cart-toggle" type="button" onclick="document.getElementById('print-cart').showModal()">View cart</button></div>
       <shopify-store store-domain="https://smcyberdesign.myshopify.com" country="US" language="en"></shopify-store>
       <div class="product-grid">
-        <shopify-context type="product" handle="least-privilege-cybersecurity-mug"><template>
+        <shopify-context type="product" handle="white-glossy-mug"><template>
           <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
-            <h3><shopify-data query="product.title"></shopify-data></h3><p>A ceramic mug for security-minded workdays.</p>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A glossy ceramic mug for everyday coffee or tea.</p>
             <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
             <shopify-variant-selector></shopify-variant-selector>
             <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add mug to cart</button>
-            <a href="https://smcyberdesign.myshopify.com/products/least-privilege-cybersecurity-mug">View full details</a>
+            <a href="https://smcyberdesign.myshopify.com/products/white-glossy-mug">View full details</a>
           </article></template></shopify-context>
         <shopify-context type="product" handle="threat-model-boxy-hoodie-for-security-engineers"><template>
           <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
@@ -57,6 +57,22 @@
             <shopify-variant-selector></shopify-variant-selector>
             <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add hoodie to cart</button>
             <a href="https://smcyberdesign.myshopify.com/products/threat-model-boxy-hoodie-for-security-engineers">View full details</a>
+          </article></template></shopify-context>
+        <shopify-context type="product" handle="unisex-hoodie-cybersecurity-in-mind"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A cozy hoodie with the Cybersecurity in mind design.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add hoodie to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/unisex-hoodie-cybersecurity-in-mind">View full details</a>
+          </article></template></shopify-context>
+        <shopify-context type="product" handle="tote-bag"><template>
+          <article class="product-card"><shopify-media query="product.featuredImage" width="480" height="480"></shopify-media>
+            <h3><shopify-data query="product.title"></shopify-data></h3><p>A roomy printed tote for everyday essentials.</p>
+            <span class="price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></span>
+            <shopify-variant-selector></shopify-variant-selector>
+            <button class="buy-button" type="button" onclick="document.getElementById('print-cart').addLine(event).showModal()">Add tote to cart</button>
+            <a href="https://smcyberdesign.myshopify.com/products/tote-bag">View full details</a>
           </article></template></shopify-context>
       </div>
       <shopify-cart id="print-cart"></shopify-cart>
