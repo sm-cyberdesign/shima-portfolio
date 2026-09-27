@@ -25,6 +25,11 @@
     .product-card shopify-variant-selector{display:block}.buy-button,.cart-toggle{border:0;border-radius:11px;background:var(--deep);color:#fff;padding:.8rem 1.1rem;font:inherit;font-weight:700;cursor:pointer}
     .buy-button{margin-top:auto}.cart-toggle{background:var(--lime);color:var(--ink)}.shop-actions{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     shopify-cart::part(primary-button){background:var(--deep);color:#fff}
+
+    .stickers{background:#f5f0f4}.sticker-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:1.4rem 0}
+    .sticker-tile{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.sticker-tile img{display:block;width:100%;aspect-ratio:1;object-fit:contain;padding:1rem;background:#fff}.sticker-tile h3{font-size:1rem;margin:.8rem 1rem 1rem}
+    .sticker-cta{display:inline-block;padding:.85rem 1.2rem;border-radius:11px;background:var(--deep);color:#fff;text-decoration:none;font-weight:700}
+    @media(max-width:700px){.sticker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     footer{background:#140d13;color:white;padding:2rem 0;font-size:.85rem}
     @media(max-width:700px){.grid,.steps,.product-grid{grid-template-columns:1fr}.top .container{align-items:flex-start;flex-direction:column}.hero{padding:4rem 0}}
   </style>
@@ -62,6 +67,17 @@
         <article class="card"><span class="icon" aria-hidden="true">✦</span><h3>Caps &amp; socks</h3><p>Make your logo part of the outfit.</p><a href="contact.html?service=Custom%20accessories">Request accessories →</a></article>
         <article class="card"><span class="icon" aria-hidden="true">▣</span><h3>Business cards, notebooks &amp; pens</h3><p>Branded essentials for meetings and events.</p><a href="contact.html?service=Custom%20stationery">Request stationery →</a></article>
       </div>
+    </div></section>
+    <section class="stickers" id="stickers" aria-labelledby="stickers-title"><div class="container">
+      <h2 id="stickers-title">Stickers for the human side of security</h2>
+      <p class="intro">Preview the new sticker collection, from laptop stickers to a four-design sheet. Online ordering is coming soon while we finalize sizes and printing. For a custom sticker order, send us your idea.</p>
+      <div class="sticker-grid">
+        <article class="sticker-tile"><img src="https://cdn.shopify.com/s/files/1/0732/0423/6371/files/trust-by-design-sticker.png?v=1790527925" alt="Lime Trust by design sticker" loading="lazy"><h3>Trust by design</h3></article>
+        <article class="sticker-tile"><img src="https://cdn.shopify.com/s/files/1/0732/0423/6371/files/human-approved-sticker.png?v=1790527944" alt="Magenta Human-Approved sticker" loading="lazy"><h3>Human-Approved</h3></article>
+        <article class="sticker-tile"><img src="https://cdn.shopify.com/s/files/1/0732/0423/6371/files/secure-by-default-sticker.png?v=1790527918" alt="Secure by default terminal sticker" loading="lazy"><h3>Secure by default</h3></article>
+        <article class="sticker-tile"><img src="https://cdn.shopify.com/s/files/1/0732/0423/6371/files/cybersecurity-laptop-sticker-sheet.png?v=1790527976" alt="Four-design SM Cyber Design laptop sticker sheet" loading="lazy"><h3>Laptop sticker sheet</h3></article>
+      </div>
+      <a class="sticker-cta" href="contact.html?service=Custom%20stickers">Request custom stickers →</a>
     </div></section>
     <section class="details" aria-labelledby="how-title"><div class="container"><h2 id="how-title">From idea to delivery</h2><div class="steps">
       <div class="step"><strong>01 · Choose</strong>Select a ready-made design on this page, or request an item with your logo.</div>
