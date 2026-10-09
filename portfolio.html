@@ -2561,7 +2561,20 @@
         display: inline !important;
       }
     }
-  </style>
+  
+    /* Applied AI: reuse the portfolio palette in both display modes. */
+    .ai-intro{max-width:860px;color:var(--muted);line-height:1.8}
+    .ai-intro p+p{margin-top:1rem}
+    .ai-keywords{display:flex;flex-wrap:wrap;gap:.55rem;list-style:none;margin:1.5rem 0 2rem;padding:0}
+    .ai-keywords li{border:1px solid var(--border);border-radius:999px;padding:.4rem .75rem;font-size:.78rem;color:var(--text)}
+    .ai-example-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .ai-example{border:1px solid var(--border);border-radius:20px;padding:1.5rem;display:flex;flex-direction:column;align-items:flex-start}
+    .ai-example h3{font-family:'DM Serif Display',serif;font-size:1.4rem;line-height:1.25;margin-bottom:.8rem;color:var(--text)}
+    .ai-example>p:not(.section-label){color:var(--muted);font-size:.9rem;margin-bottom:1.25rem}
+    .ai-example .btn-outline{margin-top:auto;white-space:normal;text-align:left}
+    @media(max-width:800px){.ai-example-grid{grid-template-columns:1fr}}
+
+</style>
 </head>
 
 <body>
@@ -2729,6 +2742,42 @@
           <a href="https://github.com/sm-cyberdesign/cybersecurity-labs" target="_blank" rel="noopener noreferrer"
             class="btn-outline">GitHub</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- APPLIED AI -->
+  <section id="applied-ai" aria-labelledby="applied-ai-title">
+    <div class="container">
+      <p class="section-label">How I Use AI</p>
+      <h2 id="applied-ai-title">Applied AI in Cybersecurity &amp; UX</h2>
+      <div class="ai-intro">
+        <p>I apply generative AI to support cybersecurity research, human-centered UX design, rapid prototyping, and technical documentation. Through independent projects and security labs, I explore AI-assisted workflows for security analysis, workflow automation, and accessible learning experiences.</p>
+        <p>My process combines prompt engineering, research synthesis, and iterative testing with human review. I validate AI-generated outputs against project requirements and technical evidence, then refine them for accuracy, usability, and clear communication.</p>
+      </div>
+      <ul class="ai-keywords" aria-label="Applied AI skills">
+        <li>Generative AI</li><li>Prompt Engineering</li><li>AI-Assisted Development</li><li>Workflow Automation</li><li>Rapid Prototyping</li><li>Human-Centered Design</li><li>Technical Documentation</li><li>Output Validation</li>
+      </ul>
+      <div class="ai-example-grid">
+        <article class="ai-example">
+          <p class="section-label">Learning Experience</p>
+          <h3>Interactive PDF Study Guide</h3>
+          <p>AI-assisted summaries, quizzes, and flashcards turn study material into an accessible learning experience. My contribution connects the learning flow, interface design, and progress tracking.</p>
+          <button class="btn-outline" type="button" onclick="openModal('study_guide')" aria-haspopup="dialog">Explore learning application</button>
+        </article>
+        <article class="ai-example">
+          <p class="section-label">Security Automation</p>
+          <h3>DeceptionForge SOAR Gateway</h3>
+          <p>Generative AI supports context-aware decoys in a security proof of concept. My work combines dashboard design, telemetry workflows, schema validation, safety controls, and simulated response testing.</p>
+          <button class="btn-outline" type="button" onclick="openModal('forgefire')" aria-haspopup="dialog">Explore security project</button>
+        </article>
+        <article class="ai-example">
+          <p class="section-label">Application Prototyping</p>
+          <h3>South America Explorer</h3>
+          <p>A responsive travel application brings together an interactive route map, itinerary cards, and planning tools. It demonstrates how I translate requirements into a usable digital experience.</p>
+          <button class="btn-outline" type="button" onclick="openModal('south_america')" aria-haspopup="dialog">Explore application prototype</button>
+        </article>
       </div>
     </div>
   </section>
