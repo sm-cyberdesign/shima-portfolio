@@ -2577,6 +2577,51 @@
     @media(max-width:800px){.ai-example-grid{grid-template-columns:1fr}}
 
 </style>
+
+  <style id="contact-motion">
+    /* A quiet invitation to connect, with no flashing or layout movement. */
+    .contact-glow {
+      position:relative;
+      isolation:isolate;
+      box-shadow:0 0 16px rgba(219,0,161,.16);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .contact-glow::before {
+      content:"";
+      position:absolute;
+      inset:-7px;
+      z-index:-1;
+      border-radius:inherit;
+      background:radial-gradient(ellipse,rgba(219,0,161,.25),transparent 72%);
+      filter:blur(7px);
+      opacity:.35;
+      pointer-events:none;
+      animation:contact-breathe 4s ease-in-out 3;
+    }
+    .contact-glow:hover,.contact-glow:focus-visible {
+      transform:translateY(-2px);
+      box-shadow:0 4px 22px rgba(219,0,161,.28);
+    }
+    .contact-glow:focus-visible {outline:2px solid var(--vivid);outline-offset:5px}
+    @keyframes contact-breathe {
+      0%,100% {opacity:.35;transform:scale(.97)}
+      50% {opacity:.85;transform:scale(1.06)}
+    }
+    #contact .contact-info {position:relative;isolation:isolate}
+    #contact .contact-info::before {
+      content:"";
+      position:absolute;
+      top:-2rem;left:-2rem;width:230px;height:180px;
+      z-index:-1;
+      pointer-events:none;
+      background:radial-gradient(ellipse,rgba(219,0,161,.09),transparent 70%);
+    }
+    @media(prefers-reduced-motion:reduce) {
+      html {scroll-behavior:auto}
+      *,*::before,*::after {animation:none!important;transition:none!important}
+      .contact-glow:hover,.contact-glow:focus-visible {transform:none}
+    }
+  </style>
 </head>
 
 <body>
@@ -2637,7 +2682,7 @@
           <div class="hero-btns">
             <a href="#portfolio" class="btn-primary">View Portfolio</a>
             <a href="#applied-ai" class="btn-outline">Explore My AI Projects</a>
-            <a href="#contact" class="btn-outline">Get in Touch</a>
+            <a href="#contact" class="btn-outline contact-glow">Get in Touch</a>
           </div>
           <div class="hero-stats">
             <div class="stat">
