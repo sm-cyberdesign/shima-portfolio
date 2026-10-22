@@ -2631,6 +2631,33 @@
     #insights .insight-link{font-size:1.05rem;font-weight:800;min-height:44px;display:inline-flex;align-items:center;align-self:flex-start;margin-top:auto;padding:.35rem 0;gap:.45rem}
     #insights .insight-link:focus-visible{outline:2px solid var(--vivid);outline-offset:5px;border-radius:4px}
   </style>
+<style id="credentials-and-report">
+#credentials,#cybergen-profile{padding:80px 0;scroll-margin-top:100px}
+#credentials{background:var(--white)}
+.credential-intro{max-width:780px;line-height:1.8;margin:1rem 0 2rem;color:var(--text)}
+.credential-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:32px 0}
+.credential-card{display:flex;flex-direction:column;align-items:flex-start;padding:24px;border:1px solid rgba(146,0,107,.2);border-radius:16px;background:var(--bg);min-width:0}
+.credential-card>a:first-child{display:block;align-self:center;margin-bottom:20px;background:#fff;border-radius:12px;padding:10px}
+.credential-card img{display:block;width:140px;height:140px;object-fit:contain}
+.credential-card h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;line-height:1.4;margin-bottom:10px}
+.credential-card p{font-size:.9rem;line-height:1.5;margin:0 0 10px;overflow-wrap:anywhere}
+.credential-card .credential-date{font-size:.8rem;margin-bottom:20px}
+.credential-card>a:last-child{margin-top:auto;color:var(--deep);font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+.report-download{display:inline-flex;margin-bottom:32px;white-space:normal}
+.report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.report-grid figure{margin:0;background:var(--white);padding:20px;border-radius:16px;border:1px solid rgba(146,0,107,.2);min-width:0}
+.report-grid img{display:block;width:100%;height:auto;background:#fff;border-radius:8px}
+.report-grid figcaption{margin-top:16px;font-size:.9rem;line-height:1.6}
+.report-grid .report-roles{grid-column:1/-1}
+.report-roles img{max-width:850px;margin:auto}
+.report-context{font-size:.85rem;line-height:1.7;max-width:800px;margin-top:24px}
+#credentials a:focus-visible,#cybergen-profile a:focus-visible{outline:3px solid var(--vivid);outline-offset:5px}
+body.secure-terminal-mode #credentials{background:#17111b}
+body.secure-terminal-mode .credential-card,body.secure-terminal-mode .report-grid figure{background:#211725;color:#fff}
+body.secure-terminal-mode .credential-intro,body.secure-terminal-mode .credential-card>a:last-child{color:#D6fb51}
+@media(max-width:1000px){.credential-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.credential-grid,.report-grid{grid-template-columns:1fr}#credentials,#cybergen-profile{padding:52px 0}.report-grid .report-roles{grid-column:auto}}
+</style>
 </head>
 
 <body>
@@ -2641,6 +2668,7 @@
     <a href="index.html" onclick="closeMob()">Home</a>
     <a href="#portfolio" onclick="closeMob()">Projects</a>
     <a href="#about" onclick="closeMob()">About</a>
+    <a href="#credentials" onclick="closeMob()">Credentials</a>
     <a href="#contact" onclick="closeMob()">Contact</a>
     <a href="https://smcyberdesign.com/" target="_blank" rel="noopener noreferrer" onclick="closeMob()">SM Cyber Design ↗</a>
     <span class="resume-availability">Résumé available upon request.</span>
@@ -2695,8 +2723,8 @@
           </div>
           <div class="hero-stats">
             <div class="stat">
-              <div class="stat-num">5+</div>
-              <div class="stat-lbl">Certifications</div>
+              <div class="stat-num">8</div>
+              <div class="stat-lbl">Credentials &amp; Badges</div>
             </div>
             <div class="stat">
               <div class="stat-num">6</div>
@@ -2786,6 +2814,7 @@
             class="btn-outline">LinkedIn</a>
           <a href="https://www.credly.com/users/shima-mudakha" target="_blank" rel="noopener noreferrer"
             class="btn-outline">Credly Credentials</a>
+          <a href="#credentials" class="btn-outline">Badges &amp; Report</a>
           <a href="https://github.com/sm-cyberdesign/cybersecurity-labs" target="_blank" rel="noopener noreferrer"
             class="btn-outline">GitHub</a>
         </div>
@@ -2793,6 +2822,39 @@
     </div>
   </section>
 
+
+
+  <section id="credentials" aria-labelledby="credentials-title">
+    <div class="container">
+      <p class="section-label">Credentials &amp; Continuing Learning</p>
+      <h2 id="credentials-title">Learning backed by evidence.</h2>
+      <p class="credential-intro">My eight public badges span cybersecurity, UX design, applied AI, and professional development. Explore each credential and its issuing organization.</p>
+      <div class="credential-grid"><article class="credential-card"><a href="https://www.credly.com/badges/0cfda0f9-904b-411d-bd5b-716392226245" target="_blank" rel="noopener noreferrer" aria-label="View CompTIA Security+ ce Certification credential"><img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA Security+ ce Certification badge" width="160" height="160" loading="lazy"></a><h3>CompTIA Security+ ce Certification</h3><p>CompTIA</p><p class="credential-date">Expires October 21, 2029</p><a href="https://www.credly.com/badges/0cfda0f9-904b-411d-bd5b-716392226245" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://www.credly.com/badges/60ec308d-856a-4e67-8adf-98cc4705cfed" target="_blank" rel="noopener noreferrer" aria-label="View Google AI for App Building credential"><img src="https://images.credly.com/images/2cf18bea-6b75-401a-bf9d-ac0a23f582fd/blob" alt="Google AI for App Building badge" width="160" height="160" loading="lazy"></a><h3>Google AI for App Building</h3><p>Coursera</p><p class="credential-date">Issued May 26, 2026</p><a href="https://www.credly.com/badges/60ec308d-856a-4e67-8adf-98cc4705cfed" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://www.credly.com/badges/63c93ea9-361a-4f3b-a7cd-dd3d33d60f6b" target="_blank" rel="noopener noreferrer" aria-label="View Google AI Professional Certificate credential"><img src="https://images.credly.com/images/782f33e7-c4b5-4d1d-a7ce-02f25b7b9a1e/blob" alt="Google AI Professional Certificate badge" width="160" height="160" loading="lazy"></a><h3>Google AI Professional Certificate</h3><p>Coursera</p><p class="credential-date">Issued May 26, 2026</p><a href="https://www.credly.com/badges/63c93ea9-361a-4f3b-a7cd-dd3d33d60f6b" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://www.credly.com/badges/a4d4cb8e-74b4-4990-b8db-32de0b0588e5" target="_blank" rel="noopener noreferrer" aria-label="View Google AI for Data Analysis credential"><img src="https://images.credly.com/images/97e068dc-d64a-4806-a6cd-5c4e68fa3d5f/blob" alt="Google AI for Data Analysis badge" width="160" height="160" loading="lazy"></a><h3>Google AI for Data Analysis</h3><p>Coursera</p><p class="credential-date">Issued May 24, 2026</p><a href="https://www.credly.com/badges/a4d4cb8e-74b4-4990-b8db-32de0b0588e5" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://www.credly.com/badges/2014c821-9441-463d-b125-080026338444" target="_blank" rel="noopener noreferrer" aria-label="View Google UX Design Professional Certificate credential"><img src="https://images.credly.com/images/f4b9febb-69f6-46d8-8797-1e504ebfe0f8/GCC_badge_UX_1000x1000.png" alt="Google UX Design Professional Certificate badge" width="160" height="160" loading="lazy"></a><h3>Google UX Design Professional Certificate</h3><p>Coursera</p><p class="credential-date">Issued May 24, 2026</p><a href="https://www.credly.com/badges/2014c821-9441-463d-b125-080026338444" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://www.credly.com/badges/abe5c5d3-b1ac-42e0-8075-8d32c393105d" target="_blank" rel="noopener noreferrer" aria-label="View Google Cybersecurity Professional Certificate V2 credential"><img src="https://images.credly.com/images/0bf0f2da-a699-4c82-82e2-56dcf1f2e1c7/image.png" alt="Google Cybersecurity Professional Certificate V2 badge" width="160" height="160" loading="lazy"></a><h3>Google Cybersecurity Professional Certificate V2</h3><p>Coursera</p><p class="credential-date">Issued January 8, 2025</p><a href="https://www.credly.com/badges/abe5c5d3-b1ac-42e0-8075-8d32c393105d" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://api.accredible.com/v1/obi/badge_assertions/39357ecc-8367-4e41-a33d-1cef59494583" target="_blank" rel="noopener noreferrer" aria-label="View Onward to Opportunity credential"><img src="https://images.credly.com/images/51e2d8bf-e761-471c-bbdc-f79539249c78/a9f1a877-f7a8-410d-88e4-539ca3c5897b_cached_image_20260524-32-irj4wp.png" alt="Onward to Opportunity badge" width="160" height="160" loading="lazy"></a><h3>Onward to Opportunity</h3><p>D’Aniello Institute for Veterans and Military Families</p><p class="credential-date">Issued February 23, 2026</p><a href="https://api.accredible.com/v1/obi/badge_assertions/39357ecc-8367-4e41-a33d-1cef59494583" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+<article class="credential-card"><a href="https://api.badgr.io/public/assertions/2hkCxiBIQeanwI4nxmOOOg" target="_blank" rel="noopener noreferrer" aria-label="View SANS Foundations Alumni credential"><img src="https://images.credly.com/images/85de80e6-fefd-4722-9b8a-e5e7acfdc8ff/converted20260524-31-rqqza9.png" alt="SANS Foundations Alumni badge" width="160" height="160" loading="lazy"></a><h3>SANS Foundations Alumni</h3><p>SANS Foundations</p><p class="credential-date">Issued October 8, 2025</p><a href="https://api.badgr.io/public/assertions/2hkCxiBIQeanwI4nxmOOOg" target="_blank" rel="noopener noreferrer">View credential ↗</a></article>
+</div>
+      <a class="btn-outline" href="https://www.credly.com/users/shima-mudakha" target="_blank" rel="noopener noreferrer">View my full badge wallet ↗</a>
+    </div>
+  </section>
+  <section id="cybergen-profile" aria-labelledby="cybergen-title">
+    <div class="container">
+      <p class="section-label">Cybersecurity Aptitude</p>
+      <h2 id="cybergen-title">How I think. Where I thrive.</h2>
+      <p class="credential-intro">My CyberGEN.IQ cognitive profile identifies Design &amp; Development as my strongest cybersecurity quadrant, alongside strengths in Offensive Operations and Analysis &amp; Forensics.</p>
+      <a class="btn-primary report-download" href="assets/cybergen/downloads/shima-mudakha-cybergen-iq-report.pdf" download="Shima-Mudakha-CyberGEN-IQ-Report.pdf">Download full report (PDF, 5.3 MB) ↓</a>
+      <div class="report-grid">
+        <figure><a href="assets/cybergen/images/cognitive-profile.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size cognitive profile chart"><img src="assets/cybergen/images/cognitive-profile.png" width="1600" height="1600" loading="lazy" alt="Radial chart showing five cognitive constructs: Critical Thinking, Initiating, Responding, Real-Time, and Exhaustive."></a><figcaption>Cognitive profile across the five constructs assessed by CyberGEN.IQ.</figcaption></figure>
+        <figure><a href="assets/cybergen/images/cybersecurity-quadrants.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size cybersecurity quadrant chart"><img src="assets/cybergen/images/cybersecurity-quadrants.png" width="2100" height="2400" loading="lazy" alt="Cybersecurity quadrant scores: Offensive Operations 70, Defensive Operations 44, Analysis and Forensics 67, Design and Development 87; Design and Development is highlighted as the strongest fit."></a><figcaption>Cybersecurity quadrant alignment, with Design &amp; Development highlighted as my strongest fit.</figcaption></figure>
+        <figure class="report-roles"><a href="assets/cybergen/images/role-alignment.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size role alignment word cloud"><img src="assets/cybergen/images/role-alignment.png" width="1001" height="499" loading="lazy" alt="Example aligned roles including security control assessment, system authorization, cybersecurity workforce management, and secure project management."></a><figcaption>Example roles aligned with the report’s highest-scoring quadrant.</figcaption></figure>
+      </div>
+      <p class="report-context">These assessment results describe cognitive styles and role alignment, not overall ability or a certification. Original charts from my CyberGEN.IQ report by Haystack Solutions.</p>
+    </div>
+  </section>
 
   <!-- APPLIED AI -->
   <section id="applied-ai" aria-labelledby="applied-ai-title">
