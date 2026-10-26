@@ -2658,6 +2658,9 @@ body.secure-terminal-mode .credential-intro,body.secure-terminal-mode .credentia
 @media(max-width:1000px){.credential-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.credential-grid,.report-grid{grid-template-columns:1fr}#credentials,#cybergen-profile{padding:52px 0}.report-grid .report-roles{grid-column:auto}}
 </style>
+<style id="portfolio-blog-styles">
+.portfolio-blog{background:var(--bg);border-top:1px solid var(--border)}.portfolio-blog-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:2rem}.portfolio-blog-heading h2{max-width:680px}.portfolio-blog-intro{color:var(--muted);max-width:620px;margin-top:1rem;line-height:1.7}.portfolio-blog-heading>.btn-outline{flex-shrink:0}.portfolio-blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}.portfolio-blog-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden;text-decoration:none;color:var(--text);transition:transform .2s}.portfolio-blog-card:hover{transform:translateY(-3px)}.portfolio-blog-card:focus-visible{outline:3px solid var(--vivid);outline-offset:4px}.portfolio-blog-card>img{display:block;width:100%;height:auto}.portfolio-blog-copy{padding:1.4rem;display:flex;flex-direction:column;align-items:flex-start;flex:1}.portfolio-blog-copy h3{font-size:1.25rem;line-height:1.4;margin-bottom:.8rem}.portfolio-blog-copy p{font-size:.95rem;line-height:1.7;color:var(--muted);margin-bottom:1rem}.portfolio-blog-read{color:var(--deep);font-weight:700;margin-top:auto;min-height:44px;display:inline-flex;align-items:center;gap:.5rem}.secure-terminal-mode .portfolio-blog{background:#120c14}.secure-terminal-mode .portfolio-blog-card{background:#1a121d;color:#fff;border-color:rgba(214,251,81,.28)}.secure-terminal-mode .portfolio-blog h2,.secure-terminal-mode .portfolio-blog h3{color:#fff}.secure-terminal-mode .portfolio-blog p{color:#d0c8d0}.secure-terminal-mode .portfolio-blog-read{color:var(--lime)}@media(max-width:800px){.portfolio-blog-grid{grid-template-columns:1fr}.portfolio-blog-heading{align-items:flex-start;flex-direction:column}.portfolio-blog-card{max-width:560px;width:100%;margin-inline:auto}}
+</style>
 </head>
 
 <body>
@@ -2668,6 +2671,7 @@ body.secure-terminal-mode .credential-intro,body.secure-terminal-mode .credentia
     <a href="index.html" onclick="closeMob()">Home</a>
     <a href="#portfolio" onclick="closeMob()">Projects</a>
     <a href="#about" onclick="closeMob()">About</a>
+    <a href="#blog" onclick="closeMob()">Blog</a>
     <a href="#credentials" onclick="closeMob()">Credentials</a>
     <a href="#contact" onclick="closeMob()">Contact</a>
     <a href="https://smcyberdesign.com/" target="_blank" rel="noopener noreferrer" onclick="closeMob()">SM Cyber Design ↗</a>
@@ -2692,6 +2696,7 @@ body.secure-terminal-mode .credential-intro,body.secure-terminal-mode .credentia
         <li><a href="index.html">Home</a></li>
         <li><a href="#portfolio">Projects</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a class="business-link" href="https://smcyberdesign.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit SM Cyber Design business website">SM Cyber Design ↗</a></li>
       </ul>
@@ -3307,6 +3312,9 @@ body.secure-terminal-mode .credential-intro,body.secure-terminal-mode .credentia
     </div>
   </section>
 
+
+<!-- BLOG -->
+<section id="blog" class="portfolio-blog" aria-labelledby="blog-h2"><div class="container"><div class="portfolio-blog-heading"><div><p class="section-label">Blog</p><h2 id="blog-h2">Security ideas, put into practice.</h2><p class="portfolio-blog-intro">Practical perspectives on cybersecurity, AI, and building safer digital experiences.</p></div><a href="blog.html" class="btn-outline">View all blog posts <span aria-hidden="true">→</span></a></div><div class="portfolio-blog-grid"><a class="portfolio-blog-card" href="agile-cybersecurity.html"><img src="assets/agile-cybersecurity-poster.svg" alt="" width="1200" height="1200" loading="lazy"><div class="portfolio-blog-copy"><span class="insight-tag">Security Strategy</span><h3>Applying Agile Principles to Cybersecurity</h3><p>A practical approach to prioritizing risk, delivering security improvements, and learning through short feedback loops.</p><span class="portfolio-blog-read">Read article <span aria-hidden="true">→</span></span></div></a><a class="portfolio-blog-card" href="agentic-devsecops.html"><img src="assets/agentic-devsecops-poster.svg" alt="" width="1200" height="1200" loading="lazy"><div class="portfolio-blog-copy"><span class="insight-tag">AI & Security</span><h3>Agentic DevSecOps: What Changes When AI Agents Are Part of the Pipeline</h3><p>Autonomous agents are starting to write code, open pull requests, and touch infrastructure. Security has to keep up.</p><span class="portfolio-blog-read">Read article <span aria-hidden="true">→</span></span></div></a><a class="portfolio-blog-card" href="website-security-fundamentals.html"><img src="assets/website-security-fundamentals-poster.svg" alt="" width="1200" height="1200" loading="lazy"><div class="portfolio-blog-copy"><span class="insight-tag">Fundamentals</span><h3>How to Make a Website Secure: What Actually Matters</h3><p>The practical fundamentals that keep a site safe — not the buzzwords, the habits that actually reduce risk.</p><span class="portfolio-blog-read">Read article <span aria-hidden="true">→</span></span></div></a></div></div></section>
 
   <!-- INSIGHTS -->
   <section id="insights" class="insights" aria-labelledby="insights-h2">
