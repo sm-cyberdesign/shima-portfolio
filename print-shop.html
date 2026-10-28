@@ -35,9 +35,15 @@
     @media(max-width:700px){.grid,.steps,.product-grid{grid-template-columns:1fr}.top .container{align-items:flex-start;flex-direction:column}.hero{padding:4rem 0}}
   </style>
   <script src="https://cdn.shopify.com/storefront/web-components.js" defer></script>
+<style id="portfolio-site-brand">.logo{gap:.7rem}.logo .logo-shield{display:inline-flex;width:36px;height:36px;color:#92006b;flex-shrink:0}.logo-shield svg{width:100%;height:100%}.logo .portfolio-site-name{color:var(--ink);font-size:1.1rem;line-height:1.15}.logo .portfolio-site-name small{display:block;font-family:"DM Sans",sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}@media(max-width:520px){.logo .portfolio-site-name{font-size:1rem}}</style>
 </head>
 <body>
-  <header class="top"><div class="container"><a class="logo" href="index.html">SM <span>Cyber Design</span></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="services.html">Design services</a><a href="contact.html">Contact</a></nav></div></header>
+  <header class="top"><div class="container"><a class="logo" href="https://shimamudakha.design/" aria-label="Shima Mudakha portfolio home"><span class="logo-shield" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path d="M12 2.4 19 5v5.6c0 4.5-2.8 8.6-7 10.1-4.2-1.5-7-5.6-7-10.1V5l7-2.6Z" fill="currentColor" />
+              <path d="M9.2 12.1 11 13.9l4-4" fill="none" stroke="#D6fb51" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span><span class="portfolio-site-name">Shima Mudakha<small>Portfolio</small></span></a><nav aria-label="Main navigation"><a href="https://shimamudakha.design/">Home</a><a href="services.html">Design services</a><a href="contact.html">Contact</a></nav></div></header>
   <main>
     <header class="hero"><div class="container"><span class="eyebrow">Print Shop</span><h1>Make your ideas tangible.</h1><p>Thoughtful designs for everyday use and memorable business moments. Explore printed apparel, stationery, drinkware, and more.</p></div></header>
     <section aria-labelledby="collections-title"><div class="container"><div class="shop-actions"><div><h2 id="collections-title">Shop printed designs</h2><p class="intro">Choose an item and size here. Your cart stays on this page; secure payment opens in Shopify checkout.</p></div><button class="cart-toggle" type="button" onclick="document.getElementById('print-cart').showModal()">View cart</button></div>
@@ -110,7 +116,7 @@
       <div class="step"><strong>03 · Order</strong>Review your cart here and pay securely in Shopify checkout. Shipping is shown there.</div>
     </div></div></section>
   </main>
-  <footer><div class="container">© <span id="year"></span> SM Cyber Design LLC</div></footer>
+  <footer><div class="container">© <span id="year"></span> Shima Mudakha</div></footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
